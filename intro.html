@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lab 1 Introduction to spatial data and map projections | 01-ClimateNA.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lab 1 Introduction to spatial data and map projections | 01-ClimateNA.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lab 1 Introduction to spatial data and map projections | 01-ClimateNA.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Open Geomatics Community of Practice</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#intro"><i class="fa fa-check"></i><b>1</b> Introduction to spatial data and map projections</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i><b>1.1</b> Lab Overview</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i><b>1.1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#competencies-in-this-lab"><i class="fa fa-check"></i><b>1.1.2</b> Competencies in This Lab</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#deliverables"><i class="fa fa-check"></i><b>1.1.3</b> Deliverables</a></li>
+<li class="chapter" data-level="1.1.4" data-path=""><a href="#data"><i class="fa fa-check"></i><b>1.1.4</b> Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-1-generate-point-data-from-climate-na"><i class="fa fa-check"></i>Task 1: Generate point data from Climate NA</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-2-import-coordinates-as-spatial-points-in-arcgis-pro"><i class="fa fa-check"></i>Task 2: Import coordinates as spatial points in ArcGIS Pro</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-3-working-with-raster-data-and-map-projections"><i class="fa fa-check"></i>Task 3: Working with raster data and map projections</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lab 1</span> Introduction to spatial data and map projections<a href="#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Written by
+Paul Pickell</p>
+<div id="lab-overview" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Lab Overview<a href="#lab-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Raster and vector data form the foundation of GIS analysis. In this lab you will download spatial data relating to current and future climate scenarios in Canada. You will then learn the basics of navigating ArcGIS Pro to display this data and create graphical outputs. This lab is designed to help you understand the differences in raster and vector data and practice visualizing spatial data on a map using sound cartographic principles. You will also learn about geographic coordinate systems and how to apply ArcGIS Pro to view different map projections.</p>
+<p>Over the past century, greenhouse gas emissions have driven rapid climatic changes across the globe. These changes can be understood by measuring changes in Mean Annual Temperature (MAT) and Mean Annual Precipitation (MAP). In this lab, you will use the Climate NA webmap to generate spatial data and examine how these variables are changing over time. You will also choose a specific location and discuss the implications of projected changes in climate at this place.</p>
+<hr />
+<div id="learning-objectives" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Understand differences between raster and vector datatypes</p></li>
+<li><p>Visualize different map projections in ArcGIS Pro</p></li>
+<li><p>Display spatial data in ArcGIS Pro using appropriate projections and symbology</p></li>
+</ul>
+<hr />
+</div>
+<div id="competencies-in-this-lab" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Competencies in This Lab<a href="#competencies-in-this-lab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Lorem ipsum</p></li>
+<li><p>Lorem ipsum</p></li>
+<li><p>Lorem ipsum</p></li>
+</ul>
+<hr />
+</div>
+<div id="deliverables" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Screenshots of spatial data displayed in a GIS</p></li>
+<li><p>Charts showing MAT and MAP plotted by elevation</p></li>
+<li><p>Answers to 9 questions</p></li>
+<li><p>Brief discussion of climate change impacts at Canadian location of your choice</p></li>
+</ul>
+<hr />
+</div>
+<div id="data" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Data<a href="#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>You will generate data for this lab using the Climate NA Webmap</p></li>
+<li><p>Shapefile of regularly spaced ellipses to explore map projection (ellipses.shp)</p></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="task-1-generate-point-data-from-climate-na" class="section level2 unnumbered hasAnchor">
+<h2>Task 1: Generate point data from Climate NA<a href="#task-1-generate-point-data-from-climate-na" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)</p>
+<p><img src="images/01-climNAmap.JPG" width="780" style="display: block; margin: auto;" /></p>
+<p>By clicking on the map on the right you can generate Annual, Seasonal and Monthly climate variables which will be displayed on the left. You can also select locations by typing in coordinates into the Latitude and Longitude boxes and hitting Enter on your keyboard.</p>
+<p><em>Q1. What map projection does the climate NA webmap use?</em></p>
+<p>The Help button will take you to a page that describes what each of the climate variables mean. For this lab we will be focusing on two Annual variables: <strong>MAT (Mean Annual Temperature)</strong> and <strong>MAP (Mean Annual Precipitation)</strong>.</p>
+<p>Use the <strong>Historical</strong> drop-down menu to generate climate normals from different decades and years. The <strong>Future</strong> drop-down menu will allow you to generate climate projections for different time periods and climate warming scenarios.</p>
+<p>The Quick Tutorial button will give more explanation for other features of the webmap.</p>
+<p><em>Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus).</em></p>
+<p><img src="images/01-UBC.JPG" width="355" style="display: block; margin: auto;" /></p>
+<p><strong>Step 2:</strong> Next we will be generating climate data at varying elevations within Vancouver and the Coast Mountains. Set the Historical drop-down menu to <strong>Normal_1961_1990</strong>.</p>
+<p><em>Q3.In two sentences describe what a climate normal is and why it might be important in understanding changes in climate.</em></p>
+<p>Zoom in to the following area showing greater Vancouver and the Coast Mountains.</p>
+<p><img src="images/01-lowermainland.JPG" width="918" style="display: block; margin: auto;" /></p>
+<p>Pick a location in the greater Vancouver area <strong>(choose a location that is on land, i.e. not in the ocean)</strong>, click on the map to add a pin then click <strong>Calculate</strong> to generate climate data for this location.</p>
+<p>Next, click the <strong>Append</strong> to button to add the climate data to a .csv file that we will download later. The Count field should now show 1, indicating that one location has been added.</p>
+<p>Next, click on 10-15 new locations on the map, click Calculate then Append to. Later, we will graph climate at different elevations, so <strong>try to sample a range of mountain peaks, valleys and flat locations.</strong> Again, choose locations on land and vary the distance to water bodies.</p>
+<p><strong>Calculate and append climate variables for 10-15 new coordinates.</strong></p>
+<p>When you are done, hit the <strong>Save</strong> button to download the csv file to your Downloads folder (this will happen automatically).</p>
+<hr />
+</div>
+<div id="task-2-import-coordinates-as-spatial-points-in-arcgis-pro" class="section level2 unnumbered hasAnchor">
+<h2>Task 2: Import coordinates as spatial points in ArcGIS Pro<a href="#task-2-import-coordinates-as-spatial-points-in-arcgis-pro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Open ArcGISPro. Click on the Map button, then name your new project and save it to a location on your computer.</p>
+<p><img src="images/01-arcpro.JPG" width="946" style="display: block; margin: auto;" /></p>
+<p>To get started, click the <strong>Insert</strong> button on the top ribbon, then the <strong>New Map</strong> button.</p>
+<p><img src="images/01-arcmappanes.JPG" width="748" style="display: block; margin: auto;" /></p>
+<p><strong>Step 2:</strong> To import ClimateData.csv to ArcGIS Pro open File Explorer and navigate to the Downloads folder. Click and drag ClimateData.csv to the Contents pane.</p>
+<p><img src="images/01-catalogpane.JPG" width="871" style="display: block; margin: auto;" /></p>
+<p><strong>Step 3:</strong> Next, we will add data to the map using the lat/long coordinates from the csv. Right click on <strong>ClimateData.csv</strong> in the Contents pane then select <strong>Display XY Data</strong> from the dropdown menu. Ensure that the <strong>X Field</strong> shows the column corresponding to longitude (long) and the <strong>Y Field</strong> shows the column corresponding to latitude (lat). Leave the output feature class coordinate system as the default. Click OK.</p>
+<p><img src="images/01-DisplayXY.jpg" width="247" style="display: block; margin: auto;" /></p>
+<p><strong>Step 4:</strong> Your point features should now be displayed in the Map pane. Right click on the <strong>ClimateData_XYTableToPoint</strong> layer and select Attribute Table. This is where you can view the climate data associated with each point.</p>
+<p><img src="images/01-attributetable.JPG" width="863" style="display: block; margin: auto;" /></p>
+<p>Right click on the <strong>ClimateData_XYTableToPoint</strong> layer in the Contents pane and select <strong>Properties</strong> from the dropdown menu. Navigate to <strong>Source</strong> and examine the <strong>Spatial Reference</strong> information by opening the menu.</p>
+<p><img src="images/01-spatialref.JPG" width="394" style="display: block; margin: auto;" /></p>
+<p><em>Q3. What is the Geographic Coordinate System of the layer? What is the Angular Unit?</em></p>
+<p><strong>Step 5:</strong> Next we will explore point symbology. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Symbology</strong>. You can change the symbol of all the points by clicking on the Symbol button and selecting a new symbol from the Gallery tab.</p>
+<p><img src="images/01-symbology.JPG" width="690" style="display: block; margin: auto;" /></p>
+<p>We can also vary the color of each point by different variables in the Attribute Table. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Symbology</strong>. Under Primary symbology, use the dropdown menu to change the symbology type to <strong>Graduated Colors</strong>.</p>
+<p><img src="images/01-plotpoints.JPG" width="950" style="display: block; margin: auto;" /></p>
+<p>Use the <strong>Field</strong> option to change which variable to classify points by. In this example we are using the Mean Annual Temperature (MAT) field and plotting colder points in purple/blue and warmer points in yellow/red. Explore the different color options in the Color Scheme menu.</p>
+<p>You can also change the number of classes and the method of choosing the classes using the Method and Classes options.</p>
+<p><strong>Plot your points and color code them by Mean Annual Precipitation (MAP). Take a screenshot of the points on the map and the symbology menu to include in your final deliverables. </strong></p>
+<p><strong>Step 6:</strong> Next, we will create a simple chart of our climate data. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Create Chart -&gt; Line Chart</strong>.</p>
+<p>In the Chart Properties pane set the <strong>Date or Number</strong> field to <strong>elev</strong>. This will plot elevation on the X-axis. Next, under Numeric fields select MAT, this will plot Mean Annual temperature on the Y-axis. Go to the General tab and change the chart title and X and Y axis labels. When you are finished click the Export -&gt; Export as graphic. Name the chart and save it as a .png.</p>
+<p><strong>Create charts of change in MAT and change in MAP by elevation. Include the images in your final deliverables. </strong></p>
+<p><img src="images/01-MATgraph.JPG" width="859" style="display: block; margin: auto;" /></p>
+<p><img src="images/01-savegraph.JPG" width="452" style="display: block; margin: auto;" /></p>
+<hr />
+</div>
+<div id="task-3-working-with-raster-data-and-map-projections" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Working with raster data and map projections<a href="#task-3-working-with-raster-data-and-map-projections" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)</p>
+<p>We will be downloading 4 raster datasets to calculate differences in current and future projections of MAT and MAP.
+To download a raster overlay, select the layer you want to download in the Overlay dropdown menu, then click Download Overlay raster files.</p>
+<p>Download the following layers:
+<strong>MAT_1961_1990</strong>
+<strong>MAT_ssp245_2071_2100</strong>
+<strong>MAP_1961_1990</strong>
+<strong>MAP_ssp245_2071_2100</strong></p>
+<p><em>Q4. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences.</em></p>
+<p><img src="images/01-climNAraster.JPG" width="456" style="display: block; margin: auto;" /></p>
+<p><strong>Step 2:</strong> Open ArcGIS Pro and insert a new Map.</p>
+<p>To visualize how different map projections alter shape, area and distance of spatial data drag and drop the <strong>ellipses.shp</strong> shapefile to the Map. Note that the default projection in ArcMap is the pseudo-Plate-Caree projection.</p>
+<p><img src="images/01-ellipses.JPG" width="675" style="display: block; margin: auto;" /></p>
+<p>Use the measure tool from the top ribbon (<strong>Map -&gt; Measure</strong>) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.</p>
+<p><em>Q5. What areas of the map show the most distortion? What properties of the circles are distorted?</em></p>
+<p>You can change the projection of the entire map in the <strong>Map Properties -&gt; Coordinate Systems</strong> tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.</p>
+<p>Compare the following three projections: <strong>Mercator (world), Robinson (world), Azimuthal Equidistant (world).</strong> .</p>
+<div id="q6-for-each-scenario-idenitfy-the-best-map-projection-1-comparing-the-area-of-different-provinces-2-calculating-the-direction-and-distance-between-two-cities-3-mapping-the-shape-of-the-northern-coastline" class="section level5 hasAnchor" number="1.1.4.0.1">
+<h5><span class="header-section-number">1.1.4.0.1</span> Q6: For each scenario idenitfy the best map projection: 1) Comparing the area of different provinces, 2) Calculating the direction and distance between two cities, 3) Mapping the shape of the northern coastline?<a href="#q6-for-each-scenario-idenitfy-the-best-map-projection-1-comparing-the-area-of-different-provinces-2-calculating-the-direction-and-distance-between-two-cities-3-mapping-the-shape-of-the-northern-coastline" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 3:</strong> Drag and drop the 4 climate rasters from your Downloads folder to the Contents pane.</p>
+<p>Right click on the <strong>mat_1961_1990</strong> layer in the Contents pane -&gt; Symbology. Change the color scheme to better see the range of values.</p>
+<p><img src="images/01-rastersymbol.JPG" width="205" style="display: block; margin: auto;" /></p>
+<p><strong>Step 4:</strong> Next we will calculate the <strong>difference in historical and projected MAT</strong>. First, navigate to the <strong>Imagery</strong> tab in the top ribbon -&gt; <strong>Raster Functions.</strong></p>
+<p>Under the Math tab click on the <strong>Minus</strong> tool. This tool subtracts cell values between two rasters and outputs a new raster whose values are the difference between the two inputs. In the Raster field input the <strong>mat_ssp245_2071_2100</strong> layer. In the Raster2 field input the <strong>mat_1961_1990</strong> layer. This will subtract the historical MAT values from the projected MAT values. Click <strong>Create new layer.</strong></p>
+<p><img src="images/01-rastercalc.JPG" width="197" style="display: block; margin: auto;" /></p>
+<p>Notice that MAT values have been scaled by a factor of 10. Next, we will divide the cell values of the change in MAT raster by 10 to put values in units of ˚C. Navigate back to the Raster Functions menu and select the Divide tool. Input the Minus_mat_ssp245_2071-2100.tif_mat_1961-1990.tif layer in the Raster field. In the Raster2 field type in <strong>10</strong>. Create new layer.</p>
+<p>You should now have a layer that looks like the following:
+<img src="images/01-MATdiff.JPG" width="606" style="display: block; margin: auto;" /></p>
+<p><em>Q7: In 1-2 sentences comment on the pattern of change in MAT. Where are the greatest changes expected in Canada?</em></p>
+<p><strong>Repeat Steps 3-4 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm. Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.</strong></p>
+<p><em>Q8: What is the minimum and maximum change in MAP (in units of mm)?</em></p>
+<p><em>Q9: In 1-2 sentences comment on the pattern of change in MAP. Where are the greatest changes expected in Canada?</em></p>
+<p><strong>Step 5:</strong> Now zoom into a place in Canada that is significant to you!</p>
+<p>(Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon -&gt; Transparency.
+Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon -&gt; Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane.
+In the example below I have chosen Victoria, BC where the projected change in MAT is 2.7C.</p>
+<p><strong>For your chosen place, record the Lat/Long and the change in MAT and MAP. Include in your final deliverables.</strong></p>
+<p><img src="images/01-victoria.JPG" width="742" style="display: block; margin: auto;" /></p>
+<p><strong>Step 6:</strong> For the place you chose in the previous step, discuss the following in 500 words or less:</p>
+<p>-Describe the current and projected changes in MAT and MAP. What is the direction of change? How does the magnitude of change compare to other sites across Canada?</p>
+<p>-Identify an environmental concern that could be intensified by the projected changes in climate. Is this region susceptible to wildfire? Flooding? Droughts? Why is this issue important? Use 1 peer reviewed source to back up your argument. (Provide the full citation for this reference at the end of the discussion).</p>
+<p>-Briefly, what changes could help mitigate this concern? Is there a specific technology that could be developed or a change in lifestyle that you would like to see in the future?</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

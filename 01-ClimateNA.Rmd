@@ -2,16 +2,14 @@
 yml_content <- yaml::read_yaml("chapterauthors.yml")
 author <- yml_content[["lab1shortname"]][["author"]]
 ```
-# Lab Title {#ClimateNA}
+# Introduction to spatial data and map projections {#intro}
 
 Written by
 ```{r results='asis', echo=FALSE}
 cat(author)
 ```
 
-# Introduction to spatial data and map projections {#intro}
-
-## Lab Overview {-}
+## Lab Overview
 
 Raster and vector data form the foundation of GIS analysis. In this lab you will download spatial data relating to current and future climate scenarios in Canada. You will then learn the basics of navigating ArcGIS Pro to display this data and create graphical outputs. This lab is designed to help you understand the differences in raster and vector data and practice visualizing spatial data on a map using sound cartographic principles. You will also learn about geographic coordinate systems and how to apply ArcGIS Pro to view different map projections. 
 
@@ -19,7 +17,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 ------------------------------------------------------------------------
 
-## Learning Objectives {-}
+### Learning Objectives
 
 -   Understand differences between raster and vector datatypes
 
@@ -29,7 +27,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 ------------------------------------------------------------------------
 
-## Competencies in This Lab {-}
+### Competencies in This Lab
 
 -   Lorem ipsum
 
@@ -39,7 +37,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 ------------------------------------------------------------------------
 
-## Deliverables {-}
+### Deliverables
 
 -   Screenshots of spatial data displayed in a GIS
 
@@ -51,7 +49,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 ------------------------------------------------------------------------
 
-## Data {-}
+### Data
 
 -   You will generate data for this lab using the Climate NA Webmap
 
@@ -69,7 +67,7 @@ knitr::include_graphics('images/01-climNAmap.jpg')
 
 By clicking on the map on the right you can generate Annual, Seasonal and Monthly climate variables which will be displayed on the left. You can also select locations by typing in coordinates into the Latitude and Longitude boxes and hitting Enter on your keyboard. 
 
-##### Q1. What map projection does the climate NA webmap use?  {-}
+*Q1. What map projection does the climate NA webmap use?*
 
 The Help button will take you to a page that describes what each of the climate variables mean. For this lab we will be focusing on two Annual variables: **MAT (Mean Annual Temperature)** and **MAP (Mean Annual Precipitation)**.
 
@@ -77,7 +75,7 @@ Use the **Historical** drop-down menu to generate climate normals from different
 
 The Quick Tutorial button will give more explanation for other features of the webmap. 
 
-##### Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus). {-}
+*Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus).*
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01-UBC.jpg')
@@ -85,7 +83,7 @@ knitr::include_graphics('images/01-UBC.jpg')
 
 **Step 2:** Next we will be generating climate data at varying elevations within Vancouver and the Coast Mountains. Set the Historical drop-down menu to **Normal_1961_1990**. 
 
-##### Q3.In two sentences describe what a climate normal is and why it might be important in understanding changes in climate. {-}
+*Q3.In two sentences describe what a climate normal is and why it might be important in understanding changes in climate.*
 
 Zoom in to the following area showing greater Vancouver and the Coast Mountains.
 
@@ -143,7 +141,7 @@ Right click on the **ClimateData_XYTableToPoint** layer in the Contents pane and
 knitr::include_graphics('images/01-spatialref.jpg')
 ```
 
-##### Q3. What is the Geographic Coordinate System of the layer? What is the Angular Unit? {-}
+*Q3. What is the Geographic Coordinate System of the layer? What is the Angular Unit?*
 
 **Step 5:** Next we will explore point symbology. Right click on **ClimateData_XYTableToPoint** layer and select **Symbology**. You can change the symbol of all the points by clicking on the Symbol button and selecting a new symbol from the Gallery tab. 
 
@@ -192,7 +190,7 @@ Download the following layers:
 **MAP_1961_1990**
 **MAP_ssp245_2071_2100**
 
-##### Q4. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences.  
+*Q4. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences.*  
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01-climNAraster.jpg')
@@ -208,7 +206,7 @@ knitr::include_graphics('images/01-ellipses.jpg')
 
 Use the measure tool from the top ribbon (**Map -> Measure**) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.
 
-##### Q5. What areas of the map show the most distortion? What properties of the circles are distorted? 
+*Q5. What areas of the map show the most distortion? What properties of the circles are distorted?* 
 
 You can change the projection of the entire map in the **Map Properties -> Coordinate Systems** tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.
 
@@ -239,13 +237,13 @@ You should now have a layer that looks like the following:
 knitr::include_graphics('images/01-MATdiff.jpg')
 ```
 
-##### Q7: In 1-2 sentences comment on the pattern of change in MAT. Where are the greatest changes expected in Canada? 
+*Q7: In 1-2 sentences comment on the pattern of change in MAT. Where are the greatest changes expected in Canada?* 
 
 **Repeat Steps 3-4 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm. Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.** 
 
-##### Q8: What is the minimum and maximum change in MAP (in units of mm)? 
+*Q8: What is the minimum and maximum change in MAP (in units of mm)?* 
 
-##### Q9: In 1-2 sentences comment on the pattern of change in MAP. Where are the greatest changes expected in Canada?
+*Q9: In 1-2 sentences comment on the pattern of change in MAP. Where are the greatest changes expected in Canada?*
 
 **Step 5:** Now zoom into a place in Canada that is significant to you!
 

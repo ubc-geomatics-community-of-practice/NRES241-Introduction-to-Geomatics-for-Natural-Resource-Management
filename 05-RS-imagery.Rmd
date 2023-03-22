@@ -229,9 +229,7 @@ Spectral indices are mathematical equations containing spectral reflectance valu
 
 NDVI is calculated with the below formula: 
 
-```{r 05-ndvi, out.width= "40%", echo = FALSE}
-    knitr::include_graphics("images/05/05-ndvi.png")
-```
+$\ NDVI = \frac{(NIR - RED)}{(NIR+RED)}$
 
 Where NIR is the near-infrared band (Landsat 7 Band 4) and Red is the red band (Landsat 7 Band 4). The results of this equation should be between -1 and 1 with values less than 0 representing water and values between 0-1 representing different levels of green vegetation. 
 
@@ -267,9 +265,7 @@ Use your knowledge of spectral indices, the NDVI formula given above and the tab
 
 We will now use the “Band Arithmetic” window to calculate the Normalized Difference Built-Up Index (NDBI). The NDBI highlights urban areas where there is typically a higher reflectance in the shortwave-infrared region compared to the near-infrared region. The equation is as follows: 
 
-```{r 05-ndbi, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/05/05-ndbi.png")
-```
+$\ NDBI = \frac{(SWIR-NIR)}{(SWIR+NIR)}$
 
 Open the “Band Arithmetic” function and select the Landsat scene as your input raster. Under “Method” use the drop-down menu and navigate to NDBI. Using what you know about Landsat imagery select the proper bands for calculating NDBI under the “Band Indexes” box and then select “Create New Layer”. 
 

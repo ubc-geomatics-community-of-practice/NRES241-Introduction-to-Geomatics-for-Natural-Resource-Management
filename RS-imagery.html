@@ -312,7 +312,7 @@ You should see the following:</p>
 <h2>Task 3: Calculating NDVI and Built Up Index<a href="#task-3-calculating-ndvi-and-built-up-index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Spectral indices are mathematical equations containing spectral reflectance values from two or more wavelengths used to highlight areas of spectral importance in an image. There are a wide variety of spectral indices used to highlight a variety of different land covers and image properties including burned Areas (Normalized Burn Ratio), urban/ built up areas (Normalized Difference Built-Up Index), and water (Normalized Difference Water Index) to name a few. The Normalized Difference Vegetation Index (NDVI) is a frequently used spectral index that takes advantage of the high near-infrared reflectance and high red absorption properties of healthy vegetation and is therefore often used to quantify vegetation in a remotely sensed multispectral image.</p>
 <p>NDVI is calculated with the below formula:</p>
-<p><img src="images/05/05-ndvi.PNG" width="40%" /></p>
+<p><span class="math inline">\(\ NDVI = \frac{(NIR - RED)}{(NIR+RED)}\)</span></p>
 <p>Where NIR is the near-infrared band (Landsat 7 Band 4) and Red is the red band (Landsat 7 Band 4). The results of this equation should be between -1 and 1 with values less than 0 representing water and values between 0-1 representing different levels of green vegetation.</p>
 <p>While ArcGIS Pro contains a built-in tool to calculate NDVI and a series of other spectral indices, in this lab we will be using the “band arithmetic” function and the above equation to create our own NDVI tool.</p>
 <p>Navigate to the Imagery ribbon at the top of your ArcPro window and click the <strong>Raster Function</strong> button.</p>
@@ -334,7 +334,7 @@ You should see the following:</p>
 <div id="q18.-what-information-does-this-type-of-analysis-give-us-when-and-why-might-this-tpye-of-analysis-be-used" class="section level5 unnumbered hasAnchor">
 <h5>Q18. What information does this type of analysis give us? When and why might this tpye of analysis be used?<a href="#q18.-what-information-does-this-type-of-analysis-give-us-when-and-why-might-this-tpye-of-analysis-be-used" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We will now use the “Band Arithmetic” window to calculate the Normalized Difference Built-Up Index (NDBI). The NDBI highlights urban areas where there is typically a higher reflectance in the shortwave-infrared region compared to the near-infrared region. The equation is as follows:</p>
-<p><img src="images/05/05-ndbi.PNG" width="75%" /></p>
+<p><span class="math inline">\(\ NDBI = \frac{(SWIR-NIR)}{(SWIR+NIR)}\)</span></p>
 <p>Open the “Band Arithmetic” function and select the Landsat scene as your input raster. Under “Method” use the drop-down menu and navigate to NDBI. Using what you know about Landsat imagery select the proper bands for calculating NDBI under the “Band Indexes” box and then select “Create New Layer”.</p>
 <hr />
 </div>
@@ -418,6 +418,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

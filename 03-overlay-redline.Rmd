@@ -116,9 +116,18 @@ Concurrently, you can also find the tool under Contents \> Data \> Export Data. 
 
 The SQL statement is widely used in ArcGIS to select your targeted features. There are four basic conditional operators (i.e., Boolean operators): AND, OR, XOR, and NOT. Similar to the Set concept in mathematics. Using the dataset shown in the table below, here are some examples of the four operators.
 
-```{r 03-table, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/03/03-table.png")
+```{r, echo = FALSE}
+    df = data.frame(ID = 1:4, height = c(18, 17, 16, 21), dbh = c(19.8, 20.6, 30.1, 24.2),
+                    Species = c('Western Red Cedar', 'Douglas Fir', 'Western Spruce', 'Douglas-Fir'),
+                    Condition = c('Good', 'Fair', 'Fair', 'Good'))
+
+colnames(df) = c('ID', 'Height (m)', 'DBH (cm)', 'Species', 'Condition')
+
+library(knitr)
+kable(df, align = 'c')
+
 ```
+
 
 AND is an exclusive statement that needs the selected feature to meet both or multiple criteria to be passed. The tuple illustration for A AND B is listed below.
 
@@ -150,7 +159,7 @@ Finally, XOR is used to describe a relationship to exclude the common area in tw
     knitr::include_graphics("images/03/03-xor.png")
 ```
 
-If we want to choose a tree species whose height is lower than 20 metres or that is a Douglas-Fir, but we want to exclude species that has both characteristics, we need to use the XOR Boolean conditional operator and we will write the statement as (height < 20) XOR (species = Douglas-Fir). It will select tree ID #1, #2, and #4.
+If we want to choose a tree species whose height is lower than 20 metres or that is a Douglas-Fir, but we want to exclude species that has both characteristics, we need to use the XOR Boolean conditional operator and we will write the statement as `(height < 20) XOR (species = Douglas-Fir)`. It will select tree ID #1, #2, and #4.
 
 Now use what you learned from the class and the handout, use the select by attributes tool, and answer the following questions:
 

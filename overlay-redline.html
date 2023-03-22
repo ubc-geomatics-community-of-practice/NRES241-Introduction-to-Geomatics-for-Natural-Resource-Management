@@ -207,7 +207,47 @@ div.csl-indent {
 <div id="task-4-select-features-using-sql-statements" class="section level2 unnumbered hasAnchor">
 <h2>Task 4: Select Features Using SQL statements<a href="#task-4-select-features-using-sql-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The SQL statement is widely used in ArcGIS to select your targeted features. There are four basic conditional operators (i.e., Boolean operators): AND, OR, XOR, and NOT. Similar to the Set concept in mathematics. Using the dataset shown in the table below, here are some examples of the four operators.</p>
-<p><img src="images/03/03-table.PNG" width="75%" /></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ID</th>
+<th align="center">Height (m)</th>
+<th align="center">DBH (cm)</th>
+<th align="center">Species</th>
+<th align="center">Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">18</td>
+<td align="center">19.8</td>
+<td align="center">Western Red Cedar</td>
+<td align="center">Good</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">17</td>
+<td align="center">20.6</td>
+<td align="center">Douglas Fir</td>
+<td align="center">Fair</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">16</td>
+<td align="center">30.1</td>
+<td align="center">Western Spruce</td>
+<td align="center">Fair</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">21</td>
+<td align="center">24.2</td>
+<td align="center">Douglas-Fir</td>
+<td align="center">Good</td>
+</tr>
+</tbody>
+</table>
 <p>AND is an exclusive statement that needs the selected feature to meet both or multiple criteria to be passed. The tuple illustration for A AND B is listed below.</p>
 <p><img src="images/03/03-and.PNG" width="40%" /></p>
 <p>If we want to choose a tree species whose DBH is larger than 20 cm and whose height is higher than 20 metres, we need to use the <code>AND</code> Boolean conditional operator and we will write the statement as <code>(DBH &gt; 20) AND (Height &gt; 20)</code>. This SQL statement will select tree ID #4.</p>
@@ -219,7 +259,7 @@ div.csl-indent {
 <p>If we want to choose a tree species whose DBH is larger than 20 cm but the tree is not a Douglas-Fir, we need to use the NOT Boolean conditional operator and we will write the statement as <code>(height &gt; 20) NOT (species = Douglas-Fir)</code>. It will select tree ID #3.</p>
 <p>Finally, XOR is used to describe a relationship to exclude the common area in two tuples, but the areas that are true individually for both or multiple statements will be kept. (i.e. everthing but the intersection of A and B).</p>
 <p><img src="images/03/03-xor.PNG" width="40%" /></p>
-<p>If we want to choose a tree species whose height is lower than 20 metres or that is a Douglas-Fir, but we want to exclude species that has both characteristics, we need to use the XOR Boolean conditional operator and we will write the statement as (height &lt; 20) XOR (species = Douglas-Fir). It will select tree ID #1, #2, and #4.</p>
+<p>If we want to choose a tree species whose height is lower than 20 metres or that is a Douglas-Fir, but we want to exclude species that has both characteristics, we need to use the XOR Boolean conditional operator and we will write the statement as <code>(height &lt; 20) XOR (species = Douglas-Fir)</code>. It will select tree ID #1, #2, and #4.</p>
 <p>Now use what you learned from the class and the handout, use the select by attributes tool, and answer the following questions:</p>
 <div id="q4-select-polygons-whose-neighbourhood-attribute-is-between-2000-and-4000-and-the-redlining-classification-is-b-or-v.-how-many-objects-do-you-select-include-your-sql-statement." class="section level5 unnumbered hasAnchor">
 <h5>Q4: Select polygons whose neighbourhood attribute is between 2000 and 4000, and the redlining classification is B or V. How many objects do you select? Include your sql statement.<a href="#q4-select-polygons-whose-neighbourhood-attribute-is-between-2000-and-4000-and-the-redlining-classification-is-b-or-v.-how-many-objects-do-you-select-include-your-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h5>

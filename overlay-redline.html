@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lab 1 Visualizing Historical Redlining Legacies | 03-overlay-redline.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lab 1 Visualizing Historical Redlining Legacies | 03-overlay-redline.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lab 1 Visualizing Historical Redlining Legacies | 03-overlay-redline.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Open Geomatics Community of Practice</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#overlay-redline"><i class="fa fa-check"></i><b>1</b> Visualizing Historical Redlining Legacies</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-1-understand-redlining"><i class="fa fa-check"></i>Task 1: Understand Redlining</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-2-import-data-understand-data"><i class="fa fa-check"></i>Task 2: Import Data &amp; Understand Data</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-3-join-tables"><i class="fa fa-check"></i>Task 3: Join Tables</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-4-select-features-using-sql-statements"><i class="fa fa-check"></i>Task 4: Select Features Using SQL statements</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-5-land-cover-and-land-use"><i class="fa fa-check"></i>Task 5: Land cover and land use</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-6-stratifying-districts"><i class="fa fa-check"></i>Task 6: Stratifying Districts</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-7-data-analysis"><i class="fa fa-check"></i>Task 7: Data Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="overlay-redline" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lab 1</span> Visualizing Historical Redlining Legacies<a href="#overlay-redline" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Written by</p>
+<p>Paul Pickell</p>
+<div id="lab-overview" class="section level2 unnumbered hasAnchor">
+<h2>Lab Overview<a href="#lab-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>‘Redlining’ is the illegal and discriminatory practice of denying services to residents of specific neighbourhoods based on racial or ethnic status. In the United States, financial institutions would ‘redline’ neighbourhoods of predominately Black or mixed-race residents and refuse to provide loans, home insurance and mortages in these communities. The legacy of historic redlining can still be seen today in the allocation of greenspace, urban gentrification and socioeconomic differences between neighbourhoods.</p>
+<p>In this lab you will practice using overlay analysis tools to explore the legacy of redlining in American cities. You will learn about the redlining concept, differentiate between land cover and land use, and practice using Structured Query Language (SQL). You will also practice data management and organization within a geodatabase. The lab will provide a naming system to organize the data. However, you can use a different file naming system if it makes more sense to you. At the end of the lab, you will demonstrate your understanding by conducting a small overlay analysis showing the spatial legacies of redlining in a city.</p>
+<hr />
+</div>
+<div id="learning-objectives" class="section level2 unnumbered hasAnchor">
+<h2>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Practice data management and organization in a geodatabase.</li>
+<li>Distinguish the different definitions between land cover/use.</li>
+<li>Use Structured Query Language (SQL) to select features based on their attributes.</li>
+<li>Understand the mechanisms behind different data analysis tools and practice using them.</li>
+<li>Understand and learn to visualize the historical legacies of redlining could on the present day and understand the Luxury Effect.</li>
+</ul>
+<hr />
+</div>
+<div id="deliverables" class="section level2 unnumbered hasAnchor">
+<h2>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Answers to 13 questions posed in the lab handout</li>
+<li>A PDF map complete with all necessary elements</li>
+<li>Discussion question</li>
+</ul>
+<hr />
+</div>
+<div id="task-1-understand-redlining" class="section level2 unnumbered hasAnchor">
+<h2>Task 1: Understand Redlining<a href="#task-1-understand-redlining" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Background</strong></p>
+<p>Redlining emerged as a discriminatory practice in the 1960s to refuse mortgages, insurance, loans and other financial services to specific communities based on race and socioeconomic class. <span class="citation">(D’Rozario and Williams 2005)</span>. The term ‘redlining’ was coined by the sociologist John Mcknight and stems from the practice of governments and money lenders literallying draw red lines on maps of urban areas (see map below of Seattle, Washington). Districts were labelled from ‘A’ to ‘D’ based on the perceived ‘safety’ of investments in these regions. Black communities underwent the most severe discrimination. Studies have found that banks would preferentially give loans to lower-class white borrowers over middle or upper-class African Americans <span class="citation">(The Federal Reserve)</span>. As a result of financial discrimination in primarily Black neighbourhoods, other public services related to health, environment, and utilities tended to worsen in these places over time. Redlining is an illegal practice nowadays. However, in communities that were historically redlined, homeownership, wealth and well-being are still much lower than nearby areas that did not face discriminatory lending practices <span class="citation">(Hayes 2022)</span>.</p>
+<p><img src="images/03/03-seattle.PNG" width="75%" /></p>
+<p>For more information on redlining that can inform your discussion see the following resources:</p>
+<p><a href="https://dsl.richmond.edu/panorama/redlining/#loc=13/41.602/-93.668&amp;city=des-moines-ia" class="uri">https://dsl.richmond.edu/panorama/redlining/#loc=13/41.602/-93.668&amp;city=des-moines-ia</a></p>
+<p>During this lab, you will visualize some of the remaining impacts of redlining by conducting an overlay analysis using historic redlining districts and current socioecnomic and demographic data.</p>
+<div id="q1-in-the-city-settings-and-forestry-context-what-do-you-think-will-be-the-possible-outcomes-for-stratifying-districts-like-this" class="section level5 unnumbered hasAnchor">
+<h5>Q1: In the city settings and forestry context, what do you think will be the possible outcomes for stratifying districts like this?<a href="#q1-in-the-city-settings-and-forestry-context-what-do-you-think-will-be-the-possible-outcomes-for-stratifying-districts-like-this" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<hr />
+</div>
+</div>
+<div id="task-2-import-data-understand-data" class="section level2 unnumbered hasAnchor">
+<h2>Task 2: Import Data &amp; Understand Data<a href="#task-2-import-data-understand-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Create a new Catalog document in ArcGIS Pro. Import the saved downloaded data from Github to your project folder (If all is the default, it should be: <code>C:\Users\hyan08.stu\Documents\ArcGIS\Projects\MyProject)</code>. Set your project geodatabase the same as the default geodatabase.</p>
+<p><strong>Tips:</strong> While you add more files to your ArcGIS Pro Project folder, you may not be able to see your newly updated file immediately. You can press the refresh button on the right corner (red circle) of the ribbon to synchronize the information.</p>
+<p><img src="images/03/03-refresh.PNG" width="100%" /></p>
+<p><strong>Step 2:</strong> Under the insert tab, click New Map to create a new map. Then drag all the data from the data folder into the map content panel. The data should contain a redlining stratification map for the United States <code>(USA_Redlining_shpfile\shapefile\holc_ad_data.shp)</code> and some basic information about Detroit. The <strong>holc_ad_data.shp</strong> contains all the stratified districts in various cities across the USA.</p>
+<p><strong>Step 3:</strong> Take some time to toggle on and off different layers .</p>
+<p>In the Contents pane, you can organize layers into Groups by right-clicking the layer and choosing New Group Layer. For example, you can name one group “original” and another group “editing” to differentiate the source data and the processed layers.</p>
+<p><strong>Step 4:</strong> View the data coordinate system for each layer to make sure they are the same. (The Projected Coordinate System should be WGS 1984 Web Mercator (auxiliary sphere) and the Geographic coordinate System should be WGS 1984). If not, you can choose to use the “Project” tool or “Define Project” tool to alter them.</p>
+<p><strong>Step 5:</strong> Now that you are familiar with all the data layers, we can then import them into a geodatabase. Import the <strong>holc_ad_data</strong> to the project.gdb by using the Feature Class to Feature Class tool in the geoprocessing panel.</p>
+<p>Concurrently, you can also find the tool under Contents &gt; Data &gt; Export Data. <strong>Be sure to rename the holc_ad_data layer to USA_Redlining in the gdb to make it easier to remember.</strong></p>
+<p><strong>Step 6:</strong> Following what has been done to the layer holc_ad_data, import the prepared data: public library, police station, parks and landmarks, bike lanes, crime information (All data featuring Detroit), and area descriptions ( found in the HOLC_Cities.gdb) .</p>
+<p><strong>Step 7:</strong> Before moving on, you can take a look at your geodatabase to see if it aligns with the files listed below.</p>
+<p><img src="images/03/03-data.PNG" width="40%" /></p>
+<hr />
+</div>
+<div id="task-3-join-tables" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Join Tables<a href="#task-3-join-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> In the attribute table of the <strong>USA_Redlining</strong> shape file, each field column represents a different attribute of the polygons. Take a look at the attribute table of the files USA_Redlining and the <strong>area_descriptions</strong> table, you should be able to spot similar or different attributes in each file. Take a moment to find the connection between these two files.</p>
+<p><strong>Step 2:</strong> We will join the USA_Redlining features to the attributes in area_descriptions table. Right-click the USA_Redlining file under the content panel, and choose Join and Relates &gt; Add Join. Think about what fields you will put under the <strong>Input Join Field</strong> and <strong>Join Table Field</strong> to complete the join of these two tables.</p>
+<p><strong>Step 3:</strong> When finishing the join, you can open the attribute table for file USA_Redlining to delete iterative columns (You can also do this step before joining the table).</p>
+<p><strong>Step 4:</strong> Once you have finished all the steps, you can see that the USA_Redlining layer attribute table will contain the area_description table.</p>
+<p><strong>Tip: Save the file to the default gdb to make it permanent.</strong></p>
+<div id="q2-when-you-join-the-tables-of-the-files-holc_ad_data-and-area_descriptions-which-fields-do-you-use" class="section level5 unnumbered hasAnchor">
+<h5>Q2: When you join the tables of the files holc_ad_data and area_descriptions, which fields do you use?<a href="#q2-when-you-join-the-tables-of-the-files-holc_ad_data-and-area_descriptions-which-fields-do-you-use" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q3-what-type-of-key-do-you-use-during-the-process-and-what-is-the-cardinality-of-joining-area_descriptions-to-holc_ad_data" class="section level5 unnumbered hasAnchor">
+<h5>Q3: What type of key do you use during the process? And what is the cardinality of joining area_descriptions to holc_ad_data?<a href="#q3-what-type-of-key-do-you-use-during-the-process-and-what-is-the-cardinality-of-joining-area_descriptions-to-holc_ad_data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<hr />
+</div>
+</div>
+<div id="task-4-select-features-using-sql-statements" class="section level2 unnumbered hasAnchor">
+<h2>Task 4: Select Features Using SQL statements<a href="#task-4-select-features-using-sql-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The SQL statement is widely used in ArcGIS to select your targeted features. There are four basic conditional operators (i.e., Boolean operators): AND, OR, XOR, and NOT. Similar to the Set concept in mathematics. Using the dataset shown in the table below, here are some examples of the four operators.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ID</th>
+<th align="center">Height (m)</th>
+<th align="center">DBH (cm)</th>
+<th align="center">Species</th>
+<th align="center">Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">18</td>
+<td align="center">19.8</td>
+<td align="center">Western Red Cedar</td>
+<td align="center">Good</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">17</td>
+<td align="center">20.6</td>
+<td align="center">Douglas Fir</td>
+<td align="center">Fair</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">16</td>
+<td align="center">30.1</td>
+<td align="center">Western Spruce</td>
+<td align="center">Fair</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">21</td>
+<td align="center">24.2</td>
+<td align="center">Douglas-Fir</td>
+<td align="center">Good</td>
+</tr>
+</tbody>
+</table>
+<p>AND is an exclusive statement that needs the selected feature to meet both or multiple criteria to be passed. The tuple illustration for A AND B is listed below.</p>
+<p><img src="images/03/03-and.PNG" width="40%" /></p>
+<p>If we want to choose a tree species whose DBH is larger than 20 cm and whose height is higher than 20 metres, we need to use the <code>AND</code> Boolean conditional operator and we will write the statement as <code>(DBH &gt; 20) AND (Height &gt; 20)</code>. This SQL statement will select tree ID #4.</p>
+<p>Or is an inclusive statement that will select all the features that meet any one of the criteria. As outlined in the shaded blue tuple, all the features that fall within this area will be selected (A OR B).</p>
+<p><img src="images/03/03-or.PNG" width="40%" /></p>
+<p>If we want to choose a tree species whose DBH is larger than 20 cm or the tree species is a Douglas-Fir, we need to use the Or Boolean conditional operator and we will write the statement as <code>(DBH  &gt; 20) Or (species = Douglas-Fir)</code>. This will select tree ID #2, #3, and #4.</p>
+<p>NOT is an exclusive statement. It is used to diminish the range of one desired characteristic. The tuple illustration for A NOT B is shown below.</p>
+<p><img src="images/03/03-not.PNG" width="40%" /></p>
+<p>If we want to choose a tree species whose DBH is larger than 20 cm but the tree is not a Douglas-Fir, we need to use the NOT Boolean conditional operator and we will write the statement as <code>(height &gt; 20) NOT (species = Douglas-Fir)</code>. It will select tree ID #3.</p>
+<p>Finally, XOR is used to describe a relationship to exclude the common area in two tuples, but the areas that are true individually for both or multiple statements will be kept. (i.e. everthing but the intersection of A and B).</p>
+<p><img src="images/03/03-xor.PNG" width="40%" /></p>
+<p>If we want to choose a tree species whose height is lower than 20 metres or that is a Douglas-Fir, but we want to exclude species that has both characteristics, we need to use the XOR Boolean conditional operator and we will write the statement as <code>(height &lt; 20) XOR (species = Douglas-Fir)</code>. It will select tree ID #1, #2, and #4.</p>
+<p>Now use what you learned from the class and the handout, use the select by attributes tool, and answer the following questions:</p>
+<div id="q4-select-polygons-whose-neighbourhood-attribute-is-between-2000-and-4000-and-the-redlining-classification-is-b-or-v.-how-many-objects-do-you-select-include-your-sql-statement." class="section level5 unnumbered hasAnchor">
+<h5>Q4: Select polygons whose neighbourhood attribute is between 2000 and 4000, and the redlining classification is B or V. How many objects do you select? Include your sql statement.<a href="#q4-select-polygons-whose-neighbourhood-attribute-is-between-2000-and-4000-and-the-redlining-classification-is-b-or-v.-how-many-objects-do-you-select-include-your-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q5-select-polygons-that-are-from-baltimore-or-portland-but-the-redlining-classification-is-not-a.-how-many-objects-do-you-select-include-your-sql-statement." class="section level5 unnumbered hasAnchor">
+<h5>Q5: Select polygons that are from Baltimore or Portland, but the redlining classification is not A. How many objects do you select? Include your sql statement.<a href="#q5-select-polygons-that-are-from-baltimore-or-portland-but-the-redlining-classification-is-not-a.-how-many-objects-do-you-select-include-your-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 1:</strong> Next, we will use Detroit as a case study in the legacies of redlining. Select Detroit from the USA_Redlining layer.</p>
+<p><strong>Step 2:</strong> Right-click the USA_Redlining layer in the Contents panel &gt; Data, &gt; Export Features. Or you can also find the Export Features button under the Data tab on the top ribbon.</p>
+<p><strong>Step 3:</strong> Write an SQL statement to select all the polygons from Detroit City. Name the Output file as <strong>Detroit</strong> and save to the geodatabse.</p>
+<p><strong>Tips:</strong> When you are mainly working on one layer in the Map Content Panel, you can turn off the other layers to make it clearer for visualization.</p>
+<hr />
+</div>
+</div>
+<div id="task-5-land-cover-and-land-use" class="section level2 unnumbered hasAnchor">
+<h2>Task 5: Land cover and land use<a href="#task-5-land-cover-and-land-use" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Land cover and land use are two easily confused terms. Land cover refers to the physical surface cover of the area. For example, it could be bare soil, ocean, mixed forest, and grey infrastructures. Land use, is described as the facility services the land can provide. Conservation areas, recreational areas, Golf Courts, and Ski resorts are all examples of land use. The Land cover &amp; use concepts are widely used in the GIS field.</p>
+<p>In this lab, you will examine the connections between land cover, land use and redlining.</p>
+<p><strong>Step 1:</strong> Change the Basemap layer to Satellite image. You can find this under Map (top ribbon) &gt; Basemap &gt; Imagery or Imagery Hybrid</p>
+<p><strong>Step 2:</strong> Use the Select by Attributes tool to select the appropriate polygons to answer the questions below.</p>
+<p>Tip: You can change the transparency levels in the appearance tab to compare the overlapping part more easily.</p>
+<div id="q6-looking-at-the-satellite-imagery-what-is-the-possible-current-land-cover-and-land-use-of-polygons-holc_id-a9-holc_id-c91-and-holc_id-d23-see-the-screenshot-below.-how-do-land-use-and-land-cover-relate-to-the-redlining-classification-abcd" class="section level5 unnumbered hasAnchor">
+<h5>Q6: Looking at the satellite imagery what is the possible current land cover and land use of polygons “holc_id = a9,” “holc_id = c91” and “holc_id =d23”? (see the screenshot below). How do land use and land cover relate to the redlining classification (A,B,C,D)?<a href="#q6-looking-at-the-satellite-imagery-what-is-the-possible-current-land-cover-and-land-use-of-polygons-holc_id-a9-holc_id-c91-and-holc_id-d23-see-the-screenshot-below.-how-do-land-use-and-land-cover-relate-to-the-redlining-classification-abcd" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><img src="images/03/03-landuse.PNG" width="75%" /></p>
+<hr />
+</div>
+</div>
+<div id="task-6-stratifying-districts" class="section level2 unnumbered hasAnchor">
+<h2>Task 6: Stratifying Districts<a href="#task-6-stratifying-districts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, we will classify the districts of Detroit according to their redlining categorization.</p>
+<p><strong>Step 1:</strong> Use the Export Feature tool, export the Detroit districts into separate features based on their holc_grade attribute value. Name the output files Detroit_A, Detroit_B, Detroit_C, and Detroit_D.</p>
+<p>Tip: To show a clean and organized data folder, we can put the layers Detroit_A, Detroit_B, Detroit_C, and Detroit_D in a new layer group called Detroit Districts.</p>
+<p><strong>Step 2:</strong> Use the reclassify field tool to reclassify the <strong>holc_grade</strong> field for Detroit. This step is made to better stratify different zoning areas in the cities. After this step, you will add a new column to the Detroit attribute table, the default name should be <strong>holc_grade_UNIQUE_VALUES</strong> but you can change it into VALUES to make it concise.</p>
+<p><strong>Step 3:</strong> As you have the values to classify the holc_grade column, you can left-click the symbology square under Detroit in the map contents panel. Then, under the symbology panel, you can click the hamburger menu icon and choose the “Vary symbology by attribute” ribbon.</p>
+<div id="q7-what-is-the-purpose-of-step-2" class="section level5 unnumbered hasAnchor">
+<h5>Q7: What is the purpose of Step 2?<a href="#q7-what-is-the-purpose-of-step-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 4:</strong> Now you can adjust the colour scheme to sort out the best spectrum to show the difference between the four stratified districts.</p>
+</div>
+<div id="q8-export-the-map-of-the-detroit-stratified-districts-and-public-services-layers-police-stations-libraries-etc.-the-map-should-include-a-scalebar-compass-and-legend." class="section level5 unnumbered hasAnchor">
+<h5>Q8: Export the map of the Detroit stratified districts and public services layers (police stations, libraries etc). The map should include a scalebar, compass and legend.<a href="#q8-export-the-map-of-the-detroit-stratified-districts-and-public-services-layers-police-stations-libraries-etc.-the-map-should-include-a-scalebar-compass-and-legend." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Additional Map Requirements:
+- Map should be 11”x17” either as a landscape or portrait layout
+- You should export the map as a PDF document
+- All features on the map should appear in the legend</p>
+<hr />
+</div>
+</div>
+<div id="task-7-data-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Task 7: Data Analysis<a href="#task-7-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, we will examine the association between the redlining classification system and district planning using library, crime rate, bike lanes, and parks and landmarks data.</p>
+<ul>
+<li>Toggle on and off the different layers.</li>
+<li>Observe the location of different public facilities</li>
+<li>Compare them with the stratified map you just created. Take some notes on your findings (Prepared for the Canvas Post) and then we will mainly work on the crime layer.</li>
+</ul>
+<p>Note: The primary aim of this data analysis is to find out how many crime events are happening in each stratified district in the Detroit area. Thus, the final output will be polygons with the total violent/property crime cases in the attribute table.</p>
+<p><strong>Step 1:</strong> Toggle on the Crime layer, you will see many scattered polygons in the Detroit city region.</p>
+<p><img src="images/03/03-crime.PNG" width="75%" /></p>
+<p>If you switch between the Detroit redlining layer and the crime layer you will find they are not 100% overlapping.</p>
+<div id="q9-what-analysis-tool-can-you-use-to-extract-the-overlapping-area-across-the-detroit-and-redlining-layers" class="section level5 unnumbered hasAnchor">
+<h5>Q9: What analysis tool can you use to extract the overlapping area across the Detroit and redlining layers?<a href="#q9-what-analysis-tool-can-you-use-to-extract-the-overlapping-area-across-the-detroit-and-redlining-layers" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Hint: After using the correct tool, the new layer will look like the picture below.</p>
+<p><img src="images/03/03-intersect.PNG" width="75%" /></p>
+<p>Next, we will stratify the polygons in the crime layer by redlining district.</p>
+</div>
+<div id="q10-what-analysis-can-will-you-use-to-extract-the-polygons-in-the-crime-layer-by-redlining-district-hint-think-about-how-to-use-the-four-stratified-layers-we-created-detroit_a-b-b-and-d." class="section level5 unnumbered hasAnchor">
+<h5>Q10: What analysis can will you use to extract the polygons in the crime layer by redlining district? Hint: think about how to use the four stratified layers we created (Detroit_A, B, B and D).<a href="#q10-what-analysis-can-will-you-use-to-extract-the-polygons-in-the-crime-layer-by-redlining-district-hint-think-about-how-to-use-the-four-stratified-layers-we-created-detroit_a-b-b-and-d." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Name the output files: Crime_A, Crime_B, Crime_C, and Crime_D</p>
+<p>Hint: After this step, the crime layer for District A should be similar to this one:</p>
+<p><img src="images/03/03-crimea.PNG" width="75%" /></p>
+<p><strong>Step 3:</strong> Now that we have all the crime polygons from the A to D districts. We will merge the crime polygons in the redlining districts (A,B,C,D) to calculate the sum of the Violent Crime and Property Crime in each district.</p>
+</div>
+<div id="q11-what-tool-will-you-use-to-merge-the-crime-polygons-in-each-redlining-district" class="section level5 unnumbered hasAnchor">
+<h5>Q11: What tool will you use to merge the crime polygons in each redlining district?<a href="#q11-what-tool-will-you-use-to-merge-the-crime-polygons-in-each-redlining-district" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The result for district A should look like the following:</p>
+<p><img src="images/03/03-mergea.PNG" width="75%" /></p>
+</div>
+<div id="q12-what-is-the-total-violent-crime-for-the-redlining-districts-classified-a-and-b-in-detroit-what-about-the-total-property-crime-for-b-and-d-districts" class="section level5 unnumbered hasAnchor">
+<h5>Q12: What is the total violent crime for the redlining districts classified A and B in Detroit? What about the total property crime for B and D districts?<a href="#q12-what-is-the-total-violent-crime-for-the-redlining-districts-classified-a-and-b-in-detroit-what-about-the-total-property-crime-for-b-and-d-districts" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Next, to account for differences in district size, divide the total crimes by the district area (shape_area) using the Calculate Field tool in the attribute table.</p>
+</div>
+<div id="q13-in-300-words-or-less-make-some-observations-about-the-distribution-of-police-stations-libraries-bike-lanes-and-parks-in-each-redlining-district.-what-do-you-see-when-you-examine-the-total-crimesarea-metric-for-each-redlining-district-what-are-some-potential-biases-or-issues-with-this-analysis" class="section level5 unnumbered hasAnchor">
+<h5>Q13: In 300 words or less, make some observations about the distribution of police stations, libraries, bike lanes and parks in each redlining district. What do you see when you examine the total crimes/area metric for each redlining district? What are some potential biases or issues with this analysis?<a href="#q13-in-300-words-or-less-make-some-observations-about-the-distribution-of-police-stations-libraries-bike-lanes-and-parks-in-each-redlining-district.-what-do-you-see-when-you-examine-the-total-crimesarea-metric-for-each-redlining-district-what-are-some-potential-biases-or-issues-with-this-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<hr />
+</div>
+<div id="references" class="section level3 unnumbered hasAnchor">
+<h3>References<a href="#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+D’Rozario, D., and J. D. Williams. 2005. <span>“Retail Redlining: Definition, Theory, Typology, and Measurement.”</span> <em>Journal of Macromarketing</em> 25 (2): 175–86. <a href="https://doi.org/10.1177/0276146705280632">https://doi.org/10.1177/0276146705280632</a>.
+</div>
+<div class="csl-entry">
+Hayes, A. 2022. <em>Redlining Definition</em>. <a href="https://www.investopedia.com/terms/r/redlining.asp ">https://www.investopedia.com/terms/r/redlining.asp </a>.
+</div>
+<div class="csl-entry">
+The Federal Reserve. <em>Federal Reserve Bulletin</em>. Vol. 77. <a href="https://fraser.stlouisfed.org/files/docs/publications/FRB/1990s/frb_111991.pdf">https://fraser.stlouisfed.org/files/docs/publications/FRB/1990s/frb_111991.pdf</a>.
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

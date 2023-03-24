@@ -17,7 +17,7 @@ The aim of this lab is to learn about the electromagnetic spectrum (EMS), unders
 
 ------------------------------------------------------------------------
 
-## Learning Objectives {.unnumbered}
+### Learning Objectives {.unnumbered}
 
 -   Understand the electromagnetic spectrum
 -   Use Landsat 5 spectral reflectance to map vegetation and urban areas 
@@ -25,14 +25,14 @@ The aim of this lab is to learn about the electromagnetic spectrum (EMS), unders
 
 ------------------------------------------------------------------------
 
-## Deliverables {.unnumbered}
+### Deliverables {.unnumbered}
 
 - Answers to 17 questions throughout the handout
 - A map of reclassified urban/vegetated land cover
 
 ------------------------------------------------------------------------
 
-## Data {.unnumbered}
+### Data {.unnumbered}
 
 We will be working with a multispectral image of Vancouver from the Landsat 5 satellite **(L5057026subset_19990922_7B.dat).**
 
@@ -70,7 +70,6 @@ Figure 2: Reflectance characteristics of unknown features.
 
 ##### Q5. Figure 2 contains 4 additional spectra, belonging to unknown surface features. Hypothesize about what these spectra might be and provide your reasoning. Use the known features (broadleaf vegetation, wet soil, etc.) and what you have learned from class/readings to inform your choices. This is a difficult task, and educated guesses are all that is asked for. Do a bit of research, put some thought into it, and explain the reasoning for your guesses. These spectra do not represent the features which are already labeled. You must think of new features which could be observed with remote sensing. {.unnumbered}
 
-
 ------------------------------------------------------------------------
 
 ## Task 2: Landsat 5 Bands, the EMS & ArcPro Software  {.unnumbered}
@@ -103,6 +102,7 @@ To start the lab, Open a new ArcPro map project and open the the L5057026subset_
 ```{r 05-sat, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/05/05-sat.png")
 ```
+
 Figure 3: True colour composite of Vancouver. 
 
 **Step 2: Exploring the data**
@@ -112,6 +112,7 @@ It is now time to explore your imagery. Right click the box beside the **L505702
 ```{r 05-source, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/05/05-source.png")
 ```
+
 After clicking on the Raster Information, the tab should open up, and display important information about the image, such as dimensions (number of pixels in the X or Y directions), data types, projection, and resolution (listed as Projection/Pixel). This information can be useful when examining an image!
 
 From the **Raster Information**  you can see that the spatial resolution of this image is approximately 30 m by 30 m, square. That means that each pixel in the image represents an area of approximately 30 x 30 m on the ground, or 900 square meters. Furthermore, it is a Landsat 5 Thematic Mapper image of Vancouver and its surroundings taken at 22 September 1999 - Wow! Even more details are apparent – its size is 4000 by 3000 pixels, and has seven bands.

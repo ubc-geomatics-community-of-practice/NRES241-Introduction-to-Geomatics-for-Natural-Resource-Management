@@ -18,7 +18,7 @@ Oftentimes, you will need to collect and display your own data. There are many p
 
 ------------------------------------------------------------------------
 
-## Learning Objectives {-}
+### Learning Objectives {-}
 
 -   Learn how to plan for field data collection 
 -   Use AvenzaMaps to collect GNSS readings 
@@ -26,7 +26,7 @@ Oftentimes, you will need to collect and display your own data. There are many p
 
 ------------------------------------------------------------------------
 
-## Deliverables {-}
+### Deliverables {-}
 
 - Answers to 5 questions throughout the assignment
 - Screenshots from the Timble Planning website
@@ -42,11 +42,13 @@ Field data collection is an important skill set to learn and practice. In this t
 section is meant to inform you of the likely hazards and how to stay safe.
 
 **Planning Your Data Collection**
+
 Safety starts at the planning stage. When planning which park you will visit, consider somewhere nearby that is easily accessible by transit or walking. Avoid going somewhere that is unfamiliar to you. Ensure that you are visiting a public park and stay off of private or restricted property. You should only visit the 
 park during daylight hours and plan to go out in sunny weather only. Check government websites for any recent animal sightings before you commit to going to your desired park. Do not plan to collect your GNSS data near bodies of water (e.g., oceans, lakes, ponds, rivers, streams). Do not plan to collect your 
 GNSS data near cliffs or on steep terrain. Finally, ensure that you will have good cell phone coverage in case of an emergency.
 
 **Likely Hazards**
+
 At all times, you must be aware of possible hazards both overhead and underfoot. The main overhead hazard in a public park is going to be trees and falling branches. Do not collect your GNSS data during windy or stormy weather, which may cause tree branches to fall. Wet and slippery surfaces, steep 
 angles, holes, logs, debris, and loose soil all pose fall hazards. Many of these hazards can be avoided with careful planning before you even step outside. Speaking of stepping, make sure you wear appropriate footwear, closed toed shoes are best for this work. Fauna are natural inhabitants of parks. Do not visit parks with recent sightings for large, predatory fauna such as bears or cougars. Even urban parks like Stanley Park in downtown Vancouver are known to have coyotes who have attacked people. As well, avoid areas with hazardous flora that may be thorny or poisonous. You may need to cross or transit streets to reach your park. Always follow local traffic laws and look for moving vehicles in and around 
 your park. Always use designated crosswalks and do not look at your phone when walking near stopped or moving vehicles. 

@@ -17,7 +17,7 @@ The aim of this lab is to design and build geodatabase, as well as organize its 
 
 ------------------------------------------------------------------------
 
-## Learning Objectives {.unnumbered}
+### Learning Objectives {.unnumbered}
 
 -   Learn how to design geodatabases based on topics and needs
 -   Familiar with building databases, organizing data, and linking data sets
@@ -27,7 +27,7 @@ The aim of this lab is to design and build geodatabase, as well as organize its 
 
 ------------------------------------------------------------------------
 
-## Deliverables {.unnumbered}
+### Deliverables {.unnumbered}
 
 -   Answers to 8 questions posted in the handout
 -   Discussion question

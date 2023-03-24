@@ -72,10 +72,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path=""><a href="#RS-imagery"><i class="fa fa-check"></i><b>1</b> Remote Sensing Imagery Analysis</a>
 <ul>
-<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
 <li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#data"><i class="fa fa-check"></i>Data</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-1-the-ems"><i class="fa fa-check"></i>Task 1: The EMS</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-2-landsat-5-bands-the-ems-arcpro-software"><i class="fa fa-check"></i>Task 2: Landsat 5 Bands, the EMS &amp; ArcPro Software</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-3-calculating-ndvi-and-built-up-index"><i class="fa fa-check"></i>Task 3: Calculating NDVI and Built Up Index</a></li>
@@ -111,9 +113,8 @@
 <h2>Lab Overview<a href="#lab-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The aim of this lab is to learn about the electromagnetic spectrum (EMS), understand spectral properties of different surfaces, and get comfortable using ArcGIS Pro to load and explore different types of remotely sensed images, display individual spectral bands, make different colour composites, and view spectral signatures. In addition, you will calculate two difference spectral indices representing built up areas and green vegetation.</p>
 <hr />
-</div>
-<div id="learning-objectives" class="section level2 unnumbered hasAnchor">
-<h2>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="learning-objectives" class="section level3 unnumbered hasAnchor">
+<h3>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Understand the electromagnetic spectrum</li>
 <li>Use Landsat 5 spectral reflectance to map vegetation and urban areas</li>
@@ -121,18 +122,19 @@
 </ul>
 <hr />
 </div>
-<div id="deliverables" class="section level2 unnumbered hasAnchor">
-<h2>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="deliverables" class="section level3 unnumbered hasAnchor">
+<h3>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Answers to 17 questions throughout the handout</li>
 <li>A map of reclassified urban/vegetated land cover</li>
 </ul>
 <hr />
 </div>
-<div id="data" class="section level2 unnumbered hasAnchor">
-<h2>Data<a href="#data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data" class="section level3 unnumbered hasAnchor">
+<h3>Data<a href="#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will be working with a multispectral image of Vancouver from the Landsat 5 satellite <strong>(L5057026subset_19990922_7B.dat).</strong></p>
 <hr />
+</div>
 </div>
 <div id="task-1-the-ems" class="section level2 unnumbered hasAnchor">
 <h2>Task 1: The EMS<a href="#task-1-the-ems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -240,12 +242,12 @@
 <h5>Q7: Band 6 is recorded with a coarser resolution because thermal radiation has a very ___ wavelength. Therefore, there is ___ energy available to sense.<a href="#q7-band-6-is-recorded-with-a-coarser-resolution-because-thermal-radiation-has-a-very-___-wavelength.-therefore-there-is-___-energy-available-to-sense." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><strong>Step 1: Starting ArcGISPro</strong></p>
 <p>To start the lab, Open a new ArcPro map project and open the the L5057026subset_19990922_7B.dat file into the map window. At this point, you should see an RGB satellite image of the city of Vancouver (Figure 3) if the mapview does not immediately pan to the image right click <strong>L5057026subset_19990922_7B.dat</strong> in the Contents pane and press Zoom to Layer .</p>
-<p><img src="images/05/05-sat.PNG" width="75%" />
-Figure 3: True colour composite of Vancouver.</p>
+<p><img src="images/05/05-sat.PNG" width="75%" /></p>
+<p>Figure 3: True colour composite of Vancouver.</p>
 <p><strong>Step 2: Exploring the data</strong></p>
 <p>It is now time to explore your imagery. Right click the box beside the <strong>L5057026subset_19990922_7B.dat</strong> file in the Contents pane and select “Properties”. Use the menu on the left-hand side and select the Source page and the Raster Information drop down.</p>
-<p><img src="images/05/05-source.PNG" width="75%" />
-After clicking on the Raster Information, the tab should open up, and display important information about the image, such as dimensions (number of pixels in the X or Y directions), data types, projection, and resolution (listed as Projection/Pixel). This information can be useful when examining an image!</p>
+<p><img src="images/05/05-source.PNG" width="75%" /></p>
+<p>After clicking on the Raster Information, the tab should open up, and display important information about the image, such as dimensions (number of pixels in the X or Y directions), data types, projection, and resolution (listed as Projection/Pixel). This information can be useful when examining an image!</p>
 <p>From the <strong>Raster Information</strong> you can see that the spatial resolution of this image is approximately 30 m by 30 m, square. That means that each pixel in the image represents an area of approximately 30 x 30 m on the ground, or 900 square meters. Furthermore, it is a Landsat 5 Thematic Mapper image of Vancouver and its surroundings taken at 22 September 1999 - Wow! Even more details are apparent – its size is 4000 by 3000 pixels, and has seven bands.</p>
 <p>Scroll down and press on the <strong>Spatial Reference</strong> to see the projection information.</p>
 <p>We will now use ArcGIS pro to zoom and pan our image.</p>

@@ -232,6 +232,7 @@ knitr::include_graphics('images/01/01-MATdiff.jpg')
 **Step 5:** Now zoom into a place in Canada that is significant to you!
 
 (Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon -> Transparency. 
+
 Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon -> Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane. 
 In the example below I have chosen Victoria, BC where the projected change in MAT is 2.7C. 
 
@@ -248,4 +249,3 @@ knitr::include_graphics('images/01/01-victoria.jpg')
 -Identify an environmental concern that could be intensified by the projected changes in climate. Is this region susceptible to wildfire? Flooding? Droughts? Why is this issue important? Use 1 peer reviewed source to back up your argument. (Provide the full citation for this reference at the end of the discussion). 
 
 -Briefly, what changes could help mitigate this concern? Is there a specific technology that could be developed or a change in lifestyle that you would like to see in the future? 
-

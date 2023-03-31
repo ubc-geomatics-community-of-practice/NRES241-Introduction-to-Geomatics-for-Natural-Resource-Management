@@ -94,9 +94,11 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path=""><a href="#overlay-redline"><i class="fa fa-check"></i><b>1</b> Visualizing Historical Redlining Legacies</a>
 <ul>
-<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
 <li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-1-understand-redlining"><i class="fa fa-check"></i>Task 1: Understand Redlining</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-2-import-data-understand-data"><i class="fa fa-check"></i>Task 2: Import Data &amp; Understand Data</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-3-join-tables"><i class="fa fa-check"></i>Task 3: Join Tables</a></li>
@@ -139,9 +141,8 @@ div.csl-indent {
 <p>‘Redlining’ is the illegal and discriminatory practice of denying services to residents of specific neighbourhoods based on racial or ethnic status. In the United States, financial institutions would ‘redline’ neighbourhoods of predominately Black or mixed-race residents and refuse to provide loans, home insurance and mortages in these communities. The legacy of historic redlining can still be seen today in the allocation of greenspace, urban gentrification and socioeconomic differences between neighbourhoods.</p>
 <p>In this lab you will practice using overlay analysis tools to explore the legacy of redlining in American cities. You will learn about the redlining concept, differentiate between land cover and land use, and practice using Structured Query Language (SQL). You will also practice data management and organization within a geodatabase. The lab will provide a naming system to organize the data. However, you can use a different file naming system if it makes more sense to you. At the end of the lab, you will demonstrate your understanding by conducting a small overlay analysis showing the spatial legacies of redlining in a city.</p>
 <hr />
-</div>
-<div id="learning-objectives" class="section level2 unnumbered hasAnchor">
-<h2>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="learning-objectives" class="section level3 unnumbered hasAnchor">
+<h3>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Practice data management and organization in a geodatabase.</li>
 <li>Distinguish the different definitions between land cover/use.</li>
@@ -151,14 +152,15 @@ div.csl-indent {
 </ul>
 <hr />
 </div>
-<div id="deliverables" class="section level2 unnumbered hasAnchor">
-<h2>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="deliverables" class="section level3 unnumbered hasAnchor">
+<h3>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Answers to 13 questions posed in the lab handout</li>
 <li>A PDF map complete with all necessary elements</li>
 <li>Discussion question</li>
 </ul>
 <hr />
+</div>
 </div>
 <div id="task-1-understand-redlining" class="section level2 unnumbered hasAnchor">
 <h2>Task 1: Understand Redlining<a href="#task-1-understand-redlining" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -183,7 +185,8 @@ div.csl-indent {
 <p>In the Contents pane, you can organize layers into Groups by right-clicking the layer and choosing New Group Layer. For example, you can name one group “original” and another group “editing” to differentiate the source data and the processed layers.</p>
 <p><strong>Step 4:</strong> View the data coordinate system for each layer to make sure they are the same. (The Projected Coordinate System should be WGS 1984 Web Mercator (auxiliary sphere) and the Geographic coordinate System should be WGS 1984). If not, you can choose to use the “Project” tool or “Define Project” tool to alter them.</p>
 <p><strong>Step 5:</strong> Now that you are familiar with all the data layers, we can then import them into a geodatabase. Import the <strong>holc_ad_data</strong> to the project.gdb by using the Feature Class to Feature Class tool in the geoprocessing panel.</p>
-<p>Concurrently, you can also find the tool under Contents &gt; Data &gt; Export Data. <strong>Be sure to rename the holc_ad_data layer to USA_Redlining in the gdb to make it easier to remember.</strong></p>
+<p>Concurrently, you can also find the tool under Contents &gt; Data &gt; Export Data.</p>
+<p><strong>Be sure to rename the holc_ad_data layer to USA_Redlining in the gdb to make it easier to remember.</strong></p>
 <p><strong>Step 6:</strong> Following what has been done to the layer holc_ad_data, import the prepared data: public library, police station, parks and landmarks, bike lanes, crime information (All data featuring Detroit), and area descriptions ( found in the HOLC_Cities.gdb) .</p>
 <p><strong>Step 7:</strong> Before moving on, you can take a look at your geodatabase to see if it aligns with the files listed below.</p>
 <p><img src="images/03/03-data.PNG" width="40%" /></p>

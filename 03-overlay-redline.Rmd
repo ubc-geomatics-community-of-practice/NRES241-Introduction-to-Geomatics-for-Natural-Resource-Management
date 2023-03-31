@@ -24,7 +24,7 @@ In this lab you will practice using overlay analysis tools to explore the legacy
 
 ------------------------------------------------------------------------
 
-## Learning Objectives {.unnumbered}
+### Learning Objectives {.unnumbered}
 
 -   Practice data management and organization in a geodatabase.
 -   Distinguish the different definitions between land cover/use.
@@ -34,7 +34,7 @@ In this lab you will practice using overlay analysis tools to explore the legacy
 
 ------------------------------------------------------------------------
 
-## Deliverables {.unnumbered}
+### Deliverables {.unnumbered}
 
 -   Answers to 13 questions posed in the lab handout
 -   A PDF map complete with all necessary elements
@@ -82,7 +82,9 @@ In the Contents pane, you can organize layers into Groups by right-clicking the 
 
 **Step 5:** Now that you are familiar with all the data layers, we can then import them into a geodatabase. Import the **holc_ad_data** to the project.gdb by using the Feature Class to Feature Class tool in the geoprocessing panel.
 
-Concurrently, you can also find the tool under Contents \> Data \> Export Data. **Be sure to rename the holc_ad_data layer to USA_Redlining in the gdb to make it easier to remember.**
+Concurrently, you can also find the tool under Contents \> Data \> Export Data. 
+
+**Be sure to rename the holc_ad_data layer to USA_Redlining in the gdb to make it easier to remember.**
 
 **Step 6:** Following what has been done to the layer holc_ad_data, import the prepared data: public library, police station, parks and landmarks, bike lanes, crime information (All data featuring Detroit), and area descriptions ( found in the HOLC_Cities.gdb) .
 

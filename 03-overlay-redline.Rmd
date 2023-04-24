@@ -18,7 +18,7 @@ cat(author)
 
 ## Lab Overview {.unnumbered}
 
-'Redlining' is the illegal and discriminatory practice of denying services to residents of specific neighbourhoods based on racial or ethnic status. In the United States, financial institutions would 'redline' neighbourhoods of predominately Black or mixed-race residents and refuse to provide loans, home insurance and mortages in these communities. The legacy of historic redlining can still be seen today in the allocation of greenspace, urban gentrification and socioeconomic differences between neighbourhoods.
+'Redlining' is the illegal and discriminatory practice of denying services to residents of specific neighbourhoods based on racial or ethnic status. In the United States, financial institutions would 'redline' neighbourhoods of predominately Black or mixed-race residents and refuse to provide loans, home insurance and mortgages in these communities. The legacy of historic redlining can still be seen today in the allocation of greenspace, urban gentrification and socioeconomic differences between neighbourhoods.
 
 In this lab you will practice using overlay analysis tools to explore the legacy of redlining in American cities. You will learn about the redlining concept, differentiate between land cover and land use, and practice using Structured Query Language (SQL). You will also practice data management and organization within a geodatabase. The lab will provide a naming system to organize the data. However, you can use a different file naming system if it makes more sense to you. At the end of the lab, you will demonstrate your understanding by conducting a small overlay analysis showing the spatial legacies of redlining in a city.
 
@@ -46,7 +46,7 @@ In this lab you will practice using overlay analysis tools to explore the legacy
 
 **Background**
 
-Redlining emerged as a discriminatory practice in the 1960s to refuse mortgages, insurance, loans and other financial services to specific communities based on race and socioeconomic class. [@DRozario]. The term 'redlining' was coined by the sociologist John Mcknight and stems from the practice of governments and money lenders literallying draw red lines on maps of urban areas (see map below of Seattle, Washington). Districts were labelled from 'A' to 'D' based on the perceived 'safety' of investments in these regions. Black communities underwent the most severe discrimination. Studies have found that banks would preferentially give loans to lower-class white borrowers over middle or upper-class African Americans [@fed]. As a result of financial discrimination in primarily Black neighbourhoods, other public services related to health, environment, and utilities tended to worsen in these places over time. Redlining is an illegal practice nowadays. However, in communities that were historically redlined, homeownership, wealth and well-being are still much lower than nearby areas that did not face discriminatory lending practices [@hayes].
+Redlining emerged as a discriminatory practice in the 1960s to refuse mortgages, insurance, loans and other financial services to specific communities based on race and socioeconomic class. [@DRozario]. The term 'redlining' was coined by the sociologist John Mcknight and stems from the practice of governments and money lenders drawing red lines on maps of urban areas (see map below of Seattle, Washington). Districts were labelled from 'A' to 'D' based on the perceived 'safety' of investments in these regions. Black communities underwent the most severe discrimination. Studies have found that banks would preferentially give loans to lower-class white borrowers over middle or upper-class African Americans [@fed]. As a result of financial discrimination in primarily Black neighbourhoods, other public services related to health, environment, and utilities tended to worsen in these places over time. Redlining is an illegal practice nowadays. However, in communities that were historically redlined, homeownership, wealth and well-being are still much lower than nearby areas that did not face discriminatory lending practices [@hayes].
 
 ```{r 03-seattle, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/03/03-seattle.png")
@@ -58,13 +58,13 @@ For more information on redlining that can inform your discussion see the follow
 
 During this lab, you will visualize some of the remaining impacts of redlining by conducting an overlay analysis using historic redlining districts and current socioecnomic and demographic data.
 
-##### Q1: In the city settings and forestry context, what do you think will be the possible outcomes for stratifying districts like this? {.unnumbered}
+##### Q1: In urban settings why might city planners/policy makers want to create districts like this? {.unnumbered}
 
 ------------------------------------------------------------------------
 
 ## Task 2: Import Data & Understand Data {.unnumbered}
 
-**Step 1:** Create a new Catalog document in ArcGIS Pro. Import the saved downloaded data from Github to your project folder (If all is the default, it should be: `C:\Users\hyan08.stu\Documents\ArcGIS\Projects\MyProject)`. Set your project geodatabase the same as the default geodatabase.
+**Step 1:** Create a new Catalog document in ArcGIS Pro. Import the saved downloaded data from Github to your project folder and name the project Lab 3. If all is the default, it should be: `C:\Users\YourUserName\Documents\ArcGIS\Projects\Lab3`. Set your project geodatabase the same as the default geodatabase.
 
 **Tips:** While you add more files to your ArcGIS Pro Project folder, you may not be able to see your newly updated file immediately. You can press the refresh button on the right corner (red circle) of the ribbon to synchronize the information.
 
@@ -191,7 +191,7 @@ In this lab, you will examine the connections between land cover, land use and r
 
 Tip: You can change the transparency levels in the appearance tab to compare the overlapping part more easily.
 
-##### Q6: Looking at the satellite imagery what is the possible current land cover and land use of polygons “holc_id = a9,”  “holc_id = c91” and “holc_id =d23”? (see the screenshot below). How do land use and land cover relate to the redlining classification (A,B,C,D)? {.unnumbered}
+##### Q6: Looking at the satellite imagery what is the possible land cover and land use of polygons “holc_id = a9,”  “holc_id = c91” and “holc_id =d23”? (see the screenshot below). How do land use and land cover relate to the redlining classifications (A,C and D)? {.unnumbered}
 
 ```{r 03-landuse, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/03/03-landuse.png")
@@ -230,11 +230,10 @@ Next, we will examine the association between the redlining classification syste
 
 -	Toggle on and off the different layers. 
 -	Observe the location of different public facilities
--	Compare them with the stratified map you just created. Take some notes on your findings (Prepared for the Canvas Post) and then we will mainly work on the crime layer. 
 
-Note: The primary aim of this data analysis is to find out how many crime events are happening in each stratified district in the Detroit area. Thus, the final output will be polygons with the total violent/property crime cases in the attribute table. 
+Note: The primary aim of this data analysis is to find out how many crime events are happening in each redlining district in the Detroit area. Thus, the final output will be polygons with the total violent/property crime cases in the attribute table. 
 
-**Step 1:** Toggle on the Crime layer, you will see many scattered polygons in the Detroit city region.
+**Step 1:** Toggle on the Crime layer, you will see many scattered polygons in the Detroit city region. Each polygon has an attribute representing number of crimes that occurred within it. We will be joining these data with the redlining districts to count crimes within each district. 
 
 ```{r 03-crime, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/03/03-crime.png")
@@ -252,7 +251,7 @@ Hint: After using the correct tool, the new layer will look like the picture bel
 
 Next, we will stratify the polygons in the crime layer by redlining district. 
 
-##### Q10: What analysis can will you use to extract the polygons in the crime layer by redlining district? Hint: think about how to use the four stratified layers we created (Detroit_A, B, B and D). {.unnumbered}
+##### Q10: What analysis can will you use to extract the polygons in the crime layer by redlining district? Name the tool and the layers in each input field. Hint: think about how to use the four stratified layers we created (Detroit_A, B, C and D) and the crime layer together. {.unnumbered}
 
 Name the output files: Crime_A, Crime_B, Crime_C, and Crime_D
 
@@ -276,7 +275,7 @@ The result for district A should look like the following:
 
 Next, to account for differences in district size, divide the total crimes by the district area (shape_area) using the Calculate Field tool in the attribute table.
 
-##### Q13: In 300 words or less, make some observations about the distribution of police stations, libraries, bike lanes and parks in each redlining district. What do you see when you examine the total crimes/area metric for each redlining district? What are some potential biases or issues with this analysis? {.unnumbered} 
+##### Q13: In 300 words or less, make some observations about the distribution of police stations, libraries, bike lanes and parks in each redlining district. What do you see when you examine the total crimes/area metric for each redlining district? What are some potential issues with this analysis and what other data could you use to examining redlining legacies? {.unnumbered} 
 
 ------------------------------------------------------------------------
 

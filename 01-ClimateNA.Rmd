@@ -59,7 +59,7 @@ Use the **Historical** drop-down menu to generate climate normals from different
 
 The Quick Tutorial button will give more explanation for other features of the webmap. 
 
-##### Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus). {.unnumbered}
+##### Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location for the normal period 1961_1990? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus). {.unnumbered}
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01/01-UBC.jpg')
@@ -67,7 +67,7 @@ knitr::include_graphics('images/01/01-UBC.jpg')
 
 **Step 2:** Next we will be generating climate data at varying elevations within Vancouver and the Coast Mountains. Set the Historical drop-down menu to **Normal_1961_1990**. 
 
-##### Q3.In two sentences describe what a climate normal is and why it might be important in understanding changes in climate. {.unnumbered}
+##### Q3. In two sentences describe what a climate normal is and why it might be important in understanding changes in climate. {.unnumbered}
 
 Zoom in to the following area showing greater Vancouver and the Coast Mountains.
 
@@ -89,7 +89,7 @@ When you are done, hit the **Save** button to download the csv file to your Down
 
 ## Task 2: Import coordinates as spatial points in ArcGIS Pro {.unnumbered}
 
-**Step 1:** Open ArcGISPro. Click on the Map button, then name your new project and save it to a location on your computer. 
+**Step 1:** Open ArcGISPro. Click on the Map button, then name your new project and save it as Lab 1 on your computer. The default filepath might look something like this: `C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab1.` 
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01/01-arcpro.jpg')
@@ -125,7 +125,7 @@ Right click on the **ClimateData_XYTableToPoint** layer in the Contents pane and
 knitr::include_graphics('images/01/01-spatialref.jpg')
 ```
 
-##### Q3. What is the Geographic Coordinate System of the layer? What is the Angular Unit? {.unnumbered}
+##### Q4. What is the Geographic Coordinate System of the layer? What is the Angular Unit? {.unnumbered}
 
 **Step 5:** Next we will explore point symbology. Right click on **ClimateData_XYTableToPoint** layer and select **Symbology**. You can change the symbol of all the points by clicking on the Symbol button and selecting a new symbol from the Gallery tab. 
 
@@ -145,9 +145,11 @@ You can also change the number of classes and the method of choosing the classes
 
 **Plot your points and color code them by Mean Annual Precipitation (MAP). Take a screenshot of the points on the map and the symbology menu to include in your final deliverables. **
 
-**Step 6:** Next, we will create a simple chart of our climate data. Right click on **ClimateData_XYTableToPoint** layer and select **Create Chart -> Line Chart**. 
+**Step 6:** Next, we will create a simple chart of our climate data. Right click on **ClimateData_XYTableToPoint** layer and select **Create Chart > Line Chart**. 
 
-In the Chart Properties pane set the **Date or Number** field to **elev**. This will plot elevation on the X-axis. Next, under Numeric fields select MAT, this will plot Mean Annual temperature on the Y-axis. Go to the General tab and change the chart title and X and Y axis labels. When you are finished click the Export -> Export as graphic. Name the chart and save it as a .png. 
+In the Chart Properties pane set the **Date or Number** field to **elev**. This will plot elevation on the X-axis. Next, under Numeric fields select MAT, this will plot Mean Annual temperature on the Y-axis. 
+
+Go to the General tab and change the chart title and X and Y axis labels to something descriptive and include units of measurement. When you are finished click the Export > Export as graphic. Name the chart and save it as a .png. 
 
 **Create charts of change in MAT and change in MAP by elevation. Include the images in your final deliverables. **
 
@@ -161,52 +163,60 @@ knitr::include_graphics('images/01/01-savegraph.jpg')
 
 ------------------------------------------------------------------------
 
-## Task 3: Working with raster data and map projections {.unnumbered}
+## Task 3: Exploring map projections {.unnumbered}
 
-**Step 1:** Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)
+**Step 1:** Open ArcGIS Pro and insert a new Map. 
 
-We will be downloading 4 raster datasets to calculate differences in current and future projections of MAT and MAP.
-To download a raster overlay, select the layer you want to download in the Overlay dropdown menu, then click Download Overlay raster files. 
-
-Download the following layers: 
-**MAT_1961_1990** 
-**MAT_ssp245_2071_2100**
-**MAP_1961_1990**
-**MAP_ssp245_2071_2100**
-
-##### Q4. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences. {.unnumbered}  
-
-``` {r, echo=FALSE, fig.align = 'center'}
-knitr::include_graphics('images/01/01-climNAraster.jpg')
-```
-
-**Step 2:** Open ArcGIS Pro and insert a new Map. 
-
-To visualize how different map projections alter shape, area and distance of spatial data drag and drop the **ellipses.shp** shapefile to the Map. Note that the default projection in ArcMap is the pseudo-Plate-Caree projection.  
+To visualize how different map projections alter shape, area and distance of spatial data drag and drop the **ellipses.shp** shapefile to the Map. Note that the default projection in ArcMap is the pseudo-Plate-Caree projection. 
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01/01-ellipses.jpg')
 ```
 
-Use the measure tool from the top ribbon (**Map -> Measure**) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.
+Use the measure tool from the top ribbon (**Map > Measure**) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.
 
 ##### Q5. What areas of the map show the most distortion? What properties of the circles are distorted? {.unnumbered} 
 
-You can change the projection of the entire map in the **Map Properties -> Coordinate Systems** tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.
+You can change the projection of the entire map in the **Map Properties > Coordinate Systems** tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.
 
-Compare the following three projections: **Mercator (world), Robinson (world), Azimuthal Equidistant (world).** .  
+**Step 2:** Compare the following three projections: **Mercator (world), Cylindrical Equal Area (world)** .  
 
-##### Q6: For each scenario idenitfy the best map projection: 1) Comparing the area of different provinces, 2) Calculating the direction and distance between two cities, 3) Mapping the shape of the northern coastline? {.unnumbered}
+##### Q6: What properties are distirted or preserved in the Mercator and Cylindrical Equal Area projections? Where on the globe are the distortions most apparent? {.unnumbered}
 
-**Step 3:** Drag and drop the 4 climate rasters from your Downloads folder to the Contents pane. 
+------------------------------------------------------------------------
 
-Right click on the **mat_1961_1990** layer in the Contents pane -> Symbology. Change the color scheme to better see the range of values. 
+## Task 4: Import and display raster data {.unnumbered}
+
+**Step 1:** Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)
+
+We will be downloading 4 raster datasets to calculate differences in current and future projections of MAT and MAP.
+
+To download a raster overlay, look at the Overlays dropdown menu at the top of the screen (NOT the Coordinates Input that you used before), then select the layer you want and click Download Overlay raster files. 
+
+Download the following layers:
+
+- **MAT_1961-1990** 
+- **MAT_ssp245_2071_2100**
+- **MAP_1961_1990**
+- **MAP_ssp245_2071_2100**
+
+##### Q7. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences. {.unnumbered}  
+
+``` {r, echo=FALSE, fig.align = 'center'}
+knitr::include_graphics('images/01/01-climNAraster.jpg')
+```
+
+**Step 2:** Drag and drop the 4 climate rasters from your Downloads folder to the Contents pane. 
+
+Change the coordinate system of the map to **NAD 1983 Statistics Canada Lambert** 
+
+Right click on the **mat_1961_1990** layer in the Contents pane > Symbology. Change the color scheme to better see the range of values. 
 
 ``` {r, echo=FALSE, fig.align = 'center'}
 knitr::include_graphics('images/01/01-rastersymbol.jpg')
 ```
 
-**Step 4:** Next we will calculate the **difference in historical and projected MAT**. First, navigate to the **Imagery** tab in the top ribbon -> **Raster Functions.** 
+**Step 3:** Next we will calculate the **difference in historical and projected MAT**. First, navigate to the **Imagery** tab in the top ribbon > **Raster Functions.** 
 
 Under the Math tab click on the **Minus** tool. This tool subtracts cell values between two rasters and outputs a new raster whose values are the difference between the two inputs. In the Raster field input the **mat_ssp245_2071_2100** layer. In the Raster2 field input the **mat_1961_1990** layer. This will subtract the historical MAT values from the projected MAT values. Click **Create new layer.**
 
@@ -223,17 +233,20 @@ knitr::include_graphics('images/01/01-MATdiff.jpg')
 
 ##### Q7: In 1-2 sentences comment on the pattern of change in MAT. Where are the greatest changes expected in Canada? {.unnumbered} 
 
-**Repeat Steps 3-4 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm. Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.** 
+Repeat Steps 2-3 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm. 
 
-##### Q8: What is the minimum and maximum change in MAP (in units of mm)? {.unnumbered} 
+**Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.** 
+
+##### Q8: What is the minimum and maximum change in MAP across the entire raster (in units of mm)? What does a negative change in MAP indicate? {.unnumbered} 
 
 ##### Q9: In 1-2 sentences comment on the pattern of change in MAP. Where are the greatest changes expected in Canada? {.unnumbered}
 
-**Step 5:** Now zoom into a place in Canada that is significant to you!
+**Step 4:** Now zoom into a place in Canada that is significant to you!
 
-(Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon -> Transparency. 
+(Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon > Transparency. 
 
-Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon -> Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane. 
+Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon > Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane. 
+
 In the example below I have chosen Victoria, BC where the projected change in MAT is 2.7C. 
 
 **For your chosen place, record the Lat/Long and the change in MAT and MAP. Include in your final deliverables.** 

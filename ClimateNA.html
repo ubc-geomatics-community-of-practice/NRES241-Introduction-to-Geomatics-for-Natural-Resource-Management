@@ -80,7 +80,8 @@
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-1-generate-point-data-from-climate-na"><i class="fa fa-check"></i>Task 1: Generate point data from Climate NA</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-2-import-coordinates-as-spatial-points-in-arcgis-pro"><i class="fa fa-check"></i>Task 2: Import coordinates as spatial points in ArcGIS Pro</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#task-3-working-with-raster-data-and-map-projections"><i class="fa fa-check"></i>Task 3: Working with raster data and map projections</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-3-exploring-map-projections"><i class="fa fa-check"></i>Task 3: Exploring map projections</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-4-import-and-display-raster-data"><i class="fa fa-check"></i>Task 4: Import and display raster data</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -152,13 +153,13 @@ Hana Travers-Smith</p>
 <p>Use the <strong>Historical</strong> drop-down menu to generate climate normals from different decades and years. The <strong>Future</strong> drop-down menu will allow you to generate climate projections for different time periods and climate warming scenarios.</p>
 <p>The Quick Tutorial button will give more explanation for other features of the webmap.</p>
 </div>
-<div id="q2.-zoom-in-to-the-ubc-vancouver-campus-what-is-the-mat-and-map-at-this-location-you-do-not-need-to-click-on-the-exact-same-point-shown-below-but-make-sure-to-click-somewhere-on-campus." class="section level5 unnumbered hasAnchor">
-<h5>Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus).<a href="#q2.-zoom-in-to-the-ubc-vancouver-campus-what-is-the-mat-and-map-at-this-location-you-do-not-need-to-click-on-the-exact-same-point-shown-below-but-make-sure-to-click-somewhere-on-campus." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="q2.-zoom-in-to-the-ubc-vancouver-campus-what-is-the-mat-and-map-at-this-location-for-the-normal-period-1961_1990-you-do-not-need-to-click-on-the-exact-same-point-shown-below-but-make-sure-to-click-somewhere-on-campus." class="section level5 unnumbered hasAnchor">
+<h5>Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location for the normal period 1961_1990? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus).<a href="#q2.-zoom-in-to-the-ubc-vancouver-campus-what-is-the-mat-and-map-at-this-location-for-the-normal-period-1961_1990-you-do-not-need-to-click-on-the-exact-same-point-shown-below-but-make-sure-to-click-somewhere-on-campus." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><img src="images/01/01-UBC.JPG" width="355" style="display: block; margin: auto;" /></p>
 <p><strong>Step 2:</strong> Next we will be generating climate data at varying elevations within Vancouver and the Coast Mountains. Set the Historical drop-down menu to <strong>Normal_1961_1990</strong>.</p>
 </div>
-<div id="q3.in-two-sentences-describe-what-a-climate-normal-is-and-why-it-might-be-important-in-understanding-changes-in-climate." class="section level5 unnumbered hasAnchor">
-<h5>Q3.In two sentences describe what a climate normal is and why it might be important in understanding changes in climate.<a href="#q3.in-two-sentences-describe-what-a-climate-normal-is-and-why-it-might-be-important-in-understanding-changes-in-climate." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="q3.-in-two-sentences-describe-what-a-climate-normal-is-and-why-it-might-be-important-in-understanding-changes-in-climate." class="section level5 unnumbered hasAnchor">
+<h5>Q3. In two sentences describe what a climate normal is and why it might be important in understanding changes in climate.<a href="#q3.-in-two-sentences-describe-what-a-climate-normal-is-and-why-it-might-be-important-in-understanding-changes-in-climate." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Zoom in to the following area showing greater Vancouver and the Coast Mountains.</p>
 <p><img src="images/01/01-lowermainland.JPG" width="918" style="display: block; margin: auto;" /></p>
 <p>Pick a location in the greater Vancouver area <strong>(choose a location that is on land, i.e. not in the ocean)</strong>, click on the map to add a pin then click <strong>Calculate</strong> to generate climate data for this location.</p>
@@ -171,7 +172,7 @@ Hana Travers-Smith</p>
 </div>
 <div id="task-2-import-coordinates-as-spatial-points-in-arcgis-pro" class="section level2 unnumbered hasAnchor">
 <h2>Task 2: Import coordinates as spatial points in ArcGIS Pro<a href="#task-2-import-coordinates-as-spatial-points-in-arcgis-pro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Step 1:</strong> Open ArcGISPro. Click on the Map button, then name your new project and save it to a location on your computer.</p>
+<p><strong>Step 1:</strong> Open ArcGISPro. Click on the Map button, then name your new project and save it as Lab 1 on your computer. The default filepath might look something like this: <code>C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab1.</code></p>
 <p><img src="images/01/01-arcpro.JPG" width="946" style="display: block; margin: auto;" /></p>
 <p>To get started, click the <strong>Insert</strong> button on the top ribbon, then the <strong>New Map</strong> button.</p>
 <p><img src="images/01/01-arcmappanes.JPG" width="748" style="display: block; margin: auto;" /></p>
@@ -183,8 +184,8 @@ Hana Travers-Smith</p>
 <p><img src="images/01/01-attributetable.JPG" width="863" style="display: block; margin: auto;" /></p>
 <p>Right click on the <strong>ClimateData_XYTableToPoint</strong> layer in the Contents pane and select <strong>Properties</strong> from the dropdown menu. Navigate to <strong>Source</strong> and examine the <strong>Spatial Reference</strong> information by opening the menu.</p>
 <p><img src="images/01/01-spatialref.JPG" width="394" style="display: block; margin: auto;" /></p>
-<div id="q3.-what-is-the-geographic-coordinate-system-of-the-layer-what-is-the-angular-unit" class="section level5 unnumbered hasAnchor">
-<h5>Q3. What is the Geographic Coordinate System of the layer? What is the Angular Unit?<a href="#q3.-what-is-the-geographic-coordinate-system-of-the-layer-what-is-the-angular-unit" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="q4.-what-is-the-geographic-coordinate-system-of-the-layer-what-is-the-angular-unit" class="section level5 unnumbered hasAnchor">
+<h5>Q4. What is the Geographic Coordinate System of the layer? What is the Angular Unit?<a href="#q4.-what-is-the-geographic-coordinate-system-of-the-layer-what-is-the-angular-unit" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><strong>Step 5:</strong> Next we will explore point symbology. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Symbology</strong>. You can change the symbol of all the points by clicking on the Symbol button and selecting a new symbol from the Gallery tab.</p>
 <p><img src="images/01/01-symbology.JPG" width="690" style="display: block; margin: auto;" /></p>
 <p>We can also vary the color of each point by different variables in the Attribute Table. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Symbology</strong>. Under Primary symbology, use the dropdown menu to change the symbology type to <strong>Graduated Colors</strong>.</p>
@@ -192,43 +193,51 @@ Hana Travers-Smith</p>
 <p>Use the <strong>Field</strong> option to change which variable to classify points by. In this example we are using the Mean Annual Temperature (MAT) field and plotting colder points in purple/blue and warmer points in yellow/red. Explore the different color options in the Color Scheme menu.</p>
 <p>You can also change the number of classes and the method of choosing the classes using the Method and Classes options.</p>
 <p><strong>Plot your points and color code them by Mean Annual Precipitation (MAP). Take a screenshot of the points on the map and the symbology menu to include in your final deliverables. </strong></p>
-<p><strong>Step 6:</strong> Next, we will create a simple chart of our climate data. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Create Chart -&gt; Line Chart</strong>.</p>
-<p>In the Chart Properties pane set the <strong>Date or Number</strong> field to <strong>elev</strong>. This will plot elevation on the X-axis. Next, under Numeric fields select MAT, this will plot Mean Annual temperature on the Y-axis. Go to the General tab and change the chart title and X and Y axis labels. When you are finished click the Export -&gt; Export as graphic. Name the chart and save it as a .png.</p>
+<p><strong>Step 6:</strong> Next, we will create a simple chart of our climate data. Right click on <strong>ClimateData_XYTableToPoint</strong> layer and select <strong>Create Chart &gt; Line Chart</strong>.</p>
+<p>In the Chart Properties pane set the <strong>Date or Number</strong> field to <strong>elev</strong>. This will plot elevation on the X-axis. Next, under Numeric fields select MAT, this will plot Mean Annual temperature on the Y-axis.</p>
+<p>Go to the General tab and change the chart title and X and Y axis labels to something descriptive and include units of measurement. When you are finished click the Export &gt; Export as graphic. Name the chart and save it as a .png.</p>
 <p><strong>Create charts of change in MAT and change in MAP by elevation. Include the images in your final deliverables. </strong></p>
 <p><img src="images/01/01-MATgraph.JPG" width="859" style="display: block; margin: auto;" /></p>
 <p><img src="images/01/01-savegraph.JPG" width="452" style="display: block; margin: auto;" /></p>
 <hr />
 </div>
 </div>
-<div id="task-3-working-with-raster-data-and-map-projections" class="section level2 unnumbered hasAnchor">
-<h2>Task 3: Working with raster data and map projections<a href="#task-3-working-with-raster-data-and-map-projections" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Step 1:</strong> Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)</p>
-<p>We will be downloading 4 raster datasets to calculate differences in current and future projections of MAT and MAP.
-To download a raster overlay, select the layer you want to download in the Overlay dropdown menu, then click Download Overlay raster files.</p>
-<p>Download the following layers:
-<strong>MAT_1961_1990</strong>
-<strong>MAT_ssp245_2071_2100</strong>
-<strong>MAP_1961_1990</strong>
-<strong>MAP_ssp245_2071_2100</strong></p>
-<div id="q4.-from-the-ipcc-sixth-assessment-report-what-does-the-ssp2-4.5-scenario-represent-answer-in-2-3-sentences." class="section level5 unnumbered hasAnchor">
-<h5>Q4. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences.<a href="#q4.-from-the-ipcc-sixth-assessment-report-what-does-the-ssp2-4.5-scenario-represent-answer-in-2-3-sentences." class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><img src="images/01/01-climNAraster.JPG" width="456" style="display: block; margin: auto;" /></p>
-<p><strong>Step 2:</strong> Open ArcGIS Pro and insert a new Map.</p>
+<div id="task-3-exploring-map-projections" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Exploring map projections<a href="#task-3-exploring-map-projections" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Open ArcGIS Pro and insert a new Map.</p>
 <p>To visualize how different map projections alter shape, area and distance of spatial data drag and drop the <strong>ellipses.shp</strong> shapefile to the Map. Note that the default projection in ArcMap is the pseudo-Plate-Caree projection.</p>
 <p><img src="images/01/01-ellipses.JPG" width="675" style="display: block; margin: auto;" /></p>
-<p>Use the measure tool from the top ribbon (<strong>Map -&gt; Measure</strong>) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.</p>
-</div>
+<p>Use the measure tool from the top ribbon (<strong>Map &gt; Measure</strong>) to measure the length and width of the ellipses at the poles and at the equator. You will notice that the ellipses are actually perfect circles with a diameter of ~1000km.</p>
 <div id="q5.-what-areas-of-the-map-show-the-most-distortion-what-properties-of-the-circles-are-distorted" class="section level5 unnumbered hasAnchor">
 <h5>Q5. What areas of the map show the most distortion? What properties of the circles are distorted?<a href="#q5.-what-areas-of-the-map-show-the-most-distortion-what-properties-of-the-circles-are-distorted" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>You can change the projection of the entire map in the <strong>Map Properties -&gt; Coordinate Systems</strong> tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.</p>
-<p>Compare the following three projections: <strong>Mercator (world), Robinson (world), Azimuthal Equidistant (world).</strong> .</p>
+<p>You can change the projection of the entire map in the <strong>Map Properties &gt; Coordinate Systems</strong> tab. Any layers in the contents pane will be projected on the fly and displayed in this coordinate system. Note that changing the coordinate system of the Map does NOT change the underlying projection of the data itself.</p>
+<p><strong>Step 2:</strong> Compare the following three projections: <strong>Mercator (world), Cylindrical Equal Area (world)</strong> .</p>
 </div>
-<div id="q6-for-each-scenario-idenitfy-the-best-map-projection-1-comparing-the-area-of-different-provinces-2-calculating-the-direction-and-distance-between-two-cities-3-mapping-the-shape-of-the-northern-coastline" class="section level5 unnumbered hasAnchor">
-<h5>Q6: For each scenario idenitfy the best map projection: 1) Comparing the area of different provinces, 2) Calculating the direction and distance between two cities, 3) Mapping the shape of the northern coastline?<a href="#q6-for-each-scenario-idenitfy-the-best-map-projection-1-comparing-the-area-of-different-provinces-2-calculating-the-direction-and-distance-between-two-cities-3-mapping-the-shape-of-the-northern-coastline" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Step 3:</strong> Drag and drop the 4 climate rasters from your Downloads folder to the Contents pane.</p>
-<p>Right click on the <strong>mat_1961_1990</strong> layer in the Contents pane -&gt; Symbology. Change the color scheme to better see the range of values.</p>
+<div id="q6-what-properties-are-distirted-or-preserved-in-the-mercator-and-cylindrical-equal-area-projections-where-on-the-globe-are-the-distortions-most-apparent" class="section level5 unnumbered hasAnchor">
+<h5>Q6: What properties are distirted or preserved in the Mercator and Cylindrical Equal Area projections? Where on the globe are the distortions most apparent?<a href="#q6-what-properties-are-distirted-or-preserved-in-the-mercator-and-cylindrical-equal-area-projections-where-on-the-globe-are-the-distortions-most-apparent" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<hr />
+</div>
+</div>
+<div id="task-4-import-and-display-raster-data" class="section level2 unnumbered hasAnchor">
+<h2>Task 4: Import and display raster data<a href="#task-4-import-and-display-raster-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Go to Climate NA webmap using the following link: ClimateNA_Map (climatewna.com)</p>
+<p>We will be downloading 4 raster datasets to calculate differences in current and future projections of MAT and MAP.</p>
+<p>To download a raster overlay, look at the Overlays dropdown menu at the top of the screen (NOT the Coordinates Input that you used before), then select the layer you want and click Download Overlay raster files.</p>
+<p>Download the following layers:</p>
+<ul>
+<li><strong>MAT_1961-1990</strong></li>
+<li><strong>MAT_ssp245_2071_2100</strong></li>
+<li><strong>MAP_1961_1990</strong></li>
+<li><strong>MAP_ssp245_2071_2100</strong></li>
+</ul>
+<div id="q7.-from-the-ipcc-sixth-assessment-report-what-does-the-ssp2-4.5-scenario-represent-answer-in-2-3-sentences." class="section level5 unnumbered hasAnchor">
+<h5>Q7. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences.<a href="#q7.-from-the-ipcc-sixth-assessment-report-what-does-the-ssp2-4.5-scenario-represent-answer-in-2-3-sentences." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><img src="images/01/01-climNAraster.JPG" width="456" style="display: block; margin: auto;" /></p>
+<p><strong>Step 2:</strong> Drag and drop the 4 climate rasters from your Downloads folder to the Contents pane.</p>
+<p>Change the coordinate system of the map to <strong>NAD 1983 Statistics Canada Lambert</strong></p>
+<p>Right click on the <strong>mat_1961_1990</strong> layer in the Contents pane &gt; Symbology. Change the color scheme to better see the range of values.</p>
 <p><img src="images/01/01-rastersymbol.JPG" width="205" style="display: block; margin: auto;" /></p>
-<p><strong>Step 4:</strong> Next we will calculate the <strong>difference in historical and projected MAT</strong>. First, navigate to the <strong>Imagery</strong> tab in the top ribbon -&gt; <strong>Raster Functions.</strong></p>
+<p><strong>Step 3:</strong> Next we will calculate the <strong>difference in historical and projected MAT</strong>. First, navigate to the <strong>Imagery</strong> tab in the top ribbon &gt; <strong>Raster Functions.</strong></p>
 <p>Under the Math tab click on the <strong>Minus</strong> tool. This tool subtracts cell values between two rasters and outputs a new raster whose values are the difference between the two inputs. In the Raster field input the <strong>mat_ssp245_2071_2100</strong> layer. In the Raster2 field input the <strong>mat_1961_1990</strong> layer. This will subtract the historical MAT values from the projected MAT values. Click <strong>Create new layer.</strong></p>
 <p><img src="images/01/01-rastercalc.JPG" width="197" style="display: block; margin: auto;" /></p>
 <p>Notice that MAT values have been scaled by a factor of 10. Next, we will divide the cell values of the change in MAT raster by 10 to put values in units of ˚C. Navigate back to the Raster Functions menu and select the Divide tool. Input the Minus_mat_ssp245_2071-2100.tif_mat_1961-1990.tif layer in the Raster field. In the Raster2 field type in <strong>10</strong>. Create new layer.</p>
@@ -237,17 +246,18 @@ To download a raster overlay, select the layer you want to download in the Overl
 </div>
 <div id="q7-in-1-2-sentences-comment-on-the-pattern-of-change-in-mat.-where-are-the-greatest-changes-expected-in-canada" class="section level5 unnumbered hasAnchor">
 <h5>Q7: In 1-2 sentences comment on the pattern of change in MAT. Where are the greatest changes expected in Canada?<a href="#q7-in-1-2-sentences-comment-on-the-pattern-of-change-in-mat.-where-are-the-greatest-changes-expected-in-canada" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Repeat Steps 3-4 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm. Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.</strong></p>
+<p>Repeat Steps 2-3 with the MAP. Note that cell values need to be scaled by a factor of 100 to convert to mm.</p>
+<p><strong>Take a screenshot of the final change in MAP layer (similar to above) and include in the final deliverables.</strong></p>
 </div>
-<div id="q8-what-is-the-minimum-and-maximum-change-in-map-in-units-of-mm" class="section level5 unnumbered hasAnchor">
-<h5>Q8: What is the minimum and maximum change in MAP (in units of mm)?<a href="#q8-what-is-the-minimum-and-maximum-change-in-map-in-units-of-mm" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="q8-what-is-the-minimum-and-maximum-change-in-map-across-the-entire-raster-in-units-of-mm-what-does-a-negative-change-in-map-indicate" class="section level5 unnumbered hasAnchor">
+<h5>Q8: What is the minimum and maximum change in MAP across the entire raster (in units of mm)? What does a negative change in MAP indicate?<a href="#q8-what-is-the-minimum-and-maximum-change-in-map-across-the-entire-raster-in-units-of-mm-what-does-a-negative-change-in-map-indicate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
 <div id="q9-in-1-2-sentences-comment-on-the-pattern-of-change-in-map.-where-are-the-greatest-changes-expected-in-canada" class="section level5 unnumbered hasAnchor">
 <h5>Q9: In 1-2 sentences comment on the pattern of change in MAP. Where are the greatest changes expected in Canada?<a href="#q9-in-1-2-sentences-comment-on-the-pattern-of-change-in-map.-where-are-the-greatest-changes-expected-in-canada" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Step 5:</strong> Now zoom into a place in Canada that is significant to you!</p>
-<p>(Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon -&gt; Transparency.</p>
-<p>Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon -&gt; Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane.
-In the example below I have chosen Victoria, BC where the projected change in MAT is 2.7C.</p>
+<p><strong>Step 4:</strong> Now zoom into a place in Canada that is significant to you!</p>
+<p>(Hint: you can adjust the transparency of the layers by clicking on them and navigating to the Appearance menu in the top ribbon &gt; Transparency.</p>
+<p>Turn on the change in MAT and MAP layers. Go to the Map tools on the top ribbon &gt; Explore. Click on the map to open a pop-up window showing the lat/long of the point you clicked as well as the cell values from all the layers that are turned on in the Contents pane.</p>
+<p>In the example below I have chosen Victoria, BC where the projected change in MAT is 2.7C.</p>
 <p><strong>For your chosen place, record the Lat/Long and the change in MAT and MAP. Include in your final deliverables.</strong></p>
 <p><img src="images/01/01-victoria.JPG" width="742" style="display: block; margin: auto;" /></p>
 <p><strong>Step 6:</strong> For the place you chose in the previous step, discuss the following in 500 words or less:</p>

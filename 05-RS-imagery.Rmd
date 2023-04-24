@@ -39,7 +39,7 @@ The aim of this lab is to learn about the electromagnetic spectrum (EMS), unders
 
 ### Data {.unnumbered}
 
-We will be working with a multispectral image of Vancouver from the Landsat 5 satellite **(L5057026subset_19990922_7B.dat).**
+We will be working with a multispectral image of Vancouver from the Landsat 5 satellite **(LT05_047026_20000823_subset.tif).**
 
 ------------------------------------------------------------------------
 

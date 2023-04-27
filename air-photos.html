@@ -198,12 +198,22 @@ Hana Travers-Smith</p>
 </div>
 <div id="q10.-for-each-of-the-land-cover-types-and-features-you-listed-in-the-previous-question-describe-how-you-can-identify-them-in-the-air-photos.-how-do-they-vary-in-terms-of-texture-shade-and-shape" class="section level5 unnumbered hasAnchor">
 <h5>Q10. For each of the land cover types and features you listed in the previous question, describe how you can identify them in the air photos. How do they vary in terms of texture, shade and shape?<a href="#q10.-for-each-of-the-land-cover-types-and-features-you-listed-in-the-previous-question-describe-how-you-can-identify-them-in-the-air-photos.-how-do-they-vary-in-terms-of-texture-shade-and-shape" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 3:</strong> Next, we will use a dot-grid to estimate the ground area covered by features in the air photo. Get a transparent dot-grid from your TA and measure the distance between the dots.</p>
+<p>Select one of the forest or urban air photos and place the dot-grid on top of the air photo. Take a photo of the air photo and dot grid.</p>
+<p>Select 3 irregularly shaped features in the photo, these could be lakes, cut-blocks, parks, property lines etc…</p>
+<p><strong>Step 4:</strong> Use the dot-grid to estimate how many cells cover each feature. Then look up the photo scale on the GIC website. Use the following example to help you calculate the ground area of each feature in m2.</p>
+<p>In this example imagine the dots are spaced 5 cm apart. A single cell on the dot grid would cover 5x5cm = 25cm^2. If you estimate that a feature on the air photo covers 10.5 cells and the scale of the photo is 1:20,000 then we would convert 10.5 cells to ground area as follows…</p>
+<p>First calculate the area of the cells:</p>
+<p><span class="math inline">\(\ 10.5 * 25 cm^2 = 262.5 cm^2\)</span></p>
+<p>Next, convert this to ground area in m using the scale of the air photo:</p>
+<p><span class="math inline">\(\ 262.5cm^2 * 20,000 = 5,250,000 cm^2 / 10,000 = 525m^2\)</span></p>
+<p><strong>Step 5:</strong> Record the ground area of each feature. On the photo you took of the air photo and dot grid use a photo editing program (ie MS Paint) to outline the features you chose. Add labels A,B,C to each feature. Include the image in your final deliverables along with the estimated ground area of each feature and its associated label.</p>
 <hr />
 </div>
 </div>
 <div id="task-3-georeferencing" class="section level2 unnumbered hasAnchor">
 <h2>Task 3: Georeferencing<a href="#task-3-georeferencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this task you will learn how to integrate air photos with other spatial layers in a GIS. To do this we need to add <strong>spatial reference information</strong> to the digital image so that it can be displayed correctly on a map and be overlaid with other data sets. In this process you will identify common features between a base map whichhas spatial reference information, with the air photo, which does not. A geogeaphic transformation will be used to align the points in the basemap with the air photo and assign a spatial reference. Because the air photo was taken in the 19XX’s some landscape features are expected to change, so we will have to carefully select features that have not changed over time! Some good examples of stable control points might be:</p>
+<p>In this task you will learn how to integrate air photos with other spatial layers in a GIS. To do this we need to add <strong>spatial reference information</strong> to the digital image so that it can be displayed correctly on a map and be overlaid with other data sets. In this process you will identify common features between a base map which has spatial reference information, with the air photo, which does not. A geographic transformation will be used to align the points in the basemap with the air photo and assign a spatial reference. Because the air photo was taken in the 19XX’s some landscape features are expected to change, so we will have to carefully select features that have not changed over time! Some good examples of stable control points might be:</p>
 <ul>
 <li>intersections of major roads</li>
 <li>airport runways</li>
@@ -211,7 +221,7 @@ Hana Travers-Smith</p>
 <li>the centres of deep lakes</li>
 <li>easily identifiable natural features, islands, spits</li>
 </ul>
-<p>Some examples of not so good control points might be river banks, trees, the shorelines of shallow lakes, as these features are more likely to change or be difficult to identify in two images.</p>
+<p>Some examples of not so good control points might be river banks, trees or the shorelines of shallow lakes, as these features are more likely to change or be difficult to identify in two images.</p>
 <p>You can read more about the process of georeferencing here: <a href="https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm" class="uri">https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm</a></p>
 <p><strong>Step 1:</strong> The file XXXXX.tif is a high-resolution digital scan of photo <strong>XXXXXXX</strong>. Create a new project in ArcGIS Pro and open a New Map. Drag and drop the air photo into ArcGIS Pro. Notice that because there is no coordinate information associated with the image, ArcGis plots the photo at the coordinates 0.0S, 0.0.0E.</p>
 <p>First, set the cooridnate system of the Map to <strong>NAD 1983 UTM Zone 10</strong>. Right click Map in the Contents Pane &gt; Properties &gt; Coordinate Systems.</p>
@@ -231,8 +241,8 @@ The overall error is shown in the pop-up menu on the Map where Forward error is 
 <p><strong>Step 5:</strong> To save the georeferenced air photo click <strong>Save</strong> and close the Georeferencing menu. You will now be able to overlay the air photo with the reference basemap and any other spatial data.</p>
 <p>Find a region on the air photo where landcover has changed over time, this could be through urbanization, clear cuts etc. Zoom in and adjust the transparency of the air photo in the Appearance menu so that you can see the modern imagery underneath.</p>
 </div>
-<div id="q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-see-example-below.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="section level5 hasAnchor" number="1.0.0.0.1">
-<h5><span class="header-section-number">1.0.0.0.1</span> Q12: Take a screenshot of the historic air photo overlaying the modern imagery (see example below). In 1-2 sentences briefly describe the change taking place in the screenshot.<a href="#q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-see-example-below.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-adjust-the-transparency-of-the-air-photo-so-the-basemap-can-be-seen-underneath.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="section level5 unnumbered hasAnchor">
+<h5>Q12: Take a screenshot of the historic air photo overlaying the modern imagery (adjust the transparency of the air photo so the basemap can be seen underneath). In 1-2 sentences briefly describe the change taking place in the screenshot.<a href="#q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-adjust-the-transparency-of-the-air-photo-so-the-basemap-can-be-seen-underneath.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
 </div>
 </div>

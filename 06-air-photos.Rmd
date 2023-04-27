@@ -114,11 +114,31 @@ Answer the following questions for the air photo pair: **BCB93024 124** and **BC
 
 ##### Q10. For each of the land cover types and features you listed in the previous question, describe how you can identify them in the air photos. How do they vary in terms of texture, shade and shape? {.unnumbered}
 
+**Step 3:** Next, we will use a dot-grid to estimate the ground area covered by features in the air photo. Get a transparent dot-grid from your TA and measure the distance between the dots.
+
+Select one of the forest or urban air photos and place the dot-grid on top of the air photo. Take a photo of the air photo and dot grid. 
+
+Select 3 irregularly shaped features in the photo, these could be lakes, cut-blocks, parks, property lines etc... 
+
+**Step 4:** Use the dot-grid to estimate how many cells cover each feature. Then look up the photo scale on the GIC website. Use the following example to help you calculate the ground area of each feature in m2. 
+
+In this example imagine the dots are spaced 5 cm apart. A single cell on the dot grid would cover 5x5cm = 25cm^2. If you estimate that a feature on the air photo covers 10.5 cells and the scale of the photo is 1:20,000 then we would convert 10.5 cells to ground area as follows...
+
+First calculate the area of the cells: 
+
+$\ 10.5 * 25 cm^2 =  262.5 cm^2$ 
+
+Next, convert this to ground area in m using the scale of the air photo:
+
+$\ 262.5cm^2 * 20,000 = 5,250,000 cm^2 / 10,000 = 525m^2$
+
+**Step 5:** Record the ground area of each feature. On the photo you took of the air photo and dot grid use a photo editing program (ie MS Paint) to outline the features you chose. Add labels A,B,C to each feature. Include the image in your final deliverables along with the estimated ground area of each feature and its associated label.   
+
 ------------------------------------------------------------------------
 
 ## Task 3: Georeferencing {.unnumbered}
 
-In this task you will learn how to integrate air photos with other spatial layers in a GIS. To do this we need to add **spatial reference information** to the digital image so that it can be displayed correctly on a map and be overlaid with other data sets. In this process you will identify common features between a base map whichhas spatial reference information,  with the air photo, which does not. A geogeaphic transformation will be used to align the points in the basemap with the air photo and assign a spatial reference. Because the air photo was taken in the 19XX's some landscape features are expected to change, so we will have to carefully select features that have not changed over time! Some good examples of stable control points might be: 
+In this task you will learn how to integrate air photos with other spatial layers in a GIS. To do this we need to add **spatial reference information** to the digital image so that it can be displayed correctly on a map and be overlaid with other data sets. In this process you will identify common features between a base map which has spatial reference information,  with the air photo, which does not. A geographic transformation will be used to align the points in the basemap with the air photo and assign a spatial reference. Because the air photo was taken in the 19XX's some landscape features are expected to change, so we will have to carefully select features that have not changed over time! Some good examples of stable control points might be: 
 
 - intersections of major roads
 - airport runways
@@ -126,7 +146,7 @@ In this task you will learn how to integrate air photos with other spatial layer
 - the centres of deep lakes
 - easily identifiable natural features, islands, spits
 
-Some examples of not so good control points might be river banks, trees, the shorelines of shallow lakes, as these features are more likely to change or be difficult to identify in two images. 
+Some examples of not so good control points might be river banks, trees or the shorelines of shallow lakes, as these features are more likely to change or be difficult to identify in two images. 
 
 You can read more about the process of georeferencing here: https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm
 
@@ -161,4 +181,4 @@ To reduce error we can add more control points to the map, delete points with hi
 
 Find a region on the air photo where landcover has changed over time, this could be through urbanization, clear cuts etc. Zoom in and adjust the transparency of the air photo in the Appearance menu so that you can see the modern imagery underneath. 
 
-##### Q12: Take a screenshot of the historic air photo overlaying the modern imagery (see example below). In 1-2 sentences briefly describe the change taking place in the screenshot. 
+##### Q12: Take a screenshot of the historic air photo overlaying the modern imagery (adjust the transparency of the air photo so the basemap can be seen underneath). In 1-2 sentences briefly describe the change taking place in the screenshot. {.unnumbered} 

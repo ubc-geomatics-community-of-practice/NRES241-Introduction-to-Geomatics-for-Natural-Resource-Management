@@ -3,7 +3,7 @@ yml_content <- yaml::read_yaml("chapterauthors.yml")
 author <- yml_content[["lab2shortname"]][["author"]]
 ```
 
-# Geodatabase, data handling, and management {#gdb}
+# Geodatabases, data handling, and mapping {#gdb}
 
 Written by
 
@@ -13,7 +13,7 @@ cat(author)
 
 ## Lab Overview {.unnumbered}
 
-The aim of this lab is to design and build geodatabase, as well as organize its contents in an orderly manner. In addition, students will learn how to access the data they need in open-source geographic databases on the web and to process the data to obtain the desired study area.
+The aim of this lab is to design and build a geodatabase, as well as organize spatial data within it. We will review tools for cleaning raster and vector data. Finally students will learn how to create and export a map using good cartographic principles.
 
 ------------------------------------------------------------------------
 
@@ -21,22 +21,20 @@ The aim of this lab is to design and build geodatabase, as well as organize its 
 
 -   Learn how to design geodatabases based on topics and needs
 -   Familiar with building databases, organizing data, and linking data sets
--   Learn how to access data in open-source databases on the web
--   Understand the operation of simple cropping of data as needed
--   Get to know more geodatabases
+-   Create and export a map
 
 ------------------------------------------------------------------------
 
 ### Deliverables {.unnumbered}
 
--   Answers to 8 questions posted in the handout
--   Discussion question
+-   Answers to 10 questions posted in the handout
+-   Map with good cartographic design
 
 ------------------------------------------------------------------------
 
-## Task 1: Geodatabase designing and Geographical data collation {.unnumbered}
+## Task 1: Building a geodatabase and organizing data {.unnumbered}
 
-In this task, we will review what the geodatabase contains and learn how to design your own geodatabase based on project requirements and objectives in ArcGIS Pro.
+In this task, we will review what a geodatabase contains and learn how to design your own geodatabase based on project requirements and objectives in ArcGIS Pro. Geodatabases allow you to store many spatial data layers of different types in one place. You can edit data related to one project within a geodatabse and then easily share it with other people.
 
 **Step 1:** Start ArcGIS Pro. Under the New header, select Catalog. Name the project "Lab2". When ArcGIS Pro opens a new Catalog window, navigate to your Lab2 folder.
 
@@ -44,23 +42,19 @@ In this task, we will review what the geodatabase contains and learn how to desi
     knitr::include_graphics("images/02/02-catalog.png")
 ```
 
-**Step 2:** Download the zipped (.zip) lab data from GitHub, unzip it, and move it into your project folder, typically `C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab2.`
+**Step 2:** Download the zipped (.zip) lab data from GitHub, unzip it, and move it into your Lab2 project folder, which by default is `C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab2.`
 
-**Step 3:** Look at your shapefiles in ArcGIS Pro. You have seven shapefiles in your data folder. Three different kinds of icons are shown in front of shapefile names. These indicate what type of data (point, line, or polygon) is stored within a shapefile. For example, the **H_FIRE_PNT_point** shapefile is composed of points, the **GM_MetroVancouverBoundary** shapefile is composed of lines, and the **CLAB_NATPK_polygon** shapefile is a polygon.
+**Step 3:** Open the Catalog pane by clicking View > Catalog Pane. Under the folders tab you should see the folder with your lab 2 project. You have six shapefiles in the data folder. Three different kinds of icons are shown in front of shapefile names. These indicate what type of data (point, line, or polygon) is stored within a shapefile. For example, the **DBM_POP_PN_points** shapefile is composed of points, the **HWY_PRFLS_line** shapefile is composed of lines, and the **main_BC_Boundary_terrestrial_multipart** shapefile is a polygon.
 
-```{r 02-data, out.width= "75%", echo = FALSE}
+```{r 02-data, out.width= "40%", echo = FALSE}
     knitr::include_graphics("images/02/02-data.png")
 ```
 
-**Step 4:** Open a new Map. Under the Insert tab on the top ribbon, click New Map. Before adding any layer, you need to make sure that the coordinate system of the map gives an accurate projection of your study area. For this lab we will focus on BC, so we will use the coordinate system that best reproduces BC. In the Map interface, right-click "Map" in the contents, select properties, and in the pop-up window, select Coordinate Systems. If your "Current XY" shows **"NAD 1983 BC Environment Albers"**, you do not need to make any changes, if not, search for the above coordinate system in the search bar below, select it and then click "OK" to complete the changes.
+**Step 4:** Open a new Map. Under the Insert tab on the top ribbon, click New Map. Before adding any layer, you need to make sure that the coordinate system of the map gives an accurate projection of your study area. For this lab we will focus on BC, so we will use the coordinate system that best reproduces BC. In the Map interface, right-click "Map" in the contents, select properties, and in the pop-up window, select Coordinate Systems. Change the coordinate system to **"NAD 1983 BC Environment Albers"**.
 
 ```{r 02-map-prop, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/02/02-map-prop.png")
 ```
-
-Using the Catalog pane, right-click the **"BC_Boundary_Terrestrial_Mutipart.shp"** shapefile and select **Add to Map.** Do the same for other shapefiles. You may notice that the names of these files are not in a uniform format, and some words may be abbreviated. This can cause some inconvenience when dealing with data from different sources. Therefore, it is necessary to format the data names to be processed uniformly to improve efficiency. In general, you can standardize the names of data according to your preferences and further explain the meaning of the names through a data dictionary or editing metadata. You can rename the layer in your map by right-clicking it and selecting properties, then change the name in general. Note that this does not change its name in the folder.
-
-##### Q1: Choose the name you think is most appropriate for each shapefile. (Historical_fire_point, BC_boundary, Metro_Vancouver_boundary, National_parks, Highway_and_railway, Goat_inventory, Fire_threat_rate) {.unnumbered}
 
 **Step 5:** By default, the Lab2.gdb geodatabase created with the new project is set as the "default geodatabase". This means that whenever you run a tool or search for data, ArcGIS Pro will automatically default to the location of this geodatabase unless you specify otherwise. If you navigate to Project \> Databases in the Contents pane, you should see a geodatabase with a little house. The house indicates which geodatabase is set as the default geodatabase for the project. Only one geodatabase can be the default at any given time.
 
@@ -68,180 +62,152 @@ Using the Catalog pane, right-click the **"BC_Boundary_Terrestrial_Mutipart.shp"
     knitr::include_graphics("images/02/02-default.png")
 ```
 
-**Step 6:** You may find that not all shapefiles are related to fire. Categorizing different data according to topics can also significantly improve our work efficiency.
+Next, we will import our data into the Lab2 geodatabase. 
 
-##### Q2: Which data do you think are useful for a project on fires in BC? {.unnumbered}
-
-**Step 7:** Right-click the lab2.gdb in Catalog, select import, then select Feature Class(es). Select all the features you think are suitable for fire in BC in input features, then click "Run".
+**Step 6:** Right-click the lab2.gdb in Catalog, select import, then select Feature Class(es). Click the folder button and navigate to the Lab 2 data folder and select each layer, then click "Run".
 
 ```{r 02-import, out.width= "75%", echo = FALSE}
     knitr::include_graphics("images/02/02-import.png")
 ```
 
-You can also finish this step using the "Feature Class To Geodatabase" tool. To do this, open up the Geoprocessing pane by selecting Tools under the Analysis tab of the top ribbon. Then search "Feature Class To Geodatabase". Do the same thing as above, but you need to choose the Output Geodatabase as fire_bc.gdb manually.
+Once all the data is in the Lab2 geodatabase it should look like the following.
 
-```{r 02-analysis, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-analysis.png")
+```{r 02-analysis, out.width= "40%", echo = FALSE}
+    knitr::include_graphics("images/02/02-gdb-data.png")
 ```
+
+**Step 7:** Drag and drop all the data from the geodatabase to the map. You may notice that the names of these files are not in a uniform format, and some words may be abbreviated. This can cause some inconvenience when dealing with data from different sources. Therefore, it is necessary to format the data names to be processed uniformly to improve efficiency. In general, you can standardize the names of data according to your preferences and further explain the meaning of the names through a data dictionary or metadata. 
+
+You can rename layers in your map by right-clicking it in the Contents pane and selecting properties, then change the name in the general tab. Note that this does not change the name of the original data. Rename each of the layers to be more descriptive and for easier organization of your map. 
+
+When you name your data, it is good practice to use underscores (_) instead of spaces. 
+
+##### Q1: Based on the filenames and attributes of each layer, choose a name you think is most appropriate for each shapefile from the following list: Canada_Cities, Historical_fire, highways, BC_boundary, BC_fire_districts. {.unnumbered}
+
+**Take a screenshot of the Catalog pane (right side of screen) showing your home folder and the Lab 2 geodatabase with all of the required layers**
 
 ------------------------------------------------------------------------
 
 ## Task 2: Vector Data Processing {.unnumbered}
 
-Next we will practice processing vector data to make it usable.
+**Step 1:** Next we will practice processing vector data contained in the new geodatabase. It is good practice to copy and edit data within a geodatabase so that the original data does not get altered accidentally. 
 
-**Step 1:** Sometimes, the data you download will not fit the needs for direct use. Therefore, you need to do some simple processing of the data to make it meet your needs. In this section, we process the directly downloaded raw vector and raster data separately to make it easy to use.
+First, you will notice that the Canada_cities layer contains cities across all of Canada. We will clip this layer to the BC boundaries. On the top ribbon click View > Geoprocessing > search for the Clip tool. In the **Input Features or Dataset** field select the layer you want to clip. In the **Clip Features** field select the layer that you want to clip the input features to. Name the new layer **BC_cities** and save it to the Lab 2 geodatabse. 
 
-**Step 2:** Here, we only examine fires after 2010. Therefore, we want a feature class that only contains data after 2010(including 2010). To do this, first right-click on the "Historical_fire_point" layer in the context, select "Data" and then select "Export Features".
+##### Q2: What layer did you use as the Input Features and Clip Features? {.unnumbered} 
 
-You can notice that the first two lines in the opened dialog box are already filled in automatically. Name the exported file as "Historical_fire_point_2010". Then, select "FIRE_YEAR" in the drop-down list below, then select "is greater than or equal to", and select "2010". Click "OK".
+**Step 2:** Next, we will create a new shapefile of fires that occurred after 2010. Right-click on the "Historical_fires" layer in the Contents pane, select "Data" and then select "Export Features".
+
+The first two lines in the opened dialog box are already filled in automatically. Name the exported file as "Historical_fires_2010". Then, select "FIRE_YEAR" in the drop-down list below, then select "is greater than or equal to", and select "2010". Click "OK".
 
 A new point feature class appears in your geodatabase, which you may need to refresh to see. It is also automatically added to the contents pane, and you can right-click on it and select the attribute table to view the new data in detail.
 
-```{r 02-export, out.width= "75%", echo = FALSE}
+```{r 02-export, out.width= "40%", echo = FALSE}
     knitr::include_graphics("images/02/02-export.png")
 ```
 
-A brief description of the tool can be obtained by clicking on the question mark on the upper right-hand side. This is a good way to understand how the tool should be used.
+Open the attribute table of the new 2010 fires layer. You can generate simple summary statistics for each attribute by right-clicking on a column > Statistics. You can also order attributes from largest to smallest by right clicking on a column > Sort Descending (Sort ascending sorts smallest to largest). Use these tools to answer the following questions. 
 
-##### Q3: How many points are included in the new feature class? What is the most common cause of fire in the selected features (except Unknown)? How many hectares was the size of the largest fire in the selected features? What are the most common types of fires in the selected features (except Unknown)? {.unnumbered}
+##### Q3: How many polygons are included in the 2010 fires shapefile? {.unnumbered}
 
-------------------------------------------------------------------------
+##### Q4: What is the most common cause of fire? How many hectares was the size of the largest fire? {.unnumbered}
 
-## Task 3: Raster Data Download {.unnumbered}
+##### Q5: What year had the most fires, and how many were there? {.unnumbered}
 
-**Step 1:** Downloading data from open-source sites is not so easy, you have to learn to search and pick the type of data you need, the area, and the time. Let's try one of the sites provided by NASA as an example. First, open the home page of the website (<https://lpdaac.usgs.gov/>). Then select Data in the top blue column and select Search Data Catalog in the drop-down list that appears. Type "burned" in the search box of the newly opened website and this will return several results. Select the product "MCD64A1 v006".
+We can also **Summarize** one attribute by another. Right-click on the **FIRE_YEAR** column in the Historical fires 2010 attribute table, then select **Summarize**. In the Field drop-down menu select **SIZE_HA** and set Statistic type to **Sum**. Click OK. 
 
-```{r 02-earth-data, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-earth-data.png")
-```
+This will create a new attribute table at the bottom of the Contents Pane, that shows total burned area for each year in hectares. 
 
-Then select Data in the top blue column and select Search Data Catalog in the drop-down list that appears.
+##### Q6: What year had the highest burned area? How many hectares were burned? {.unnumbered}
 
-```{r 02-data-catalog, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-data-catalog.png")
-```
+**Step 3:** Open the attribute table of the BC_fire_districts layer. The MFFRCNTRNM  attribute (very helpfully named), contains the name of each administrative fire centre. In the next step, we will spatially join this information to the BC_Cities layer, so that each city has an attribute showing which fire district it is in. 
 
-Type "burned" in the search box of the newly opened website and this will return several results. Select the product "MCD64A1 v006".
+Right click on the BC_Cities layer > Joins and Relates > Spatial Join. Set the fire districts layer as the **Join Features** and name the new feature class BC_cities_join. Set **Join Operation** to Join one to one. This will join one city to one fire district. Scroll through the **Match Options**. These determine how the target features are matched to the join features. Select **Within**, this will join cities with the fire district they are completely within. Click OK. 
 
-```{r 02-search, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-search.png")
-```
+##### Q7: What fire centre and fire zone is the town of Merrit located in? {.unnumbered}
 
-**Step 2:** You will see a page as shown below, select access data to get the data. You will see many options, here we try to use the "NASA Earthdata Search" tool. This is a more intuitive way, but of course you are encouraged to try other ways as well.
+Use the tools from this section to conduct your own analysis and answer the following questions: 
 
-```{r 02-modis, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-modis.png")
-```
+##### Q8: Which fire centre instersects with the most fires from 2010 onwards? How many total fires were there? (HINT: Think carefully about the Join Operation and Match Options.) {.unnumbered}
 
-You will see many options, here we try to use the "NASA Earthdata Search" tool. This is a more intuitive way, but of course you are encouraged to try other ways as well. Note that please click on the download logo under the "Download Data" column to continue, rather than clicking on the tool name, which will lead you to the home page of the tool.
+##### Q9: Which fire centre had the highest total burned area in ha? The highest mean fire size? (Exclude the Null result, as this represents two fires that were mapped outside of the BC boundaries.) {.unnumbered}  
 
-```{r 02-access, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-access.png")
-```
-
-**Step 3:** The newly opened page is shown below. In order to download the data, you will usually need to log in, click on "Earthdata Login" in the top right corner of the screen to log in. For most people, you may need to register for an account. After registering and logging in, you will be redirected back to this screen. Click on the product that has been selected "MODIS/Terra+Aqua Direct Broadcast Burned Area Monthly L3 Global 500m SIN Grid V006", which is the same as the product that was just displayed on the web page.
-
-```{r 02-collection, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-collection.png")
-```
-
-**Step 4:** You can see that a very large number of results appear, and this is all the data from the beginning of the collection of this product until now. We are only looking at data from a certain period this time, so we need filters to help us. To do this, select the data from August 1, 2018 to August 31, 2018 in the temporal column of the filter on the left.
-
-```{r 02-filter, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-filter.png")
-```
-
-##### Q4: How many matching granules were obtained after using the filter? {.unnumbered}
-
-**Step 5:** Take a closer look at the name of the product, it is a dataset that covers a global scope. So, let's go ahead and select out the regions that contain BC. Then use the button on the right side of the screen to draw a graph containing the entire BC province. Don't worry about drawing too big, we will cut out the BC province later.
-
-```{r 02-aoi, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-aoi.png")
-```
-
-After doing this, you can see a significant reduction in the number of results. Then you can click "Download All" in the bottom right corner of the dialog box. You will see the dialog box change to the one shown below, go ahead and click "Download Data".
-
-```{r 02-download, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-download.png")
-```
-
-You will be directed to a new website where all the files are listed as shown in the image below. Since we don't have many files, you can download them directly by clicking on these blue links one by one. Put these downloaded files into a folder called "Burned Area" and place it in the Lab2 folder.
-
-```{r 02-download-status, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-download-status.png")
-```
+##### Q10: Do you see any patterns in the total annual burned area between 1920 and the present day? Do some research and discuss what do you think could be driving these patterns. Include a Line Chart to support your answer. Answer in less than 200 words. (HINT: To answer this question first create a summary table, then review Lab 1 for instructions on how to create a Line Chart using the data from this table.) {.unnumbered}
 
 ------------------------------------------------------------------------
 
-## Task 4: Raster Data Processing {.unnumbered}
+## Task 3: Create a map {.unnumbered}
 
-**Step 1:** Add the data from the Burned Area folder to the map to view them (Or you can use data that we offered to you in "Burned" folder). A dialog box may pop up when you join, select yes to continue. Note the range of these data, which will be needed later when selecting parameters for the tool. Right-click on the layer file in contents and select properties to see more information. Then in the popup dialog box, select the source tab to view raster information.
+In this task we will use the spatial layers we generated in the previous step to create a map showing good cartographic principles. 
 
-##### Q5: How many bands are there for each raster data? {.unnumbered}
+**Step 1:** First we will assemble all the required layers in the Map. Make sure you have the following layers loaded in the Contents pane (remove all other layers by right-clicking > Remove: 
 
-**Step 2:** The raster data containing the BC fires was divided into several separate parts and we need to merge them into a larger raster data. We need a specific tool to help us with this operation. Under the Analysis tab on the top ribbon, click Tools. This will open the "Geoprocessing" tab (usually located on the right side of your screen). Then, in the search bar at the top, type "Mosaic". This will return many search results, select "Mosaic To New Raster".
+- Historical Fires (2010 onwards)
+- BC highways
+- BC cities
 
-```{r 02-geoprocessing, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-geoprocessing.png")
+Change the symbology of the historical fires polygon so that fires are color coded by the **FIRE_YEAR** attribute. Choose an appropriate color scheme to show which fires are most recent. You may also change the symbology of the highwats and cities layers. 
+
+Next, change the basemap using Map (top ribbon) > Basemap. Experiment with the different options and pick one that is aesthetically pleasing to you. 
+
+**Step 2:** Once you have set the basemap and symbology for all the layers click **Insert** > **New Layout**. Then choose the size of the layout. For compatibility with most printers select **Letter 8.5x11**. This will open a new Layout window where you will construct your final map. 
+
+```{r 02-layout, echo = FALSE}
+    knitr::include_graphics("images/02/02-layout.png")
 ```
 
-**Step 3:** This will bring it to the tool's window, which contains many parameters to be filled for running the tool. Parameters with red asterisks are required, those without are optional. First, for input raster, we click on the folder behind it, find the Burned Area folder and select all the files in it. Then, select Lab2.gdb as output location, and name the new raster as "Burn_Data". Use the drop-down list to select the same spatial reference for raster as for BC_Boundary.
+In the new Layout, select **Insert** > **Map Frame**. Select Map1, then drag and draw where the data will be displayed on the page. Leave room on the sides for latitude/longitude labels. 
 
-```{r 02-mosaic, out.width= "40%", echo = FALSE}
-    knitr::include_graphics("images/02/02-mosaic.png")
+Once the map extent is drawn, you can zoom in/out and reposition the map within the map frame by right clicking on **Map Frame** in the Contents pane > Activate. Adjust the Map Frame so that you can see the extent of BC. When you are done click the back arrow to go back to the layout. 
+
+**Step 3:** Every map you create should have the following elements: 
+
+- Scale bar
+- North arrow
+- Legend
+- Title
+
+For this lab we will also include an inset map, although this is not always necessary.
+
+**Your final map will also be graded based on the clarity of the layout, so take your time to make a good looking map!**
+
+First, add a scale bar and north arrow in the Insert tab (top ribbon). Use the drop down arrows to select a style, you can also customize the  map elements by right clicking on them in the Contents pane > Properties. 
+
+```{r 02-elements, out.width= "75%", echo = FALSE}
+    knitr::include_graphics("images/02/02-elements.png")
 ```
 
-The following figure shows the specific description of the Pixel Type for this tool from the official ArcGIS Pro website (<https://pro.arcgis.com/en/pro-app/2.8/tool-reference/data-management/mosaic-to-new-raster.htm>).
+Open the scale bar properties and change the Map Units and Label Text from Miles to Kilometers. Examine the other options in this tab and experiment with changing font size, the color or the bar, etc. 
 
-```{r 02-type, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-type.png")
+Next, add a title using the add text button.
+
+Next, we will remove the ESRI basemap credits from the map. ESRI does not let you remove them completely, but we can redraw them outside the layout so they don't get plotted. Insert > Dynamic Text > Service Layer Credits. Move the credits outside the layout extent. 
+
+Your layout should now look something like the following: 
+
+```{r 02-example, out.width= "75%", echo = FALSE}
+    knitr::include_graphics("images/02/02-example.png")
 ```
 
-##### Q6: Based on the description of the pixel type parameter and the retrieval of the data, which is the most suitable pixel type for our new raster and why? {.unnumbered}
+**Step 4:** Next, insert a legend. You can rename the items in the legend by renaming the layers in the Contents pane. Ensure all the layers are displayed in the legend and have descriptive titles. Open the Legend properties and experiment with the customization options. Here is a great resource for some of these options: https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/tips-and-tricks-for-working-with-legends-in-arcgs-pro/ 
+Legend customization in ArcGis Pro can be confusing and unintuitive! If you are struggling to find the right box/menu to edit a specific part of the legend, you can right-click on the legend > convert to graphics. This will separate each part of the legend into editibale chunks, and can be helpful for adjusting text size of different headings and labels and for resizing elements of the legend.
 
-Similarly, you may wish to know what the Mosaic Operator and the options contained therein all mean. You can get an explanation by browsing this page or by clicking on the blue hints in front of the parameters.
+Here is an example legend (note that yours does not have to look exactly the same): 
 
-```{r 02-hint, out.width= "40%", echo = FALSE}
-    knitr::include_graphics("images/02/02-hint.png")
+```{r 02-legend, out.width= "40%", echo = FALSE}
+    knitr::include_graphics("images/02/02-legend.png")
 ```
 
-```{r 02-mosaic-operations, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-mosaic-operations.png")
+**Step 5:** Finally, we will add an inset map to show where our data is in relation to the rest of Canada. Insert > **New Map**. Select a different basemap than the main map. Go back to the Layout , insert a new Map Frame and Select Map1. Rightclick on the new Map Frame 1 in the Contents > Activate. Re-position the inset map to show the extent of Canada. 
+
+Click on **Map Frame 1** then in the top ribbon select **Extent Indicator** > **Map Frame** (this is the BC fire map.) This will add a box on the inset map showing the extent of the BC fires data.  
+
+```{r 02-Inset, out.width= "95%", echo = FALSE}
+    knitr::include_graphics("images/02/02-Inset.png")
 ```
 
-In this case, there is no overlap between our data so we can leave this parameter unselected and leave it as default. But this parameter is very important for this tool, and in future work you may need to save the overlap you want with these options.
+**Step 6:** You are now ready to export the final map! Go to **Share** on the top ribbon > **Export Layout**.   
 
-Note: You can find specific descriptions of this and many more tools provided by ESRI at this site, which is very helpful for learning and exploring the use of more tools and functions.
+Save the map a PNG (easier to copy and paste in a Word document) or PDF in a folder you will be able to find. Make sure the Resolution is set to at least 300 DPI. 
 
-Select the pixel type you think is most appropriate and fill 1 in the blank at the number of bands. Finally, click the "Run" button in the bottom right corner. Then a layer like this should appear on your map.
-
-```{r 02-map, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-map.png")
-```
-
-Note: The size and shape of the graph may vary, due to the amount of data downloaded.
-
-**Step 4:** As you can see, the newly synthesized raster data is significantly larger than the BC province, and this write section is redundant. Therefore, we have to delete this part of the data. However, the burn data is a raster data and we have to take a different approach than above.
-
-**Step 5:** We need to crop the burning data with the boundary data of BC, which will use the "Extract By Mask" tool. You can open this tool in the same way as above. Then follow the requirements below to fill each parameter and you can quickly select the layer to add to the map by clicking on it.
-
--   **Input raster:** Burn_Data
--   **Input raster or feature mask data:** BC_Boundary
--   **Output raster:** Burn_BC
-
-```{r 02-bc-map, out.width= "75%", echo = FALSE}
-    knitr::include_graphics("images/02/02-bc-map.png")
-```
-
-Note: The colors are automatically set by ArcGIS Pro, so your colors may be different from those shown above.
-
-##### Q7: What are the maximum and minimum values of Burn_BC? {.unnumbered}
-
-------------------------------------------------------------------------
-
-## Task 5: Design your own geodatabase {.unnumbered}
-
-In this section you will, pick a topic of interest, design what needs to be included in your geodatabase, then start building your own geodatabase, then share your geodatabase
-
-##### Q8: Earlier, we learned how to design a geodatabase for BC Wildfire. Now, try to identify a topic that interests you and conceptualize what kind of data and possible data types should be included in your geodatabase. In 200 words or less describe your topic and the data included in your geodatabase. You are also encouraged to share the URLs of websites that you think might contain the needed data. {.unnumbered}
+**Include your map in the final deliverables.**

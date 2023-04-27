@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lab 1 Working with Air Photos | 06-air-photos.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lab 1 Working with Air Photos | 06-air-photos.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lab 1 Working with Air Photos | 06-air-photos.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Open Geomatics Community of Practice</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#air-photos"><i class="fa fa-check"></i><b>1</b> Working with Air Photos</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#data"><i class="fa fa-check"></i>Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-1-measurements-from-air-photos"><i class="fa fa-check"></i>Task 1: Measurements from air photos</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-2-interpreting-air-photos"><i class="fa fa-check"></i>Task 2: Interpreting air photos</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-3-georeferencing"><i class="fa fa-check"></i>Task 3: Georeferencing</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="air-photos" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lab 1</span> Working with Air Photos<a href="#air-photos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Written by
+Hana Travers-Smith</p>
+<div id="lab-overview" class="section level2 unnumbered hasAnchor">
+<h2>Lab Overview<a href="#lab-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Geographic Information Centre at (GIC) (<a href="http://gic.geog.ubc.ca/" class="uri">http://gic.geog.ubc.ca/</a>) at UBC hosts the largest collection of aerial photos from British Columbia, and provides the public with services for accessing those aerial photos. It is also home to the University Aerial Photograph Collection, which consists of over 2 million air photos. In our labs will be using some photos from the GIC.</p>
+<p><strong>For this lab it is recommended that you download Google Earth to your laptop or tablet.</strong></p>
+<hr />
+<div id="learning-objectives" class="section level3 unnumbered hasAnchor">
+<h3>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Understand map scales and relation to ground area</li>
+<li>Learn techniques for identifying land use and land cover on aerial photography</li>
+<li>Practice georeferencing imagery in ArcGIS Pro</li>
+</ul>
+<hr />
+</div>
+<div id="deliverables" class="section level3 unnumbered hasAnchor">
+<h3>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Answers to the questions posed in the handout</li>
+<li>Photos of the topography recreated in the Virtual Sandbox</li>
+<li>A georeferenced air photo displayed in a GIS</li>
+</ul>
+<hr />
+</div>
+<div id="data" class="section level3 unnumbered hasAnchor">
+<h3>Data<a href="#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data for this lab includes historic air photos given to you in class. Note you cannot take the air photos home with you, so be sure to use your time in class wisely to complete all tasks. You will also be given a digital air photo, which you will georeference in ArcGIS Pro.</p>
+<hr />
+</div>
+</div>
+<div id="task-1-measurements-from-air-photos" class="section level2 unnumbered hasAnchor">
+<h2>Task 1: Measurements from air photos<a href="#task-1-measurements-from-air-photos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The GIC aerial photo collection includes federal, provincial and private air photos dating from 1922 for many areas in BC and some parts of the Yukon. The photos form a historical collection, mainly covering urban areas, although many rural regions have some coverage. While the majority of the air photos held by the GIC are vertical black and white photos, some color and oblique air photos (from the mid-1940s) are available for selected areas in BC. The standard format for a vertical aerial photo-graph contact print is 25 cm x 25 cm (10” x 10”). Photos obtained by the government for regular inventory programs are typically provided at scales of 1:15,000 to 1:40,000. Each photo is cross-referenced to an index map or flight report that indicates the flight path, flight altitude, date, and time of exposure. The air photographs are filed according to air photo roll numbers and are located in compact storage units.</p>
+<p>Each file is coded by flightline following this format:</p>
+<ul>
+<li><strong>BC</strong> or <strong>BCB</strong> (B added after 1989) = British Columbia government, black and white</li>
+<li><strong>BCC</strong> = BC government color (after 1970’s)</li>
+<li><strong>A</strong> = Federal government</li>
+</ul>
+<p>and then by a 4 or 5 digit number (after 1977, the first two numbers correspond to the date of the photography), then a roll number circled for every 5th or 10th photo. All photos are numbered se-quentially, usually from 001, and increase in the direction of the flight. Sequential numbers (e.g. 009, 010) along a flight line indicate stereo pair coverage, meaning that the photos have 60% overlap and can be viewed in 3D.</p>
+<p><strong>Step 1:</strong> First, we will practice finding air photo metatdata (i.e. information relating to location, map scale, year of acquisition etc..) from the GIC website: <a href="http://a100.gov.bc.ca/pub/wimsi/AirphotoSearch" class="uri">http://a100.gov.bc.ca/pub/wimsi/AirphotoSearch</a></p>
+<p><img src="images/06/06-finder.PNG" width="80%" /></p>
+<p>Pick one of the air photos from the “Urban” category.</p>
+<p>Navigate to the <strong>Roll and Frame</strong> tab and search for the photo using the photo roll frame series and frame number found on the top right of the photo. Select <strong>View in Google Earth</strong> - this will automatically download a kmz. file to your computer. Click on the file to open it in Google Earth. The .kmz will show you the location of the air photo. Clicking on the camera icon will show metatdata related to the photo.</p>
+<p><em>If you do not have access to Google Earth you can get the lat/long of the photo using the Search button instead. You type these into Google or Bing Maps on your device to get the location of the photo.</em></p>
+<div id="q1.-what-year-was-the-photo-taken-what-is-the-nominal-scale-of-the-photo-and-focal-length-of-the-camera" class="section level5 unnumbered hasAnchor">
+<h5>Q1. What year was the photo taken? What is the nominal scale of the photo and focal length of the camera?<a href="#q1.-what-year-was-the-photo-taken-what-is-the-nominal-scale-of-the-photo-and-focal-length-of-the-camera" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q2.-what-town-is-shown-in-the-photo" class="section level5 unnumbered hasAnchor">
+<h5>Q2. What town is shown in the photo?<a href="#q2.-what-town-is-shown-in-the-photo" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q3.-for-each-of-the-following-scales-what-is-the-equivalent-ground-area-in-hectares-ha-for-a-region-covering-5x-5-hint-1-2.54-cm-1-ha-10000-m2-110000.-112000-130000" class="section level5 unnumbered hasAnchor">
+<h5>Q3. For each of the following scales, what is the equivalent ground area in hectares (ha) for a region covering 5”x 5” (Hint: 1” = 2.54 cm; 1 ha = 10,000 m<sup>2</sup>): 1:10,000. 1:12,000, 1:30,000<a href="#q3.-for-each-of-the-following-scales-what-is-the-equivalent-ground-area-in-hectares-ha-for-a-region-covering-5x-5-hint-1-2.54-cm-1-ha-10000-m2-110000.-112000-130000" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 2:</strong> The following equation is used to calculate the nominal scale of an air photo.</p>
+<p><span class="math inline">\(\ S_{p} = f/(H-h_{avg})\)</span></p>
+<p>where f is the focal length of the camera, H is the height of the aircraft above sea level and H<sub>avg</sub> is the average elevation of the terrain in the photo.</p>
+<p>For example: If f = 305 mm, H = 7000 m, h<sub>avg</sub> = 700 m</p>
+<p><span class="math inline">\(\ S_{p} = 0.305 / (7000 - 700)\)</span></p>
+<p><span class="math inline">\(\ S_{p} = 0.00004841\)</span></p>
+<p>Note for the above calculation we first convert focal length in mm to m.</p>
+<p>Next to get the nominal scale in terms of 1:XXXX we need to convert 0.00004 to a fraction.</p>
+<p>First, rewrite 0.00004 as <strong>4/100000</strong>. (i.e. put the 4 in the numerator and then a 1 with the same number of 0’s as decimal places in the denominator).</p>
+<p>Then divide 100,000 by 4 to get the nominal scale of 1:25000.</p>
+<p>Answer the following questions for the air photo pair: <strong>BCB93024 124</strong> and <strong>BCB93024 123</strong></p>
+</div>
+<div id="q4.-what-year-were-the-photos-taken-what-is-the-focal-length-of-the-camera-what-is-the-scale-of-the-photos" class="section level5 unnumbered hasAnchor">
+<h5>Q4. What year were the photos taken? What is the focal length of the camera? What is the scale of the photos?<a href="#q4.-what-year-were-the-photos-taken-what-is-the-focal-length-of-the-camera-what-is-the-scale-of-the-photos" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q5.-what-is-the-name-of-the-mountain-range-in-the-photos" class="section level5 unnumbered hasAnchor">
+<h5>Q5. What is the name of the mountain range in the photos?<a href="#q5.-what-is-the-name-of-the-mountain-range-in-the-photos" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q6.-the-scale-given-in-the-image-metadata-uses-the-average-elevation-of-the-photo.-why-would-a-single-number-representing-photo-scale-be-problematic-in-this-terrain" class="section level5 unnumbered hasAnchor">
+<h5>Q6. The scale given in the image metadata uses the <strong>average</strong> elevation of the photo. Why would a single number representing photo scale be problematic in this terrain?<a href="#q6.-the-scale-given-in-the-image-metadata-uses-the-average-elevation-of-the-photo.-why-would-a-single-number-representing-photo-scale-be-problematic-in-this-terrain" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q7.-the-highest-peak-in-the-photo-is-at-2030-m.-what-is-the-nominal-scale-for-a-point-located-at-the-summit-assuming-the-aircraft-flew-at-an-altidue-of-6393-m-hint-remember-to-convert-the-focal-length-of-the-camera-in-mm-to-m" class="section level5 unnumbered hasAnchor">
+<h5>Q7. The highest peak in the photo is at 2030 m. What is the nominal scale for a point located at the summit, assuming the aircraft flew at an altidue of 6393 m? (Hint: Remember to convert the focal length of the camera in mm to m!)<a href="#q7.-the-highest-peak-in-the-photo-is-at-2030-m.-what-is-the-nominal-scale-for-a-point-located-at-the-summit-assuming-the-aircraft-flew-at-an-altidue-of-6393-m-hint-remember-to-convert-the-focal-length-of-the-camera-in-mm-to-m" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<hr />
+</div>
+</div>
+<div id="task-2-interpreting-air-photos" class="section level2 unnumbered hasAnchor">
+<h2>Task 2: Interpreting air photos<a href="#task-2-interpreting-air-photos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Step 1:</strong> Select an air photo pair with mountainous topography. Get your TA to help you view them in 3D using the stereoscope.</p>
+<div id="q8.-using-the-air-photos-and-google-earth-as-a-reference-try-to-recreate-the-topography-in-the-virtual-sandbox.-include-a-photo-of-one-of-the-air-photos-and-a-photo-of-the-sandbox-in-your-final-deliverables." class="section level5 unnumbered hasAnchor">
+<h5>Q8. Using the air photos and Google Earth as a reference, try to recreate the topography in the Virtual Sandbox. Include a photo of one of the air photos and a photo of the sandbox in your final deliverables.<a href="#q8.-using-the-air-photos-and-google-earth-as-a-reference-try-to-recreate-the-topography-in-the-virtual-sandbox.-include-a-photo-of-one-of-the-air-photos-and-a-photo-of-the-sandbox-in-your-final-deliverables." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 2:</strong> Select an air photo with urban/natural features. Note the roll and photo numbers.</p>
+</div>
+<div id="q9.-on-your-selected-photo-list-at-least-4-land-cover-types-i.e.-closed-forest-open-forest-urban-water-agricultural-herbaceous-shrub-and-2-3-specific-urban-features-i.e.-roads-buildings-docks-seismic-lines-etc-present-in-the-photo." class="section level5 unnumbered hasAnchor">
+<h5>Q9. On your selected photo list at least 4 land cover types (i.e. closed forest, open forest, urban, water, agricultural, herbaceous, shrub) and 2-3 specific urban features (i.e. roads, buildings, docks, seismic lines etc…) present in the photo.<a href="#q9.-on-your-selected-photo-list-at-least-4-land-cover-types-i.e.-closed-forest-open-forest-urban-water-agricultural-herbaceous-shrub-and-2-3-specific-urban-features-i.e.-roads-buildings-docks-seismic-lines-etc-present-in-the-photo." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q10.-for-each-of-the-land-cover-types-and-features-you-listed-in-the-previous-question-describe-how-you-can-identify-them-in-the-air-photos.-how-do-they-vary-in-terms-of-texture-shade-and-shape" class="section level5 unnumbered hasAnchor">
+<h5>Q10. For each of the land cover types and features you listed in the previous question, describe how you can identify them in the air photos. How do they vary in terms of texture, shade and shape?<a href="#q10.-for-each-of-the-land-cover-types-and-features-you-listed-in-the-previous-question-describe-how-you-can-identify-them-in-the-air-photos.-how-do-they-vary-in-terms-of-texture-shade-and-shape" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 3:</strong> Next, we will use a dot-grid to estimate the ground area covered by features in the air photo. Get a transparent dot-grid from your TA and measure the distance between the dots.</p>
+<p>Select one of the forest or urban air photos and place the dot-grid on top of the air photo. Take a photo of the air photo and dot grid.</p>
+<p>Select 3 irregularly shaped features in the photo, these could be lakes, cut-blocks, parks, property lines etc…</p>
+<p><strong>Step 4:</strong> Use the dot-grid to estimate how many cells cover each feature. Then look up the photo scale on the GIC website. Use the following example to help you calculate the ground area of each feature in m2.</p>
+<p>In this example imagine the dots are spaced 5 cm apart. A single cell on the dot grid would cover 5x5cm = 25cm^2. If you estimate that a feature on the air photo covers 10.5 cells and the scale of the photo is 1:20,000 then we would convert 10.5 cells to ground area as follows…</p>
+<p>First calculate the area of the cells:</p>
+<p><span class="math inline">\(\ 10.5 * 25 cm^2 = 262.5 cm^2\)</span></p>
+<p>Next, convert this to ground area in m using the scale of the air photo:</p>
+<p><span class="math inline">\(\ 262.5cm^2 * 20,000 = 5,250,000 cm^2 / 10,000 = 525m^2\)</span></p>
+<p><strong>Step 5:</strong> Record the ground area of each feature. On the photo you took of the air photo and dot grid use a photo editing program (ie MS Paint) to outline the features you chose. Add labels A,B,C to each feature. Include the image in your final deliverables along with the estimated ground area of each feature and its associated label.</p>
+<hr />
+</div>
+</div>
+<div id="task-3-georeferencing" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Georeferencing<a href="#task-3-georeferencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this task you will learn how to integrate air photos with other spatial layers in a GIS. To do this we need to add <strong>spatial reference information</strong> to the digital image so that it can be displayed correctly on a map and be overlaid with other data sets. In this process you will identify common features between a base map which has spatial reference information, with the air photo, which does not. A geographic transformation will be used to align the points in the basemap with the air photo and assign a spatial reference. Because the air photo was taken in the 19XX’s some landscape features are expected to change, so we will have to carefully select features that have not changed over time! Some good examples of stable control points might be:</p>
+<ul>
+<li>intersections of major roads</li>
+<li>airport runways</li>
+<li>buildings, piers, bridges, other permanent structures</li>
+<li>the centres of deep lakes</li>
+<li>easily identifiable natural features, islands, spits</li>
+</ul>
+<p>Some examples of not so good control points might be river banks, trees or the shorelines of shallow lakes, as these features are more likely to change or be difficult to identify in two images.</p>
+<p>You can read more about the process of georeferencing here: <a href="https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm" class="uri">https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm</a></p>
+<p><strong>Step 1:</strong> The file XXXXX.tif is a high-resolution digital scan of photo <strong>XXXXXXX</strong>. Create a new project in ArcGIS Pro and open a New Map. Drag and drop the air photo into ArcGIS Pro. Notice that because there is no coordinate information associated with the image, ArcGis plots the photo at the coordinates 0.0S, 0.0.0E.</p>
+<p>First, set the cooridnate system of the Map to <strong>NAD 1983 UTM Zone 10</strong>. Right click Map in the Contents Pane &gt; Properties &gt; Coordinate Systems.</p>
+<p><strong>Step 2:</strong> In the Map Pane navigate to the corresponding region shown in the air photo. We will be using the basemap in ArcGIS Pro as the reference imagery. In the top Ribbon select Map &gt; Basemap and change the basemap to Imagery or Imagery Hybrid.</p>
+<p>On the top ribbon go to Imagery &gt; Georeferencing &gt; Fit to Display. This will plot the air photo in the Map pane. Next, use the Move, Scale and Rotate tools to approximately line up the air photo with the underlying basemap. Be sure to zoom in and try and identify common features between the air photo and the basemap. Note, this will not result in a perfect fit, but try and get reasonably close. When you done, click on the map outside the air photo to close the Move, Scale, Rotate tools.</p>
+<p><strong>Step 3:</strong> To georeference the image we will be adding <strong>control points</strong> in the reference basemap and finding the corresponding points in the air photo. In the example below we will use XXXX as the first control point.</p>
+<p>Turn off the air photo layer in the Contents pane. Zoom in on the basemap to the control point. On the top ribbon choose Add Control Point. Click on the basemap to set the <strong>source location</strong>, next turn on the air photo and click on the corresponding location on the air photo to set the <strong>target location</strong>.</p>
+<p>Remember, Source = reference basemap and Target = air photo.</p>
+<p>Repeat this process and set 4-5 more control points. Try to distribute them across the entire image, a good practice is to try and choose points in each of the four corners and one or two in the centre of the image.</p>
+<p><strong>Step 4:</strong> You need a minimum of three points to apply a geographic transformation. The transformation will automatically warp the air photo to try and minimize the distance between the source and the target locations of each control point.</p>
+<p>Click Transformation on the top ribbon and select <strong>First Order Polynomial</strong> &gt; Apply.</p>
+<p>Examine the Control Point table. For each control point Residual X indicates the difference in m between the source and target in the X direction after applying the transformation and Residual Y indicates the difference in the Y direction.
+The overall error is shown in the pop-up menu on the Map where Forward error is average difference in meters and Inverse is the number of pixels.</p>
+<p>To reduce error we can add more control points to the map, delete points with high error or change the transformation type. Add 8-10 control points (total), <strong>aim for Forward RMS less than 15 m.</strong></p>
+<div id="q11-once-you-have-achived-a-forward-rms-15-m.-take-a-screenshot-of-your-control-point-table-and-include-it-in-the-final-deliverables." class="section level5 unnumbered hasAnchor">
+<h5>Q11: Once you have achived a Forward RMS &lt; 15 m. Take a screenshot of your Control Point table and include it in the final deliverables.<a href="#q11-once-you-have-achived-a-forward-rms-15-m.-take-a-screenshot-of-your-control-point-table-and-include-it-in-the-final-deliverables." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 5:</strong> To save the georeferenced air photo click <strong>Save</strong> and close the Georeferencing menu. You will now be able to overlay the air photo with the reference basemap and any other spatial data.</p>
+<p>Find a region on the air photo where landcover has changed over time, this could be through urbanization, clear cuts etc. Zoom in and adjust the transparency of the air photo in the Appearance menu so that you can see the modern imagery underneath.</p>
+</div>
+<div id="q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-adjust-the-transparency-of-the-air-photo-so-the-basemap-can-be-seen-underneath.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="section level5 unnumbered hasAnchor">
+<h5>Q12: Take a screenshot of the historic air photo overlaying the modern imagery (adjust the transparency of the air photo so the basemap can be seen underneath). In 1-2 sentences briefly describe the change taking place in the screenshot.<a href="#q12-take-a-screenshot-of-the-historic-air-photo-overlaying-the-modern-imagery-adjust-the-transparency-of-the-air-photo-so-the-basemap-can-be-seen-underneath.-in-1-2-sentences-briefly-describe-the-change-taking-place-in-the-screenshot." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -38,20 +38,15 @@ Oftentimes, you will need to collect and display your own data. There are many p
 
 ## Task 1: Preparing for GNSS Data Collection {-}
 
-Field data collection is an important skill set to learn and practice. In this task, you will plan the collection of your GNSS data in a public park. The task for collecting GNSS data in a public park has nearly the same risks as if you collected the data on campus and you are expected to take similar precautions. This 
-section is meant to inform you of the likely hazards and how to stay safe.
+Field data collection is an important skill set to learn and practice. In this task, you will plan the collection of your GNSS data in a public park. The task for collecting GNSS data in a public park has nearly the same risks as if you collected the data on campus and you are expected to take similar precautions. This section is meant to inform you of the likely hazards and how to stay safe.
 
 **Planning Your Data Collection**
 
-Safety starts at the planning stage. When planning which park you will visit, consider somewhere nearby that is easily accessible by transit or walking. Avoid going somewhere that is unfamiliar to you. Ensure that you are visiting a public park and stay off of private or restricted property. You should only visit the 
-park during daylight hours and plan to go out in sunny weather only. Check government websites for any recent animal sightings before you commit to going to your desired park. Do not plan to collect your GNSS data near bodies of water (e.g., oceans, lakes, ponds, rivers, streams). Do not plan to collect your 
-GNSS data near cliffs or on steep terrain. Finally, ensure that you will have good cell phone coverage in case of an emergency.
+Safety starts at the planning stage. When planning which park you will visit, consider somewhere nearby that is easily accessible by transit or walking. Avoid going somewhere that is unfamiliar to you. Ensure that you are visiting a public park and stay off of private or restricted property. You should only visit the park during daylight hours and plan to go out in sunny weather only. Check government websites for any recent animal sightings before you commit to going to your desired park. Do not plan to collect your GNSS data near bodies of water (e.g., oceans, lakes, ponds, rivers, streams). Do not plan to collect your GNSS data near cliffs or on steep terrain. Finally, ensure that you will have good cell phone coverage in case of an emergency.
 
 **Likely Hazards**
 
-At all times, you must be aware of possible hazards both overhead and underfoot. The main overhead hazard in a public park is going to be trees and falling branches. Do not collect your GNSS data during windy or stormy weather, which may cause tree branches to fall. Wet and slippery surfaces, steep 
-angles, holes, logs, debris, and loose soil all pose fall hazards. Many of these hazards can be avoided with careful planning before you even step outside. Speaking of stepping, make sure you wear appropriate footwear, closed toed shoes are best for this work. Fauna are natural inhabitants of parks. Do not visit parks with recent sightings for large, predatory fauna such as bears or cougars. Even urban parks like Stanley Park in downtown Vancouver are known to have coyotes who have attacked people. As well, avoid areas with hazardous flora that may be thorny or poisonous. You may need to cross or transit streets to reach your park. Always follow local traffic laws and look for moving vehicles in and around 
-your park. Always use designated crosswalks and do not look at your phone when walking near stopped or moving vehicles. 
+At all times, you must be aware of possible hazards both overhead and underfoot. The main overhead hazard in a public park is going to be trees and falling branches. Do not collect your GNSS data during windy or stormy weather, which may cause tree branches to fall. Wet and slippery surfaces, steep angles, holes, logs, debris, and loose soil all pose fall hazards. Many of these hazards can be avoided with careful planning before you even step outside. Speaking of stepping, make sure you wear appropriate footwear, closed toed shoes are best for this work. Fauna are natural inhabitants of parks. Do not visit parks with recent sightings for large, predatory fauna such as bears or cougars. Even urban parks like Stanley Park in downtown Vancouver are known to have coyotes who have attacked people. As well, avoid areas with hazardous flora that may be thorny or poisonous. You may need to cross or transit streets to reach your park. Always follow local traffic laws and look for moving vehicles in and around your park. Always use designated crosswalks and do not look at your phone when walking near stopped or moving vehicles. 
 
 *Do not collect your GNSS data while walking and looking at your phone. Always be aware of your surroundings.*
 
@@ -85,14 +80,14 @@ Open the attribute table of refpoints and add three new columns: Name, East, Nor
 
 **Step 3:** You will be exporting a georeferenced map of your study area. Zoom in (or out) to an extent that contains at least the entire park.
 
+**INCLUDE THE MAP IN YOUR FINAL DELIVERABLES - BE SURE TO INCLUDE THE FOLLOWING ELEMENTS ON THE MAP (10)**
+
 **Elements to include on the map:**
 - Reference points
 - Inset map showing location of study area within Vancouver
 - Scale bar, north arrow, legend, title.  
 
-**INCLUDE THE MAP IN YOUR FINAL DELIVERABLES**
-
-##### Q1: Provide a description of each reference point - what is it? {.unnumbered}
+##### Q1: Provide a description of each reference point - what is it?(2) {.unnumbered}
 
 Using the top ribbon, select Share > Export Map. A pane will pop up on the right-hand side of your screen. The file type is PDF, and make sure that it is saved somewhere you will be able to find it. 
 
@@ -105,9 +100,9 @@ Go to the Trimble GNSS Planning Online website and enter your study area’s coo
 
 After you have input your information into Settings, click “Apply” and look through the other tabs (Satellite Library, Charts, Sky Plot, World View). 
 
-**On the Charts tab take a screenshot of the Number of Satellites and Iono Information charts - INCLUDE IN FINAL DELIVERABLES**
+**On the Charts tab take a screenshot of the Number of Satellites and Iono Information charts - INCLUDE IN FINAL DELIVERABLES (2)**
 
-##### Q2: Use these plots to determine the ideal time to collect GNSS points and briefly explain why. {.unnumbered}
+##### Q2: Use these plots to determine the ideal time to collect GNSS points and briefly explain why. (2) {.unnumbered}
 
 ------------------------------------------------------------------------
 
@@ -122,6 +117,7 @@ You will need either an Android or iOS smartphone capable of installing the Aven
 **Step 3:**  Now that you are registered and logged in, you will change some settings in the Avenza Maps app. Navigate to the Settings in the bottom right corner (for iOS) and in the top right corner (for Android). Scroll down and click “GPS settings”. Use the following settings:
 
 - **Location Source:** “Use Only Internal Sources”. This ensures that we are only using the phone’s internal GNSS receiver.
+
 - **Horizontal Accuracy:** "Keep all fixes"
 - **Distance Thresholds:** "Keep all fixes"
 - **Time Threshold:** "Keep all fixes"
@@ -151,7 +147,7 @@ If you ran into problems creating your georeferenced PDF, then you can use the p
 
 **Step 6:** Travel to your study area!!! Open the Avenza app, and select the Georeferenced PDF under “My Maps.” Go to one of the reference points you selected in ArcGIS. On the bottom right of the app, there is a button that will bring the map to your current area. Press that button, then press the placemark button directly to the right of it. Create a placemark and name it something meaningful (for example: placemark 1, location 1). Stay exactly where you are, and create a placemark every 10 seconds for the next minute by pressing the location button then the placemark. You should have a total of 6 placemarks. Take a picture of the area you are trying to geographically capture. Go to two more of your designated locations and do the same procedure (create 6 placemarks, each 10 seconds apart, and take a picture.
 
-**INCLUDE PICTURES OF ALL YOUR REFERENCE POINTS (IN THE FIELD) WITH YOUR FINAL DELIVERABLES**
+**INCLUDE PICTURES OF ALL YOUR REFERENCE POINTS (IN THE FIELD) WITH YOUR FINAL DELIVERABLES (3)**
 
 **Step 7:** Now you can return back to your workstation (after taking a nice walk!). In Avenza, go back to “My Maps,” then select Layers (at the bottom). Select the layer you created, then the icon with three lines at the bottom right. Choose export layers. Export the layer as a KML by pressing the EXPORT option 
 at the top right. A list of export applications should pop up—choose whichever one you would prefer.
@@ -166,7 +162,7 @@ For this lab, we will consider the initial ArcGIS-created reference points as th
 
 **Step 1:** Visually compare the Avenza-created Placemarks (called “Observed values” for the rest of the lab) with each other and ArcGIS reference points. How close/far are they from one another? You can use the measure tool to add values to this visual assessment. 
 
-**TAKE A SCREENSHOT OF YOUR REFERNCE POINTS AND OBSERVED POINTS IN ARCGIS PRO AND INCLUDE IN YOUR DELIVERABLES**
+**TAKE A SCREENSHOT OF YOUR REFERNCE POINTS AND OBSERVED POINTS IN ARCGIS PRO AND INCLUDE IN YOUR DELIVERABLES (5)**
 
 When you are comparing the observed values Page 10 of 12 to each other, you are assessing **precision**, when you are comparing them to the “True” locations, you are assessing **accuracy**.
 
@@ -182,9 +178,9 @@ Excel is a convenient place to use this equation. Breaking down the equation –
 
 `=SQRT((average(observed east values)-true east value)^2+((average(observed north values)-true north value)^2))`
 
-The resulting value represents how accurate the GNSS measurements were – a lower value represents greater accuracy. 
+The resulting value represents how accurate the GNSS measurements were – a lower value represents greater accuracy.
 
-##### Q3: Is there a noticeable difference in accuracy between your placemarks? Why do you think this is? {.unnumbered}
+##### Q3: Is there a noticeable difference in accuracy between your placemarks? Why do you think this is? (3) {.unnumbered}
 
 To assess the precision, you will use the following equation:
 
@@ -194,8 +190,8 @@ Calculate the standard deviation of the observed East and North values, square t
 
 `=SQRT((STDEV(observed east values)^2 + STDEV(observed values)^2))`
 
-The resulting value represents how precise the GNSS measurements were – a lower value represents greater accuracy. 
+The resulting value represents how precise the GNSS measurements were – a lower value represents greater precision. 
 
-##### Q4: Is there a noticeable difference in precision between your placemarks? Why do you think this is? {.unnumbered}
+##### Q4: Is there a noticeable difference in precision between your placemarks? Why do you think this is? (3) {.unnumbered}
 
-##### Q5: In 300 words or less, discuss potential errors and what may have affected accuracy and precision – be sure to reflect on the validity of the “True” values. {.unnumbered}
+##### Q5: In 300 words or less, discuss potential errors and what may have affected accuracy and precision – be sure to reflect on the validity of the “True” values. (10) {.unnumbered}

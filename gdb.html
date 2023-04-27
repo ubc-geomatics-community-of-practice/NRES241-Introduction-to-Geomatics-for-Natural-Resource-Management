@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lab 1 Geodatabase, data handling, and management | 02-gdb.knit</title>
+  <title>Lab 1 Geodatabases, data handling, and mapping | 02-GDB.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lab 1 Geodatabase, data handling, and management | 02-gdb.knit" />
+  <meta property="og:title" content="Lab 1 Geodatabases, data handling, and mapping | 02-GDB.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lab 1 Geodatabase, data handling, and management | 02-gdb.knit" />
+  <meta name="twitter:title" content="Lab 1 Geodatabases, data handling, and mapping | 02-GDB.knit" />
   
   
   
@@ -70,18 +70,16 @@
 <li><a href="./">An Open Geomatics Community of Practice</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path=""><a href="#gdb"><i class="fa fa-check"></i><b>1</b> Geodatabase, data handling, and management</a>
+<li class="chapter" data-level="1" data-path=""><a href="#gdb"><i class="fa fa-check"></i><b>1</b> Geodatabases, data handling, and mapping</a>
 <ul>
 <li class="chapter" data-level="" data-path=""><a href="#lab-overview"><i class="fa fa-check"></i>Lab Overview</a>
 <ul>
 <li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#task-1-geodatabase-designing-and-geographical-data-collation"><i class="fa fa-check"></i>Task 1: Geodatabase designing and Geographical data collation</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-1-building-a-geodatabase-and-organizing-data"><i class="fa fa-check"></i>Task 1: Building a geodatabase and organizing data</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#task-2-vector-data-processing"><i class="fa fa-check"></i>Task 2: Vector Data Processing</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#task-3-raster-data-download"><i class="fa fa-check"></i>Task 3: Raster Data Download</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#task-4-raster-data-processing"><i class="fa fa-check"></i>Task 4: Raster Data Processing</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#task-5-design-your-own-geodatabase"><i class="fa fa-check"></i>Task 5: Design your own geodatabase</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#task-3-create-a-map"><i class="fa fa-check"></i>Task 3: Create a map</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -106,143 +104,141 @@
 <!--bookdown:title:end-->
 <!--bookdown:title:start-->
 <div id="gdb" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Lab 1</span> Geodatabase, data handling, and management<a href="#gdb" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Lab 1</span> Geodatabases, data handling, and mapping<a href="#gdb" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Written by</p>
-<p>Paul Pickell</p>
+<p>Hana Travers-Smith</p>
 <div id="lab-overview" class="section level2 unnumbered hasAnchor">
 <h2>Lab Overview<a href="#lab-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The aim of this lab is to design and build geodatabase, as well as organize its contents in an orderly manner. In addition, students will learn how to access the data they need in open-source geographic databases on the web and to process the data to obtain the desired study area.</p>
+<p>The aim of this lab is to design and build a geodatabase, as well as organize spatial data within it. We will review tools for cleaning raster and vector data. Finally students will learn how to create and export a map using good cartographic principles.</p>
 <hr />
 <div id="learning-objectives" class="section level3 unnumbered hasAnchor">
 <h3>Learning Objectives<a href="#learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Learn how to design geodatabases based on topics and needs</li>
 <li>Familiar with building databases, organizing data, and linking data sets</li>
-<li>Learn how to access data in open-source databases on the web</li>
-<li>Understand the operation of simple cropping of data as needed</li>
-<li>Get to know more geodatabases</li>
+<li>Create and export a map</li>
 </ul>
 <hr />
 </div>
 <div id="deliverables" class="section level3 unnumbered hasAnchor">
 <h3>Deliverables<a href="#deliverables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Answers to 8 questions posted in the handout</li>
-<li>Discussion question</li>
+<li>Answers to 10 questions posted in the handout</li>
+<li>Map with good cartographic design</li>
 </ul>
 <hr />
 </div>
 </div>
-<div id="task-1-geodatabase-designing-and-geographical-data-collation" class="section level2 unnumbered hasAnchor">
-<h2>Task 1: Geodatabase designing and Geographical data collation<a href="#task-1-geodatabase-designing-and-geographical-data-collation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this task, we will review what the geodatabase contains and learn how to design your own geodatabase based on project requirements and objectives in ArcGIS Pro.</p>
+<div id="task-1-building-a-geodatabase-and-organizing-data" class="section level2 unnumbered hasAnchor">
+<h2>Task 1: Building a geodatabase and organizing data<a href="#task-1-building-a-geodatabase-and-organizing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this task, we will review what a geodatabase contains and learn how to design your own geodatabase based on project requirements and objectives in ArcGIS Pro. Geodatabases allow you to store many spatial data layers of different types in one place. You can edit data related to one project within a geodatabse and then easily share it with other people.</p>
 <p><strong>Step 1:</strong> Start ArcGIS Pro. Under the New header, select Catalog. Name the project “Lab2”. When ArcGIS Pro opens a new Catalog window, navigate to your Lab2 folder.</p>
 <p><img src="images/02/02-catalog.PNG" width="75%" /></p>
-<p><strong>Step 2:</strong> Download the zipped (.zip) lab data from GitHub, unzip it, and move it into your project folder, typically <code>C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab2.</code></p>
-<p><strong>Step 3:</strong> Look at your shapefiles in ArcGIS Pro. You have seven shapefiles in your data folder. Three different kinds of icons are shown in front of shapefile names. These indicate what type of data (point, line, or polygon) is stored within a shapefile. For example, the <strong>H_FIRE_PNT_point</strong> shapefile is composed of points, the <strong>GM_MetroVancouverBoundary</strong> shapefile is composed of lines, and the <strong>CLAB_NATPK_polygon</strong> shapefile is a polygon.</p>
-<p><img src="images/02/02-data.PNG" width="75%" /></p>
-<p><strong>Step 4:</strong> Open a new Map. Under the Insert tab on the top ribbon, click New Map. Before adding any layer, you need to make sure that the coordinate system of the map gives an accurate projection of your study area. For this lab we will focus on BC, so we will use the coordinate system that best reproduces BC. In the Map interface, right-click “Map” in the contents, select properties, and in the pop-up window, select Coordinate Systems. If your “Current XY” shows <strong>“NAD 1983 BC Environment Albers”</strong>, you do not need to make any changes, if not, search for the above coordinate system in the search bar below, select it and then click “OK” to complete the changes.</p>
+<p><strong>Step 2:</strong> Download the zipped (.zip) lab data from GitHub, unzip it, and move it into your Lab2 project folder, which by default is <code>C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab2.</code></p>
+<p><strong>Step 3:</strong> Open the Catalog pane by clicking View &gt; Catalog Pane. Under the folders tab you should see the folder with your lab 2 project. You have six shapefiles in the data folder. Three different kinds of icons are shown in front of shapefile names. These indicate what type of data (point, line, or polygon) is stored within a shapefile. For example, the <strong>DBM_POP_PN_points</strong> shapefile is composed of points, the <strong>HWY_PRFLS_line</strong> shapefile is composed of lines, and the <strong>main_BC_Boundary_terrestrial_multipart</strong> shapefile is a polygon.</p>
+<p><img src="images/02/02-data.PNG" width="40%" /></p>
+<p><strong>Step 4:</strong> Open a new Map. Under the Insert tab on the top ribbon, click New Map. Before adding any layer, you need to make sure that the coordinate system of the map gives an accurate projection of your study area. For this lab we will focus on BC, so we will use the coordinate system that best reproduces BC. In the Map interface, right-click “Map” in the contents, select properties, and in the pop-up window, select Coordinate Systems. Change the coordinate system to <strong>“NAD 1983 BC Environment Albers”</strong>.</p>
 <p><img src="images/02/02-map-prop.PNG" width="75%" /></p>
-<p>Using the Catalog pane, right-click the <strong>“BC_Boundary_Terrestrial_Mutipart.shp”</strong> shapefile and select <strong>Add to Map.</strong> Do the same for other shapefiles. You may notice that the names of these files are not in a uniform format, and some words may be abbreviated. This can cause some inconvenience when dealing with data from different sources. Therefore, it is necessary to format the data names to be processed uniformly to improve efficiency. In general, you can standardize the names of data according to your preferences and further explain the meaning of the names through a data dictionary or editing metadata. You can rename the layer in your map by right-clicking it and selecting properties, then change the name in general. Note that this does not change its name in the folder.</p>
-<div id="q1-choose-the-name-you-think-is-most-appropriate-for-each-shapefile.-historical_fire_point-bc_boundary-metro_vancouver_boundary-national_parks-highway_and_railway-goat_inventory-fire_threat_rate" class="section level5 unnumbered hasAnchor">
-<h5>Q1: Choose the name you think is most appropriate for each shapefile. (Historical_fire_point, BC_boundary, Metro_Vancouver_boundary, National_parks, Highway_and_railway, Goat_inventory, Fire_threat_rate)<a href="#q1-choose-the-name-you-think-is-most-appropriate-for-each-shapefile.-historical_fire_point-bc_boundary-metro_vancouver_boundary-national_parks-highway_and_railway-goat_inventory-fire_threat_rate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><strong>Step 5:</strong> By default, the Lab2.gdb geodatabase created with the new project is set as the “default geodatabase”. This means that whenever you run a tool or search for data, ArcGIS Pro will automatically default to the location of this geodatabase unless you specify otherwise. If you navigate to Project &gt; Databases in the Contents pane, you should see a geodatabase with a little house. The house indicates which geodatabase is set as the default geodatabase for the project. Only one geodatabase can be the default at any given time.</p>
 <p><img src="images/02/02-default.PNG" width="75%" /></p>
-<p><strong>Step 6:</strong> You may find that not all shapefiles are related to fire. Categorizing different data according to topics can also significantly improve our work efficiency.</p>
-</div>
-<div id="q2-which-data-do-you-think-are-useful-for-a-project-on-fires-in-bc" class="section level5 unnumbered hasAnchor">
-<h5>Q2: Which data do you think are useful for a project on fires in BC?<a href="#q2-which-data-do-you-think-are-useful-for-a-project-on-fires-in-bc" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Step 7:</strong> Right-click the lab2.gdb in Catalog, select import, then select Feature Class(es). Select all the features you think are suitable for fire in BC in input features, then click “Run”.</p>
+<p>Next, we will import our data into the Lab2 geodatabase.</p>
+<p><strong>Step 6:</strong> Right-click the lab2.gdb in Catalog, select import, then select Feature Class(es). Click the folder button and navigate to the Lab 2 data folder and select each layer, then click “Run”.</p>
 <p><img src="images/02/02-import.PNG" width="75%" /></p>
-<p>You can also finish this step using the “Feature Class To Geodatabase” tool. To do this, open up the Geoprocessing pane by selecting Tools under the Analysis tab of the top ribbon. Then search “Feature Class To Geodatabase”. Do the same thing as above, but you need to choose the Output Geodatabase as fire_bc.gdb manually.</p>
-<p><img src="images/02/02-analysis.PNG" width="75%" /></p>
+<p>Once all the data is in the Lab2 geodatabase it should look like the following.</p>
+<p><img src="images/02/02-gdb-data.PNG" width="40%" /></p>
+<p><strong>Step 7:</strong> Drag and drop all the data from the geodatabase to the map. You may notice that the names of these files are not in a uniform format, and some words may be abbreviated. This can cause some inconvenience when dealing with data from different sources. Therefore, it is necessary to format the data names to be processed uniformly to improve efficiency. In general, you can standardize the names of data according to your preferences and further explain the meaning of the names through a data dictionary or metadata.</p>
+<p>You can rename layers in your map by right-clicking it in the Contents pane and selecting properties, then change the name in the general tab. Note that this does not change the name of the original data. Rename each of the layers to be more descriptive and for easier organization of your map.</p>
+<p>When you name your data, it is good practice to use underscores (_) instead of spaces.</p>
+<div id="q1-based-on-the-filenames-and-attributes-of-each-layer-choose-a-name-you-think-is-most-appropriate-for-each-shapefile-from-the-following-list-canada_cities-historical_fire-highways-bc_boundary-bc_fire_districts." class="section level5 unnumbered hasAnchor">
+<h5>Q1: Based on the filenames and attributes of each layer, choose a name you think is most appropriate for each shapefile from the following list: Canada_Cities, Historical_fire, highways, BC_boundary, BC_fire_districts.<a href="#q1-based-on-the-filenames-and-attributes-of-each-layer-choose-a-name-you-think-is-most-appropriate-for-each-shapefile-from-the-following-list-canada_cities-historical_fire-highways-bc_boundary-bc_fire_districts." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Take a screenshot of the Catalog pane (right side of screen) showing your home folder and the Lab 2 geodatabase with all of the required layers</strong></p>
 <hr />
 </div>
 </div>
 <div id="task-2-vector-data-processing" class="section level2 unnumbered hasAnchor">
 <h2>Task 2: Vector Data Processing<a href="#task-2-vector-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Next we will practice processing vector data to make it usable.</p>
-<p><strong>Step 1:</strong> Sometimes, the data you download will not fit the needs for direct use. Therefore, you need to do some simple processing of the data to make it meet your needs. In this section, we process the directly downloaded raw vector and raster data separately to make it easy to use.</p>
-<p><strong>Step 2:</strong> Here, we only examine fires after 2010. Therefore, we want a feature class that only contains data after 2010(including 2010). To do this, first right-click on the “Historical_fire_point” layer in the context, select “Data” and then select “Export Features”.</p>
-<p>You can notice that the first two lines in the opened dialog box are already filled in automatically. Name the exported file as “Historical_fire_point_2010”. Then, select “FIRE_YEAR” in the drop-down list below, then select “is greater than or equal to”, and select “2010”. Click “OK”.</p>
+<p><strong>Step 1:</strong> Next we will practice processing vector data contained in the new geodatabase. It is good practice to copy and edit data within a geodatabase so that the original data does not get altered accidentally.</p>
+<p>First, you will notice that the Canada_cities layer contains cities across all of Canada. We will clip this layer to the BC boundaries. On the top ribbon click View &gt; Geoprocessing &gt; search for the Clip tool. In the <strong>Input Features or Dataset</strong> field select the layer you want to clip. In the <strong>Clip Features</strong> field select the layer that you want to clip the input features to. Name the new layer <strong>BC_cities</strong> and save it to the Lab 2 geodatabse.</p>
+<div id="q2-what-layer-did-you-use-as-the-input-features-and-clip-features" class="section level5 unnumbered hasAnchor">
+<h5>Q2: What layer did you use as the Input Features and Clip Features?<a href="#q2-what-layer-did-you-use-as-the-input-features-and-clip-features" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 2:</strong> Next, we will create a new shapefile of fires that occurred after 2010. Right-click on the “Historical_fires” layer in the Contents pane, select “Data” and then select “Export Features”.</p>
+<p>The first two lines in the opened dialog box are already filled in automatically. Name the exported file as “Historical_fires_2010”. Then, select “FIRE_YEAR” in the drop-down list below, then select “is greater than or equal to”, and select “2010”. Click “OK”.</p>
 <p>A new point feature class appears in your geodatabase, which you may need to refresh to see. It is also automatically added to the contents pane, and you can right-click on it and select the attribute table to view the new data in detail.</p>
-<p><img src="images/02/02-export.PNG" width="75%" /></p>
-<p>A brief description of the tool can be obtained by clicking on the question mark on the upper right-hand side. This is a good way to understand how the tool should be used.</p>
-<div id="q3-how-many-points-are-included-in-the-new-feature-class-what-is-the-most-common-cause-of-fire-in-the-selected-features-except-unknown-how-many-hectares-was-the-size-of-the-largest-fire-in-the-selected-features-what-are-the-most-common-types-of-fires-in-the-selected-features-except-unknown" class="section level5 unnumbered hasAnchor">
-<h5>Q3: How many points are included in the new feature class? What is the most common cause of fire in the selected features (except Unknown)? How many hectares was the size of the largest fire in the selected features? What are the most common types of fires in the selected features (except Unknown)?<a href="#q3-how-many-points-are-included-in-the-new-feature-class-what-is-the-most-common-cause-of-fire-in-the-selected-features-except-unknown-how-many-hectares-was-the-size-of-the-largest-fire-in-the-selected-features-what-are-the-most-common-types-of-fires-in-the-selected-features-except-unknown" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><img src="images/02/02-export.PNG" width="40%" /></p>
+<p>Open the attribute table of the new 2010 fires layer. You can generate simple summary statistics for each attribute by right-clicking on a column &gt; Statistics. You can also order attributes from largest to smallest by right clicking on a column &gt; Sort Descending (Sort ascending sorts smallest to largest). Use these tools to answer the following questions.</p>
+</div>
+<div id="q3-how-many-polygons-are-included-in-the-2010-fires-shapefile" class="section level5 unnumbered hasAnchor">
+<h5>Q3: How many polygons are included in the 2010 fires shapefile?<a href="#q3-how-many-polygons-are-included-in-the-2010-fires-shapefile" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q4-what-is-the-most-common-cause-of-fire-how-many-hectares-was-the-size-of-the-largest-fire" class="section level5 unnumbered hasAnchor">
+<h5>Q4: What is the most common cause of fire? How many hectares was the size of the largest fire?<a href="#q4-what-is-the-most-common-cause-of-fire-how-many-hectares-was-the-size-of-the-largest-fire" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q5-what-year-had-the-most-fires-and-how-many-were-there" class="section level5 unnumbered hasAnchor">
+<h5>Q5: What year had the most fires, and how many were there?<a href="#q5-what-year-had-the-most-fires-and-how-many-were-there" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We can also <strong>Summarize</strong> one attribute by another. Right-click on the <strong>FIRE_YEAR</strong> column in the Historical fires 2010 attribute table, then select <strong>Summarize</strong>. In the Field drop-down menu select <strong>SIZE_HA</strong> and set Statistic type to <strong>Sum</strong>. Click OK.</p>
+<p>This will create a new attribute table at the bottom of the Contents Pane, that shows total burned area for each year in hectares.</p>
+</div>
+<div id="q6-what-year-had-the-highest-burned-area-how-many-hectares-were-burned" class="section level5 unnumbered hasAnchor">
+<h5>Q6: What year had the highest burned area? How many hectares were burned?<a href="#q6-what-year-had-the-highest-burned-area-how-many-hectares-were-burned" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><strong>Step 3:</strong> Open the attribute table of the BC_fire_districts layer. The MFFRCNTRNM attribute (very helpfully named), contains the name of each administrative fire centre. In the next step, we will spatially join this information to the BC_Cities layer, so that each city has an attribute showing which fire district it is in.</p>
+<p>Right click on the BC_Cities layer &gt; Joins and Relates &gt; Spatial Join. Set the fire districts layer as the <strong>Join Features</strong> and name the new feature class BC_cities_join. Set <strong>Join Operation</strong> to Join one to one. This will join one city to one fire district. Scroll through the <strong>Match Options</strong>. These determine how the target features are matched to the join features. Select <strong>Within</strong>, this will join cities with the fire district they are completely within. Click OK.</p>
+</div>
+<div id="q7-what-fire-centre-and-fire-zone-is-the-town-of-merrit-located-in" class="section level5 unnumbered hasAnchor">
+<h5>Q7: What fire centre and fire zone is the town of Merrit located in?<a href="#q7-what-fire-centre-and-fire-zone-is-the-town-of-merrit-located-in" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Use the tools from this section to conduct your own analysis and answer the following questions:</p>
+</div>
+<div id="q8-which-fire-centre-instersects-with-the-most-fires-from-2010-onwards-how-many-total-fires-were-there-hint-think-carefully-about-the-join-operation-and-match-options." class="section level5 unnumbered hasAnchor">
+<h5>Q8: Which fire centre instersects with the most fires from 2010 onwards? How many total fires were there? (HINT: Think carefully about the Join Operation and Match Options.)<a href="#q8-which-fire-centre-instersects-with-the-most-fires-from-2010-onwards-how-many-total-fires-were-there-hint-think-carefully-about-the-join-operation-and-match-options." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q9-which-fire-centre-had-the-highest-total-burned-area-in-ha-the-highest-mean-fire-size-exclude-the-null-result-as-this-represents-two-fires-that-were-mapped-outside-of-the-bc-boundaries." class="section level5 unnumbered hasAnchor">
+<h5>Q9: Which fire centre had the highest total burned area in ha? The highest mean fire size? (Exclude the Null result, as this represents two fires that were mapped outside of the BC boundaries.)<a href="#q9-which-fire-centre-had-the-highest-total-burned-area-in-ha-the-highest-mean-fire-size-exclude-the-null-result-as-this-represents-two-fires-that-were-mapped-outside-of-the-bc-boundaries." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="q10-do-you-see-any-patterns-in-the-total-annual-burned-area-between-1920-and-the-present-day-do-some-research-and-discuss-what-do-you-think-could-be-driving-these-patterns.-include-a-line-chart-to-support-your-answer.-answer-in-less-than-200-words.-hint-to-answer-this-question-first-create-a-summary-table-then-review-lab-1-for-instructions-on-how-to-create-a-line-chart-using-the-data-from-this-table." class="section level5 unnumbered hasAnchor">
+<h5>Q10: Do you see any patterns in the total annual burned area between 1920 and the present day? Do some research and discuss what do you think could be driving these patterns. Include a Line Chart to support your answer. Answer in less than 200 words. (HINT: To answer this question first create a summary table, then review Lab 1 for instructions on how to create a Line Chart using the data from this table.)<a href="#q10-do-you-see-any-patterns-in-the-total-annual-burned-area-between-1920-and-the-present-day-do-some-research-and-discuss-what-do-you-think-could-be-driving-these-patterns.-include-a-line-chart-to-support-your-answer.-answer-in-less-than-200-words.-hint-to-answer-this-question-first-create-a-summary-table-then-review-lab-1-for-instructions-on-how-to-create-a-line-chart-using-the-data-from-this-table." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <hr />
 </div>
 </div>
-<div id="task-3-raster-data-download" class="section level2 unnumbered hasAnchor">
-<h2>Task 3: Raster Data Download<a href="#task-3-raster-data-download" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Step 1:</strong> Downloading data from open-source sites is not so easy, you have to learn to search and pick the type of data you need, the area, and the time. Let’s try one of the sites provided by NASA as an example. First, open the home page of the website (<a href="https://lpdaac.usgs.gov/" class="uri">https://lpdaac.usgs.gov/</a>). Then select Data in the top blue column and select Search Data Catalog in the drop-down list that appears. Type “burned” in the search box of the newly opened website and this will return several results. Select the product “MCD64A1 v006”.</p>
-<p><img src="images/02/02-earth-data.PNG" width="75%" /></p>
-<p>Then select Data in the top blue column and select Search Data Catalog in the drop-down list that appears.</p>
-<p><img src="images/02/02-data-catalog.PNG" width="75%" /></p>
-<p>Type “burned” in the search box of the newly opened website and this will return several results. Select the product “MCD64A1 v006”.</p>
-<p><img src="images/02/02-search.PNG" width="75%" /></p>
-<p><strong>Step 2:</strong> You will see a page as shown below, select access data to get the data. You will see many options, here we try to use the “NASA Earthdata Search” tool. This is a more intuitive way, but of course you are encouraged to try other ways as well.</p>
-<p><img src="images/02/02-modis.PNG" width="75%" /></p>
-<p>You will see many options, here we try to use the “NASA Earthdata Search” tool. This is a more intuitive way, but of course you are encouraged to try other ways as well. Note that please click on the download logo under the “Download Data” column to continue, rather than clicking on the tool name, which will lead you to the home page of the tool.</p>
-<p><img src="images/02/02-access.PNG" width="75%" /></p>
-<p><strong>Step 3:</strong> The newly opened page is shown below. In order to download the data, you will usually need to log in, click on “Earthdata Login” in the top right corner of the screen to log in. For most people, you may need to register for an account. After registering and logging in, you will be redirected back to this screen. Click on the product that has been selected “MODIS/Terra+Aqua Direct Broadcast Burned Area Monthly L3 Global 500m SIN Grid V006”, which is the same as the product that was just displayed on the web page.</p>
-<p><img src="images/02/02-collection.PNG" width="75%" /></p>
-<p><strong>Step 4:</strong> You can see that a very large number of results appear, and this is all the data from the beginning of the collection of this product until now. We are only looking at data from a certain period this time, so we need filters to help us. To do this, select the data from August 1, 2018 to August 31, 2018 in the temporal column of the filter on the left.</p>
-<p><img src="images/02/02-filter.PNG" width="75%" /></p>
-<div id="q4-how-many-matching-granules-were-obtained-after-using-the-filter" class="section level5 unnumbered hasAnchor">
-<h5>Q4: How many matching granules were obtained after using the filter?<a href="#q4-how-many-matching-granules-were-obtained-after-using-the-filter" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Step 5:</strong> Take a closer look at the name of the product, it is a dataset that covers a global scope. So, let’s go ahead and select out the regions that contain BC. Then use the button on the right side of the screen to draw a graph containing the entire BC province. Don’t worry about drawing too big, we will cut out the BC province later.</p>
-<p><img src="images/02/02-aoi.PNG" width="75%" /></p>
-<p>After doing this, you can see a significant reduction in the number of results. Then you can click “Download All” in the bottom right corner of the dialog box. You will see the dialog box change to the one shown below, go ahead and click “Download Data”.</p>
-<p><img src="images/02/02-download.PNG" width="75%" /></p>
-<p>You will be directed to a new website where all the files are listed as shown in the image below. Since we don’t have many files, you can download them directly by clicking on these blue links one by one. Put these downloaded files into a folder called “Burned Area” and place it in the Lab2 folder.</p>
-<p><img src="images/02/02-download-status.PNG" width="75%" /></p>
-<hr />
-</div>
-</div>
-<div id="task-4-raster-data-processing" class="section level2 unnumbered hasAnchor">
-<h2>Task 4: Raster Data Processing<a href="#task-4-raster-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Step 1:</strong> Add the data from the Burned Area folder to the map to view them (Or you can use data that we offered to you in “Burned” folder). A dialog box may pop up when you join, select yes to continue. Note the range of these data, which will be needed later when selecting parameters for the tool. Right-click on the layer file in contents and select properties to see more information. Then in the popup dialog box, select the source tab to view raster information.</p>
-<div id="q5-how-many-bands-are-there-for-each-raster-data" class="section level5 unnumbered hasAnchor">
-<h5>Q5: How many bands are there for each raster data?<a href="#q5-how-many-bands-are-there-for-each-raster-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><strong>Step 2:</strong> The raster data containing the BC fires was divided into several separate parts and we need to merge them into a larger raster data. We need a specific tool to help us with this operation. Under the Analysis tab on the top ribbon, click Tools. This will open the “Geoprocessing” tab (usually located on the right side of your screen). Then, in the search bar at the top, type “Mosaic”. This will return many search results, select “Mosaic To New Raster”.</p>
-<p><img src="images/02/02-geoprocessing.PNG" width="75%" /></p>
-<p><strong>Step 3:</strong> This will bring it to the tool’s window, which contains many parameters to be filled for running the tool. Parameters with red asterisks are required, those without are optional. First, for input raster, we click on the folder behind it, find the Burned Area folder and select all the files in it. Then, select Lab2.gdb as output location, and name the new raster as “Burn_Data”. Use the drop-down list to select the same spatial reference for raster as for BC_Boundary.</p>
-<p><img src="images/02/02-mosaic.PNG" width="40%" /></p>
-<p>The following figure shows the specific description of the Pixel Type for this tool from the official ArcGIS Pro website (<a href="https://pro.arcgis.com/en/pro-app/2.8/tool-reference/data-management/mosaic-to-new-raster.htm" class="uri">https://pro.arcgis.com/en/pro-app/2.8/tool-reference/data-management/mosaic-to-new-raster.htm</a>).</p>
-<p><img src="images/02/02-type.PNG" width="75%" /></p>
-</div>
-<div id="q6-based-on-the-description-of-the-pixel-type-parameter-and-the-retrieval-of-the-data-which-is-the-most-suitable-pixel-type-for-our-new-raster-and-why" class="section level5 unnumbered hasAnchor">
-<h5>Q6: Based on the description of the pixel type parameter and the retrieval of the data, which is the most suitable pixel type for our new raster and why?<a href="#q6-based-on-the-description-of-the-pixel-type-parameter-and-the-retrieval-of-the-data-which-is-the-most-suitable-pixel-type-for-our-new-raster-and-why" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Similarly, you may wish to know what the Mosaic Operator and the options contained therein all mean. You can get an explanation by browsing this page or by clicking on the blue hints in front of the parameters.</p>
-<p><img src="images/02/02-hint.PNG" width="40%" /></p>
-<p><img src="images/02/02-mosaic-operations.PNG" width="75%" /></p>
-<p>In this case, there is no overlap between our data so we can leave this parameter unselected and leave it as default. But this parameter is very important for this tool, and in future work you may need to save the overlap you want with these options.</p>
-<p>Note: You can find specific descriptions of this and many more tools provided by ESRI at this site, which is very helpful for learning and exploring the use of more tools and functions.</p>
-<p>Select the pixel type you think is most appropriate and fill 1 in the blank at the number of bands. Finally, click the “Run” button in the bottom right corner. Then a layer like this should appear on your map.</p>
-<p><img src="images/02/02-map.PNG" width="75%" /></p>
-<p>Note: The size and shape of the graph may vary, due to the amount of data downloaded.</p>
-<p><strong>Step 4:</strong> As you can see, the newly synthesized raster data is significantly larger than the BC province, and this write section is redundant. Therefore, we have to delete this part of the data. However, the burn data is a raster data and we have to take a different approach than above.</p>
-<p><strong>Step 5:</strong> We need to crop the burning data with the boundary data of BC, which will use the “Extract By Mask” tool. You can open this tool in the same way as above. Then follow the requirements below to fill each parameter and you can quickly select the layer to add to the map by clicking on it.</p>
+<div id="task-3-create-a-map" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Create a map<a href="#task-3-create-a-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this task we will use the spatial layers we generated in the previous step to create a map showing good cartographic principles.</p>
+<p><strong>Step 1:</strong> First we will assemble all the required layers in the Map. Make sure you have the following layers loaded in the Contents pane (remove all other layers by right-clicking &gt; Remove:</p>
 <ul>
-<li><strong>Input raster:</strong> Burn_Data</li>
-<li><strong>Input raster or feature mask data:</strong> BC_Boundary</li>
-<li><strong>Output raster:</strong> Burn_BC</li>
+<li>Historical Fires (2010 onwards)</li>
+<li>BC highways</li>
+<li>BC cities</li>
 </ul>
-<p><img src="images/02/02-bc-map.PNG" width="75%" /></p>
-<p>Note: The colors are automatically set by ArcGIS Pro, so your colors may be different from those shown above.</p>
-</div>
-<div id="q7-what-are-the-maximum-and-minimum-values-of-burn_bc" class="section level5 unnumbered hasAnchor">
-<h5>Q7: What are the maximum and minimum values of Burn_BC?<a href="#q7-what-are-the-maximum-and-minimum-values-of-burn_bc" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<hr />
-</div>
-</div>
-<div id="task-5-design-your-own-geodatabase" class="section level2 unnumbered hasAnchor">
-<h2>Task 5: Design your own geodatabase<a href="#task-5-design-your-own-geodatabase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this section you will, pick a topic of interest, design what needs to be included in your geodatabase, then start building your own geodatabase, then share your geodatabase</p>
-<div id="q8-earlier-we-learned-how-to-design-a-geodatabase-for-bc-wildfire.-now-try-to-identify-a-topic-that-interests-you-and-conceptualize-what-kind-of-data-and-possible-data-types-should-be-included-in-your-geodatabase.-in-200-words-or-less-describe-your-topic-and-the-data-included-in-your-geodatabase.-you-are-also-encouraged-to-share-the-urls-of-websites-that-you-think-might-contain-the-needed-data." class="section level5 unnumbered hasAnchor">
-<h5>Q8: Earlier, we learned how to design a geodatabase for BC Wildfire. Now, try to identify a topic that interests you and conceptualize what kind of data and possible data types should be included in your geodatabase. In 200 words or less describe your topic and the data included in your geodatabase. You are also encouraged to share the URLs of websites that you think might contain the needed data.<a href="#q8-earlier-we-learned-how-to-design-a-geodatabase-for-bc-wildfire.-now-try-to-identify-a-topic-that-interests-you-and-conceptualize-what-kind-of-data-and-possible-data-types-should-be-included-in-your-geodatabase.-in-200-words-or-less-describe-your-topic-and-the-data-included-in-your-geodatabase.-you-are-also-encouraged-to-share-the-urls-of-websites-that-you-think-might-contain-the-needed-data." class="anchor-section" aria-label="Anchor link to header"></a></h5>
-</div>
+<p>Change the symbology of the historical fires polygon so that fires are color coded by the <strong>FIRE_YEAR</strong> attribute. Choose an appropriate color scheme to show which fires are most recent. You may also change the symbology of the highwats and cities layers.</p>
+<p>Next, change the basemap using Map (top ribbon) &gt; Basemap. Experiment with the different options and pick one that is aesthetically pleasing to you.</p>
+<p><strong>Step 2:</strong> Once you have set the basemap and symbology for all the layers click <strong>Insert</strong> &gt; <strong>New Layout</strong>. Then choose the size of the layout. For compatibility with most printers select <strong>Letter 8.5x11</strong>. This will open a new Layout window where you will construct your final map.</p>
+<p><img src="images/02/02-layout.PNG" width="816" /></p>
+<p>In the new Layout, select <strong>Insert</strong> &gt; <strong>Map Frame</strong>. Select Map1, then drag and draw where the data will be displayed on the page. Leave room on the sides for latitude/longitude labels.</p>
+<p>Once the map extent is drawn, you can zoom in/out and reposition the map within the map frame by right clicking on <strong>Map Frame</strong> in the Contents pane &gt; Activate. Adjust the Map Frame so that you can see the extent of BC. When you are done click the back arrow to go back to the layout.</p>
+<p><strong>Step 3:</strong> Every map you create should have the following elements:</p>
+<ul>
+<li>Scale bar</li>
+<li>North arrow</li>
+<li>Legend</li>
+<li>Title</li>
+</ul>
+<p>For this lab we will also include an inset map, although this is not always necessary.</p>
+<p><strong>Your final map will also be graded based on the clarity of the layout, so take your time to make a good looking map!</strong></p>
+<p>First, add a scale bar and north arrow in the Insert tab (top ribbon). Use the drop down arrows to select a style, you can also customize the map elements by right clicking on them in the Contents pane &gt; Properties.</p>
+<p><img src="images/02/02-elements.PNG" width="75%" /></p>
+<p>Open the scale bar properties and change the Map Units and Label Text from Miles to Kilometers. Examine the other options in this tab and experiment with changing font size, the color or the bar, etc.</p>
+<p>Next, add a title using the add text button.</p>
+<p>Next, we will remove the ESRI basemap credits from the map. ESRI does not let you remove them completely, but we can redraw them outside the layout so they don’t get plotted. Insert &gt; Dynamic Text &gt; Service Layer Credits. Move the credits outside the layout extent.</p>
+<p>Your layout should now look something like the following:</p>
+<p><img src="images/02/02-example.PNG" width="75%" /></p>
+<p><strong>Step 4:</strong> Next, insert a legend. You can rename the items in the legend by renaming the layers in the Contents pane. Ensure all the layers are displayed in the legend and have descriptive titles. Open the Legend properties and experiment with the customization options. Here is a great resource for some of these options: <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/tips-and-tricks-for-working-with-legends-in-arcgs-pro/" class="uri">https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/tips-and-tricks-for-working-with-legends-in-arcgs-pro/</a>
+Legend customization in ArcGis Pro can be confusing and unintuitive! If you are struggling to find the right box/menu to edit a specific part of the legend, you can right-click on the legend &gt; convert to graphics. This will separate each part of the legend into editibale chunks, and can be helpful for adjusting text size of different headings and labels and for resizing elements of the legend.</p>
+<p>Here is an example legend (note that yours does not have to look exactly the same):</p>
+<p><img src="images/02/02-legend.PNG" width="40%" /></p>
+<p><strong>Step 5:</strong> Finally, we will add an inset map to show where our data is in relation to the rest of Canada. Insert &gt; <strong>New Map</strong>. Select a different basemap than the main map. Go back to the Layout , insert a new Map Frame and Select Map1. Rightclick on the new Map Frame 1 in the Contents &gt; Activate. Re-position the inset map to show the extent of Canada.</p>
+<p>Click on <strong>Map Frame 1</strong> then in the top ribbon select <strong>Extent Indicator</strong> &gt; <strong>Map Frame</strong> (this is the BC fire map.) This will add a box on the inset map showing the extent of the BC fires data.</p>
+<p><img src="images/02/02-Inset.PNG" width="95%" /></p>
+<p><strong>Step 6:</strong> You are now ready to export the final map! Go to <strong>Share</strong> on the top ribbon &gt; <strong>Export Layout</strong>.</p>
+<p>Save the map a PNG (easier to copy and paste in a Word document) or PDF in a folder you will be able to find. Make sure the Resolution is set to at least 300 DPI.</p>
+<p><strong>Include your map in the final deliverables.</strong></p>
 </div>
 </div>
             </section>

@@ -68,13 +68,13 @@ Navigate to the **Roll and Frame** tab and search for the photo using the photo 
 
 ##### Q2. What town is shown in the photo? {.unnumbered}
 
-##### Q3. For each of the following scales, what is the equivalent ground area in hectares (ha) for a region covering 5”x 5” (Hint: 1" = 2.54 cm; 1 ha = 10,000 m^2^): 1:10,000. 1:12,000, 1:30,000 {.unnumbered}
+##### Q3. For each of the following scales, what is the equivalent ground area in hectares (ha) for a region covering 5”x 5” on the map 1:10,000. 1:12,000, 1:30,000? For full makrs show your work. (Hint: 1" = 2.54 cm; 1 ha = 10,000 m^2^) {.unnumbered}
 
-**Step 2:** The following equation is used to calculate the nominal scale of an air photo. 
+**Step 2:** The following equation is used to calculate the nominal scale of an air photo.  
 
 $\ S_{p} = f/(H-h_{avg})$
 
-where f is the focal length of the camera, H is the height of the aircraft above sea level and H~avg~ is the average elevation of the terrain in the photo. 
+where f is the focal length of the camera, H is the height of the aircraft above sea level and H~avg~ is the average elevation of the terrain in the photo. Note that the scale will change slightly at any given point if the terrain is hilly or mountainous!
 
 For example: If f = 305 mm, H = 7000 m, h~avg~ = 700 m
 
@@ -84,9 +84,9 @@ $\ S_{p} = 0.00004841$
 
 Note for the above calculation we first convert focal length in mm to m. 
 
-Next to get the nominal scale in terms of 1:XXXX we need to convert 0.00004 to a fraction. 
+Next to get the nominal scale in terms of 1:XXXX we need to convert 0.00004 to a ratio. 
 
-First, rewrite 0.00004 as **4/100000**. (i.e. put the 4 in the numerator and then a 1 with the same number of 0's as decimal places in the denominator). 
+First, rewrite 0.00004 as **4:100000**. (i.e. put the 4 on the left side and then a 1 with the same number of 0's as decimal places on the left). 
 
 Then divide 100,000 by 4 to get the nominal scale of 1:25000.  
 
@@ -98,7 +98,7 @@ Answer the following questions for the air photo pair: **BCB93024 124** and **BC
 
 ##### Q6. The scale given in the image metadata uses the **average** elevation of the photo. Why would a single number representing photo scale be problematic in this terrain? {.unnumbered}
 
-##### Q7. The highest peak in the photo is at 2030 m. What is the nominal scale for a point located at the summit, assuming the aircraft flew at an altidue of 6393 m? (Hint: Remember to convert the focal length of the camera in mm to m!) {.unnumbered}
+##### Q7. The highest peak in the photo is at 2030 m. What is the nominal scale for a point located at the summit, assuming the aircraft flew at an altidue of 6393 m above sea level? Show your work. (Hint: Remember to convert the focal length of the camera in mm to m!) {.unnumbered}
 
 ------------------------------------------------------------------------
 
@@ -110,17 +110,19 @@ Answer the following questions for the air photo pair: **BCB93024 124** and **BC
 
 **Step 2:** Select an air photo with urban/natural features. Note the roll and photo numbers. 
 
-##### Q9. On your selected photo list at least 4 land cover types (i.e. closed forest, open forest, urban, water, agricultural, herbaceous, shrub) and 2-3 specific urban features (i.e. roads, buildings, docks, seismic lines etc...) present in the photo. {.unnumbered}
+##### Q9. On your selected photo list at least 4 land cover types and 2-3 specific urban features present in the photo. {.unnumbered}
 
 ##### Q10. For each of the land cover types and features you listed in the previous question, describe how you can identify them in the air photos. How do they vary in terms of texture, shade and shape? {.unnumbered}
 
 **Step 3:** Next, we will use a dot-grid to estimate the ground area covered by features in the air photo. Get a transparent dot-grid from your TA and measure the distance between the dots.
 
-Select one of the forest or urban air photos and place the dot-grid on top of the air photo. Take a photo of the air photo and dot grid. 
+Select one of the forest or urban air photos and place the dot-grid on top of the air photo. **Take a photo of the air photo and overlaid dot grid.** 
 
 Select 3 irregularly shaped features in the photo, these could be lakes, cut-blocks, parks, property lines etc... 
 
-**Step 4:** Use the dot-grid to estimate how many cells cover each feature. Then look up the photo scale on the GIC website. Use the following example to help you calculate the ground area of each feature in m2. 
+**Step 4:** Use the dot-grid to estimate how many cells cover each feature. Then look up the photo scale on the GIC website. 
+
+Use the following example to help you calculate the ground area of each feature in m2. 
 
 In this example imagine the dots are spaced 5 cm apart. A single cell on the dot grid would cover 5x5cm = 25cm^2. If you estimate that a feature on the air photo covers 10.5 cells and the scale of the photo is 1:20,000 then we would convert 10.5 cells to ground area as follows...
 
@@ -132,7 +134,9 @@ Next, convert this to ground area in m using the scale of the air photo:
 
 $\ 262.5cm^2 * 20,000 = 5,250,000 cm^2 / 10,000 = 525m^2$
 
-**Step 5:** Record the ground area of each feature. On the photo you took of the air photo and dot grid use a photo editing program (ie MS Paint) to outline the features you chose. Add labels A,B,C to each feature. Include the image in your final deliverables along with the estimated ground area of each feature and its associated label.   
+**Step 5:** Record the ground area of each feature you selected. On the photo you took of the air photo and dot grid use a photo editing program (ie MS Paint) to outline the features you chose. Add labels A,B,C to each feature. 
+
+**Include the image in your final deliverables along with the estimated ground area of each feature and its associated label.**   
 
 ------------------------------------------------------------------------
 
@@ -150,35 +154,68 @@ Some examples of not so good control points might be river banks, trees or the s
 
 You can read more about the process of georeferencing here: https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm
 
-**Step 1:** The file XXXXX.tif is a high-resolution digital scan of photo **XXXXXXX**. Create a new project in ArcGIS Pro and open a New Map. Drag and drop the air photo into ArcGIS Pro. Notice that because there is no coordinate information associated with the image, ArcGis plots the photo at the coordinates 0.0S, 0.0.0E.
+**Step 1:** The file BurnsLake.tif is a high-resolution digital scan of photo **BC7739 No 188**. Create a new project in ArcGIS Pro and open a New Map. Drag and drop the air photo into ArcGIS Pro. Notice that because there is no coordinate information associated with the image, ArcGis plots the photo at the coordinates 0.0S, 0.0.0E.
+
+``` {r, echo=FALSE, out.width = "75%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-burnslake.jpg')
+```
+
+You may also have to change the Symbology from RGB to greyscale strech. 
 
 First, set the cooridnate system of the Map to **NAD 1983 UTM Zone 10**. Right click Map in the Contents Pane > Properties > Coordinate Systems. 
 
-**Step 2:** In the Map Pane navigate to the corresponding region shown in the air photo. We will be using the basemap in ArcGIS Pro as the reference imagery. In the top Ribbon select Map > Basemap and change the basemap to Imagery or Imagery Hybrid. 
+**Step 2:** In the Map Pane navigate to the corresponding region shown in the air photo (Burns Lake). We will be using the basemaps in ArcGIS Pro as the reference imagery. In the top Ribbon select Map > Basemap and change the basemap to Imagery or Imagery Hybrid. 
 
-On the top ribbon go to Imagery > Georeferencing > Fit to Display. This will plot the air photo in the Map pane. Next, use the Move, Scale and Rotate tools to approximately line up the air photo with the underlying basemap. Be sure to zoom in and try and identify common features between the air photo and the basemap. Note, this will not result in a perfect fit, but try and get reasonably close. When you done, click on the map outside the air photo to close the Move, Scale, Rotate tools. 
+There is a cloud over parts of the image, however, you should be able to see enough detail to georeference the image. 
 
-**Step 3:** To georeference the image we will be adding **control points** in the reference basemap and finding the corresponding points in the air photo. In the example below we will use XXXX as the first control point.  
+On the top ribbon go to Imagery > Georeferencing > Fit to Display. This will plot the air photo in the Map pane. 
 
-Turn off the air photo layer in the Contents pane. Zoom in on the basemap to the control point. On the top ribbon choose Add Control Point. Click on the basemap to set the **source location**, next turn on the air photo and click on the corresponding location on the air photo to set the **target location**. 
+Next, use the Move, Scale and Rotate tools to approximately line up the air photo with the underlying basemap. Be sure to zoom in and try and identify common features between the air photo and the basemap. Note, this will not result in a perfect fit, but try and get reasonably close. When you done, click on the map outside the air photo to close the Move, Scale, Rotate tools. 
 
-Remember, Source = reference basemap and Target = air photo. 
+**Step 3:** To georeference the image we will be adding **control points** in the reference basemap and finding the corresponding points in the air photo. In the example below we will use an intersection on the Trans Canada highway as the first control point.  
 
-Repeat this process and set 4-5 more control points. Try to distribute them across the entire image, a good practice is to try and choose points in each of the four corners and one or two in the centre of the image.
+``` {r, echo=FALSE, out.width = "75%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-cp1.jpg')
+```
+
+Turn off the air photo layer in the Contents pane. Zoom in on the basemap to the control point. On the top ribbon choose Add Control Point. Click on the **scanned airphoto** to set the **source location**, next turn on the **basemap** and click on the corresponding location on the air photo to set the **target location**. 
+
+Remember, Source = airphoto and Target = reference basemap. 
+
+Control point on source image
+``` {r, echo=FALSE, out.width = "75%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-cpsource.jpg')
+```
+
+Corresponding control point on target image
+``` {r, echo=FALSE, out.width = "75%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-cptarget.jpg')
+```
+
+Repeat this process and set 6-10 more control points. Try to distribute them across the entire image, a good practice is to try and choose points in each of the four corners and one or two in the centre of the image.
 
 **Step 4:** You need a minimum of three points to apply a geographic transformation. The transformation will automatically warp the air photo to try and minimize the distance between the source and the target locations of each control point. 
 
 Click Transformation on the top ribbon and select **First Order Polynomial** > Apply.  
 
-Examine the Control Point table. For each control point Residual X indicates the difference in m between the source and target in the X direction after applying the transformation and Residual Y indicates the difference in the Y direction.
-The overall error is shown in the pop-up menu on the Map where Forward error is average difference in meters and Inverse is the number of pixels. 
+Examine the Control Point table. For each control point, **Residual X** indicates the difference in meters between the source and target in the X direction after applying the transformation, and **Residual Y** indicates the difference in the Y direction.
 
-To reduce error we can add more control points to the map, delete points with high error or change the transformation type. Add 8-10 control points (total), **aim for Forward RMS less than 15 m.**
+``` {r, echo=FALSE, out.width = "100%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-table.jpg')
+```
 
-##### Q11: Once you have achived a Forward RMS < 15 m. Take a screenshot of your Control Point table and include it in the final deliverables. {.unnumbered} 
+The overall error is shown in the pop-up menu on the Map where Forward error is average difference across all control points in meters and Inverse is the difference in terms of the pixel units. 
+
+To reduce error we can add more control points to the map, and delete points with high error and replace them with new points. Add 8-10 control points (total), **aim for Forward RMS less than 15 m.**
+
+``` {r, echo=FALSE, out.width = "50%", fig.align = 'center'}
+knitr::include_graphics('images/06/06-forward.jpg')
+```
+
+##### Q11: Once you have achived a Forward RMS < 15 m. Take a screenshot of your Control Point table that includes the error for each point and include it in the final deliverables. {.unnumbered} 
 
 **Step 5:** To save the georeferenced air photo click **Save** and close the Georeferencing menu. You will now be able to overlay the air photo with the reference basemap and any other spatial data. 
 
-Find a region on the air photo where landcover has changed over time, this could be through urbanization, clear cuts etc. Zoom in and adjust the transparency of the air photo in the Appearance menu so that you can see the modern imagery underneath. 
+Find a region on the air photo where land cover has changed over time, this could be through urbanization, clear cuts etc. Zoom in and adjust the transparency of the air photo in the Appearance menu so that you can see the modern imagery underneath. 
 
-##### Q12: Take a screenshot of the historic air photo overlaying the modern imagery (adjust the transparency of the air photo so the basemap can be seen underneath). In 1-2 sentences briefly describe the change taking place in the screenshot. {.unnumbered} 
+##### Q12: Take two screenshots, one of the historic air photo and another of the modern imagery showing changing land cover or land use. In 2-3 sentences briefly describe the change taking place in the two images. {.unnumbered} 

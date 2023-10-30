@@ -5,13 +5,12 @@ biblio-style: "apalike"
 
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["lab3shortname"]][["author"]]
+author <- yml_content[["overlay-redline"]][["author"]]
 ```
 
 # Visualizing Historical Redlining Legacies {#overlay-redline}
 
 Written by
-
 ```{r results='asis', echo=FALSE}
 cat(author)
 ```

@@ -1,6 +1,6 @@
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["lab6shortname"]][["author"]]
+author <- yml_content[["air-photos"]][["author"]]
 ```
 
 # Working with Air Photos {#air-photos}

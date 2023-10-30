@@ -1,12 +1,12 @@
-lab1shortname:
+climatena:
   author: Hana Travers-Smith
-lab2shortname:
+gdb:
   author: Hana Travers-Smith
-lab3shortname:
+overlay-redline:
+  author: Han Yan
+GNSS-data:
   author: Paul Pickell
-lab4shortname:
-  author: Paul Pickell
-lab5shortname:
-  author: Paul Pickell
-lab6shortname:
-  author: Hana Travers-Smith
+RS-imagery:
+  author: Nicholas Coops
+air-photos:
+  author: Andres Varhola and Hana Travers-Smith

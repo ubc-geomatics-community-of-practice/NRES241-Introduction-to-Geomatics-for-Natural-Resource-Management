@@ -1,12 +1,12 @@
-climatena:
+climate-spatial-data:
   author: Hana Travers-Smith
-gdb:
+geodatabase-management:
   author: Hana Travers-Smith
-overlay-redline:
+overlay-analysis-redlining:
   author: Han Yan
-GNSS-data:
+global-navigation-statellite-systems:
   author: Paul Pickell
-RS-imagery:
+remote-sensing-image-analysis:
   author: Nicholas Coops
 air-photos:
   author: Andres Varhola and Hana Travers-Smith

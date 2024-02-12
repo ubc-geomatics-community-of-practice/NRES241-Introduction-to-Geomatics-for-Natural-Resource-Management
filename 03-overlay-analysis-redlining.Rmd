@@ -1,14 +1,9 @@
----
-bibliography: "book.bib"
-biblio-style: "apalike"
----
-
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["overlay-redline"]][["author"]]
+author <- yml_content[["overlay-analysis-redlining"]][["author"]]
 ```
 
-# Visualizing Historical Redlining Legacies {#overlay-redline}
+# Visualizing Historical Redlining Legacies {#overlay-analysis-redlining}
 
 Written by
 ```{r results='asis', echo=FALSE}

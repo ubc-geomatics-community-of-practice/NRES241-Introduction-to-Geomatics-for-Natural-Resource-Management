@@ -5,10 +5,10 @@ output:
 ---
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["RS-imagery"]][["author"]]
+author <- yml_content[["remote-sensing-image-analysis"]][["author"]]
 ```
 
-# Remote Sensing Imagery Analysis {#RS-imagery}
+# Remote Sensing Imagery Analysis {#remote-sensing-image-analysis}
 
 Written by
 ```{r results='asis', echo=FALSE}

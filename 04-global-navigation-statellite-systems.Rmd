@@ -1,10 +1,10 @@
 
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["GNSS-data"]][["author"]]
+author <- yml_content[["global-navigation-statellite-systems"]][["author"]]
 ```
 
-# Collecting and processing GNSS data {#GNSS-data}
+# Collecting and processing GNSS data {#global-navigation-statellite-systems}
 
 Written by
 ```{r results='asis', echo=FALSE}

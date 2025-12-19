@@ -4,7 +4,7 @@ yml_content <- yaml::read_yaml("chapterauthors.yml")
 author <- yml_content[["overlay-analysis-caribou"]][["author"]]
 ```
 
-# Spatial Overlay in QGIS {#Overlay}
+# Spatial Overlay in QGIS {#overlay-analysis-caribou}
 
 Written by
 ```{r results='asis', echo=FALSE}

@@ -1,9 +1,9 @@
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["gdb"]][["author"]]
+author <- yml_content[["geodatabase-management"]][["author"]]
 ```
 
-# Geodatabases, data handling, and mapping {#gdb}
+# Geodatabases, data handling, and mapping {#geodatabase-management}
 
 Written by
 ```{r results='asis', echo=FALSE}
@@ -147,7 +147,7 @@ Next, change the basemap using Map (top ribbon) > Basemap. Experiment with the d
 
 **Step 2:** Once you have set the basemap and symbology for all the layers click **Insert** > **New Layout**. Then choose the size of the layout. For compatibility with most printers select **Letter 8.5x11**. This will open a new Layout window where you will construct your final map. 
 
-```{r 02-layout, echo = FALSE}
+```{r 02-layout, echo = FALSE, out.width= "100%"}
     knitr::include_graphics("images/02/02-layout.png")
 ```
 
@@ -168,7 +168,7 @@ For this lab we will also include an inset map, although this is not always nece
 
 First, add a scale bar and north arrow in the Insert tab (top ribbon). Use the drop down arrows to select a style, you can also customize the  map elements by right clicking on them in the Contents pane > Properties. 
 
-```{r 02-elements, out.width= "75%", echo = FALSE}
+```{r 02-elements, out.width= "100%", echo = FALSE}
     knitr::include_graphics("images/02/02-elements.png")
 ```
 
@@ -180,7 +180,7 @@ Next, we will remove the ESRI basemap credits from the map. ESRI does not let yo
 
 Your layout should now look something like the following: 
 
-```{r 02-example, out.width= "75%", echo = FALSE}
+```{r 02-example, out.width= "100%", echo = FALSE}
     knitr::include_graphics("images/02/02-example.png")
 ```
 
@@ -197,7 +197,7 @@ Here is an example legend (note that yours does not have to look exactly the sam
 
 Click on **Map Frame 1** then in the top ribbon select **Extent Indicator** > **Map Frame** (this is the BC fire map.) This will add a box on the inset map showing the extent of the BC fires data.  
 
-```{r 02-Inset, out.width= "95%", echo = FALSE}
+```{r 02-Inset, out.width= "100%", echo = FALSE}
     knitr::include_graphics("images/02/02-Inset.png")
 ```
 

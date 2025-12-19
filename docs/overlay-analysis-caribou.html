@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lab 3 Spatial Overlay in QGIS | NRES 241: Introduction to Geomatics for Natural Resource Management</title>
+  <meta name="description" content="Open Educational Resources for NRES 241 course at the University of British Columbia" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lab 3 Spatial Overlay in QGIS | NRES 241: Introduction to Geomatics for Natural Resource Management" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Open Educational Resources for NRES 241 course at the University of British Columbia" />
+  <meta name="github-repo" content="github.com/ubc-geomatics-community-of-practice/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lab 3 Spatial Overlay in QGIS | NRES 241: Introduction to Geomatics for Natural Resource Management" />
+  
+  <meta name="twitter:description" content="Open Educational Resources for NRES 241 course at the University of British Columbia" />
+  
+
+<meta name="author" content="Chris Colton" />
+
+
+<meta name="date" content="2025-12-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="geodatabase-management.html"/>
+<link rel="next" href="global-navigation-statellite-systems.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Open Geomatics Community of Practice</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-these-resources"><i class="fa fa-check"></i>How to use these resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-get-involved"><i class="fa fa-check"></i>How to get involved</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to spatial data and map projections</a>
+<ul>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#lab-overview"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#deliverables"><i class="fa fa-check"></i>Deliverables</a></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#data"><i class="fa fa-check"></i>Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#task-1-generate-point-data-from-climate-na"><i class="fa fa-check"></i>Task 1: Generate point data from Climate NA</a></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#task-2-import-coordinates-as-spatial-points-in-arcgis-pro"><i class="fa fa-check"></i>Task 2: Import coordinates as spatial points in ArcGIS Pro</a></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#task-3-exploring-map-projections"><i class="fa fa-check"></i>Task 3: Exploring map projections</a></li>
+<li class="chapter" data-level="" data-path="climate-spatial-data.html"><a href="climate-spatial-data.html#task-4-import-and-display-raster-data"><i class="fa fa-check"></i>Task 4: Import and display raster data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="geodatabase-management.html"><a href="geodatabase-management.html"><i class="fa fa-check"></i><b>2</b> Geodatabases, data handling, and mapping</a>
+<ul>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#lab-overview-1"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#learning-objectives-1"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#deliverables-1"><i class="fa fa-check"></i>Deliverables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#task-1-building-a-geodatabase-and-organizing-data"><i class="fa fa-check"></i>Task 1: Building a geodatabase and organizing data</a></li>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#task-2-vector-data-processing"><i class="fa fa-check"></i>Task 2: Vector Data Processing</a></li>
+<li class="chapter" data-level="" data-path="geodatabase-management.html"><a href="geodatabase-management.html#task-3-create-a-map"><i class="fa fa-check"></i>Task 3: Create a map</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html"><i class="fa fa-check"></i><b>3</b> Spatial Overlay in QGIS</a>
+<ul>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#lab-overview-2"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#learning-objectives-2"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#deliverables-2"><i class="fa fa-check"></i>Deliverables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#task-1-import-data"><i class="fa fa-check"></i>Task 1: Import Data</a></li>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#task-2-join-tables"><i class="fa fa-check"></i>Task 2: Join Tables</a></li>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#task-3-select-features-using-sql-statements"><i class="fa fa-check"></i>Task 3: Select Features Using SQL statements</a></li>
+<li class="chapter" data-level="" data-path="overlay-analysis-caribou.html"><a href="overlay-analysis-caribou.html#task-4-data-analysis"><i class="fa fa-check"></i>Task 4: Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html"><i class="fa fa-check"></i><b>4</b> Collecting and processing GNSS data</a>
+<ul>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#lab-overview-3"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#learning-objectives-3"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#deliverables-3"><i class="fa fa-check"></i>Deliverables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#task-1-preparing-for-gnss-data-collection"><i class="fa fa-check"></i>Task 1: Preparing for GNSS Data Collection</a></li>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#task-2-collect-gnss-data"><i class="fa fa-check"></i>Task 2: Collect GNSS Data</a></li>
+<li class="chapter" data-level="" data-path="global-navigation-statellite-systems.html"><a href="global-navigation-statellite-systems.html#task-3-assess-precision-accuracy-and-possible-errors"><i class="fa fa-check"></i>Task 3: Assess Precision, Accuracy, and Possible Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html"><i class="fa fa-check"></i><b>5</b> Remote Sensing Imagery Analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#lab-overview-4"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#learning-objectives-4"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#deliverables-4"><i class="fa fa-check"></i>Deliverables</a></li>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#data-1"><i class="fa fa-check"></i>Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#task-1-the-ems"><i class="fa fa-check"></i>Task 1: The EMS</a></li>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#task-2-landsat-5-bands-the-ems-arcpro-software"><i class="fa fa-check"></i>Task 2: Landsat 5 Bands, the EMS &amp; ArcPro Software</a></li>
+<li class="chapter" data-level="" data-path="remote-sensing-image-analysis.html"><a href="remote-sensing-image-analysis.html#task-3-viewing-spectral-signatures"><i class="fa fa-check"></i>Task 3: Viewing Spectral Signatures</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air-photos.html"><a href="air-photos.html"><i class="fa fa-check"></i><b>6</b> Working with Air Photos</a>
+<ul>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#lab-overview-5"><i class="fa fa-check"></i>Lab Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#learning-objectives-5"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#deliverables-5"><i class="fa fa-check"></i>Deliverables</a></li>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#data-2"><i class="fa fa-check"></i>Data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#task-1-measurements-from-air-photos"><i class="fa fa-check"></i>Task 1: Measurements from air photos</a></li>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#task-2-interpreting-air-photos"><i class="fa fa-check"></i>Task 2: Interpreting air photos</a></li>
+<li class="chapter" data-level="" data-path="air-photos.html"><a href="air-photos.html#task-3-georeferencing"><i class="fa fa-check"></i>Task 3: Georeferencing</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NRES 241: Introduction to Geomatics for Natural Resource Management</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="overlay-analysis-caribou" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Lab 3</span> Spatial Overlay in QGIS<a href="overlay-analysis-caribou.html#overlay-analysis-caribou" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Written by
+Hana Travers-Smith</p>
+<div id="lab-overview-2" class="section level2 unnumbered hasAnchor">
+<h2>Lab Overview<a href="overlay-analysis-caribou.html#lab-overview-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Caribou are a keystone species in BC, and their presence indicates the health of boreal and mountain ecosystems. Habitat loss due to logging, mining, and climate change has led to significant population declines. Protecting caribou habitats helps preserve these ecosystems, supports the species’ recovery, and protects important ecological services and cultural values.</p>
+<p>In this lab you will practice using overlay tools in QGIS to explore caribou habitat availability in BC. You will learn about Structured Query Language (SQL) and perform a table and spatial join in QGIS.</p>
+<hr />
+<div id="learning-objectives-2" class="section level3 unnumbered hasAnchor">
+<h3>Learning Objectives<a href="overlay-analysis-caribou.html#learning-objectives-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Become familiar with spatial overlay tools in QGIS</li>
+<li>Use Structured Query Language (SQL) to select features based on their attributes.</li>
+</ul>
+<hr />
+</div>
+<div id="deliverables-2" class="section level3 unnumbered hasAnchor">
+<h3>Deliverables<a href="overlay-analysis-caribou.html#deliverables-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Answers to questions posed in the lab handout</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="task-1-import-data" class="section level2 unnumbered hasAnchor">
+<h2>Task 1: Import Data<a href="overlay-analysis-caribou.html#task-1-import-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This lab introduces a new <strong>open-source</strong> software called <strong>QGIS</strong>. It has similar tools and operations as ArcGIS Pro, (which you used in the first two labs), but it is freely available to the public and does not require a paid subscription like ArcGIS Pro. Many consulting and NGO’s prefer QGIS for this reason, so it is helpful to be familiar with how to use it!</p>
+<p><strong>Step 1:</strong> Open QGIS and select “New Empty Project”. To add data to the map use the <strong>Browser</strong> pane on the left to navigate to the directory on your computer where the lab data is saved. Your “Downloads” and “Documents” folders will be listed under the <strong>Home</strong> directory in the Browser. Double click on a layer to add it to the map.</p>
+<p>Load the <strong>Herds.fgb</strong> and the <strong>Herd_area_forest.csv</strong> datasets. The “flatgeobuf” or <code>fgb</code> is a new spatial data file type, it is equivalent to a shapefile that we worked with in ArcGIS, but it is open-access and is not “owned” by ESRI (the company the makes ArcGIS). Also note that the Herd_area_forest dataset is not a spatial data set (it is just a table of attributes) - so it will not add spatial data on the map.</p>
+<p><img src="images/03/03-qgis.png" width="100%" /></p>
+<p>If you ever accidentally close the Browser or Layers panels you can reopen them from View &gt; Panels &gt; and toggling on the visible panels!</p>
+<p><strong>Step 2:</strong> Add a basemap by scrolling through the Browser panel and double clicking on <strong>Open Street Map</strong>. You may get a pop-up window asking which geographic transformation you want to apply to the basemap. Click the first one on the list &gt; Okay.
+In the Layers panel you can change the order the layers plot in by dragging and re-ordering them. Put the basemap on the bottom and the herd layer on top. Practice zooming in and out and panning on the map.</p>
+<p><img src="images/03/03-basemap.png" width="40%" /></p>
+<p><strong>Step 3:</strong> Open the <strong>Herds</strong> attribute table by right-clicking on it in the Layers panel &gt; Open Attribute Table. Each polygon in this layer represents the range of a caribou herd. You can see attributes for things like the herd name, ecotype and risk status.</p>
+<p><img src="images/03/03-holc_att.png" width="100%" /></p>
+<div id="q1-how-many-unique-herds-are-there-in-bc" class="section level4 unnumbered hasAnchor">
+<h4>Q1) How many unique herds are there in BC?<a href="overlay-analysis-caribou.html#q1-how-many-unique-herds-are-there-in-bc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Step 4:</strong> Next, symbolize the herds by risk status. Right click on the Herds layer &gt; Properties &gt; Symbology. hange the symbology type to “Categorized” and the value field to “RISK_STAT”. Click the “Classify” button to add the classes to the legend and adjust the colors as you see fit &gt; OK.</p>
+<p><img src="images/03/03-holc_class.png" width="90%" /></p>
+<p>Your map should look something like the following:</p>
+<p><img src="images/03/03-task1map.png" width="90%" /></p>
+<p><strong>Step 5:</strong> Right-click on the Herds layer and navigate to <strong>Information</strong> in the Properties tab to answer the following questions:</p>
+</div>
+<div id="q2-what-is-the-coordinate-system-of-the-data" class="section level4 unnumbered hasAnchor">
+<h4>Q2) What is the coordinate system of the data?<a href="overlay-analysis-caribou.html#q2-what-is-the-coordinate-system-of-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q3-how-many-attributes-or-fields-are-in-the-dataset-how-many-attributes-are-a-numeric-data-type" class="section level4 unnumbered hasAnchor">
+<h4>Q3) How many attributes (or fields) are in the dataset? How many attributes are a numeric data type?<a href="overlay-analysis-caribou.html#q3-how-many-attributes-or-fields-are-in-the-dataset-how-many-attributes-are-a-numeric-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<hr />
+</div>
+</div>
+<div id="task-2-join-tables" class="section level2 unnumbered hasAnchor">
+<h2>Task 2: Join Tables<a href="overlay-analysis-caribou.html#task-2-join-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this task we will join attributes from a table represented forested area to the Herds polygons.</p>
+<p><strong>Step 1:</strong> Right-click on the <strong>Herd_Area_Forest</strong> layer and open the attribute table. The attribute “Forest Area(Sqm)” represents the area of forests in m2 within each herd polygon. To perform a tabular join the two datasets both need to have a common attribute, or “key”. A “key, indicates which rows from the first data set correspond to the rows in the second dataset. Rows that have the same value in the”key” will be joined together. In this case we will join the non-spatial tabular forested areas data to the herd polygons.</p>
+<p>Inspect the attribute tables of the <strong>Herd_area_forest</strong> and <strong>Herd</strong> polygons.</p>
+<div id="q4-what-attribute-could-we-use-as-a-key-to-join-these-two-datasets-together" class="section level4 unnumbered hasAnchor">
+<h4>Q4) What attribute could we use as a key to join these two datasets together?<a href="overlay-analysis-caribou.html#q4-what-attribute-could-we-use-as-a-key-to-join-these-two-datasets-together" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Step 2:</strong> To perform a tabular join on the top ribbon navigate to Processing &gt; Toolbox &gt; Search for “join attributes by field value”.</p>
+<ul>
+<li>Input Layer: <strong>Herds</strong></li>
+<li>Table field: [input the key attribute from Q4 here]</li>
+<li>Input Layer 2: <strong>Herd_area_forest</strong></li>
+<li>Table field: [key attribute]</li>
+<li>Join type: Take attributes of the first matching feature only</li>
+<li><strong>Run</strong></li>
+</ul>
+<p>You should now see a new layer in the contents pane called “Joined layer”. Open the attribute table and scroll through all the attributes - the information from the forested area dataset should be joined to each polygon feature.</p>
+<hr />
+</div>
+</div>
+<div id="task-3-select-features-using-sql-statements" class="section level2 unnumbered hasAnchor">
+<h2>Task 3: Select Features Using SQL statements<a href="overlay-analysis-caribou.html#task-3-select-features-using-sql-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The SQL statement is widely used in GIS to select target features. There are four basic conditional operators (i.e., Boolean operators): AND, OR, XOR, and NOT. Similar to the Set concept in mathematics.</p>
+<p><strong>AND</strong> is an exclusive statement that needs the selected feature to meet both or multiple criteria to be passed. The tuple illustration for A AND B is listed below.</p>
+<p><img src="images/03/03-and.png" width="40%" /></p>
+<p><strong>OR</strong> is an inclusive statement that will select all the features that meet any one of the criteria. As outlined in the shaded blue tuple, all the features that fall within this area will be selected (A OR B).</p>
+<p><img src="images/03/03-or.png" width="40%" /></p>
+<p><strong>NOT</strong> is an exclusive statement. It is used to diminish the range of one desired characteristic. The tuple illustration for A NOT B is shown below.</p>
+<p><img src="images/03/03-not.png" width="40%" /></p>
+<p><strong>XOR</strong> is used to describe a relationship to exclude the common area in two tuples, but the areas that are true individually for both or multiple statements will be kept. (i.e. everthing but the intersection of A and B).</p>
+<p><img src="images/03/03-xor.png" width="40%" /></p>
+<p><strong>Step 1:</strong> Open the attribute table of the “Joined layer” polygon and click the “Select by Expression” button. (If you have closed QGIS between this task and the previous task you may need to repeat the join operation with the forested area table).</p>
+<p><img src="images/03/03-exp-button.png" width="80%" /></p>
+<p>We will practice some basic queries using the attributes in the table. You can directly type a selection query into the Expression panel on the right or you can use the drop-down menus on the left to help build your queries.</p>
+<p><strong>Step 2:</strong> First, we will select the features where the RISK_STAT attribute is ‘Blue/Special’. Expand the “Fields and Values” menu. Double click the RISK_STAT attribute - this will add it to the expression box on the left. Use the = sign button on the bottom (or type in in) to add the symbol to the expression. Finally, click the “All Unique” button to see the unique values of the RISK_STAT attribute and click <em>Blue/Special</em>. You should now see the completed expression on the left. &gt; <strong>Select Features</strong>. The selected features should be highlighted in yellow on the map.</p>
+<p><img src="images/03/03-query.png" width="80%" /></p>
+<p>Notice the formatting style of the expression - the attribute RISK_STAT is enclosed in ” ” and the field value is enclosed in ’ ’. SQL statements must follow these formatting rules, otherwise you will get an error when you try and run the query. You can use the drop-down menus to select attributes, operators and values which will automatically apply the formatting for you.</p>
+<p><strong>Step 3:</strong> Open the attribute table of “Joined layer” and notice that <strong>26</strong> polygons with ‘Blue/Special’ are highlighted.</p>
+<p><img src="images/03/03-selected.png" width="80%" /></p>
+<p>Clear the selected features. Repeat the same query but this time use the “NOT EQUAL” operator <code>!=</code>. Now 29 polygons should be selected.</p>
+<p><img src="images/03/03-clear-button.png" width="80%" /></p>
+<p><strong>Step 4:</strong> Now we will combine two attributes in a query using the boolean (AND/OR/NOT) operators. Practice using the drop-down menus and typing directly into the expression panel to construct the following SQL statement: <code>"RISK_STAT"  =  'Blue/Special'  AND  "Forest Area(Sqm)" &gt; 3000000000</code>. (The AND operator and the &gt; symbol can be found in the “Operators” drop-down menu below “Fields and Values”.)</p>
+<div id="q5-how-many-polygons-are-selected-with-this-query" class="section level4 unnumbered hasAnchor">
+<h4>Q5: How many polygons are selected with this query?<a href="overlay-analysis-caribou.html#q5-how-many-polygons-are-selected-with-this-query" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Clear the selected attributes.</p>
+<p><strong>Step 5:</strong> Use what you have learned about SQL statements to answer the following questions:</p>
+</div>
+<div id="q6-how-many-herds-are-endangered-or-threatened-include-the-sql-statement.-hint-you-will-need-to-use-the-risk_stat-attribute-twice-in-your-sql-statement" class="section level4 unnumbered hasAnchor">
+<h4>Q6: How many herds are Endangered or Threatened? Include the SQL statement. (Hint: you will need to use the “RISK_STAT” attribute twice in your SQL statement)<a href="overlay-analysis-caribou.html#q6-how-many-herds-are-endangered-or-threatened-include-the-sql-statement.-hint-you-will-need-to-use-the-risk_stat-attribute-twice-in-your-sql-statement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q7-how-many-herds-with-the-mountain-ecotype-are-classified-as-endangered-include-the-sql-statement." class="section level4 unnumbered hasAnchor">
+<h4>Q7: How many herds with the Mountain ecotype are classified as Endangered? Include the SQL statement.<a href="overlay-analysis-caribou.html#q7-how-many-herds-with-the-mountain-ecotype-are-classified-as-endangered-include-the-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q8-list-the-names-of-the-herds-in-the-boreal-ecotype-with-between-1000000000-and-5000000000-sqm-of-forested-area-include-the-sql-statement." class="section level4 unnumbered hasAnchor">
+<h4>Q8: List the names of the herds in the Boreal ecotype with <strong>between</strong> 1000000000 and 5000000000 Sqm of forested area? Include the SQL statement.<a href="overlay-analysis-caribou.html#q8-list-the-names-of-the-herds-in-the-boreal-ecotype-with-between-1000000000-and-5000000000-sqm-of-forested-area-include-the-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q9-how-many-herds-have-at-least-5000000000-sqm-of-forested-area-but-are-not-endangered-or-threatened-include-the-sql-statement." class="section level4 unnumbered hasAnchor">
+<h4>Q9: How many herds have at least 5000000000 Sqm of forested area but are <strong>NOT</strong> Endangered or Threatened? Include the SQL statement.<a href="overlay-analysis-caribou.html#q9-how-many-herds-have-at-least-5000000000-sqm-of-forested-area-but-are-not-endangered-or-threatened-include-the-sql-statement." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<hr />
+</div>
+</div>
+<div id="task-4-data-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Task 4: Data Analysis<a href="overlay-analysis-caribou.html#task-4-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this task we will combine the herd polygons with spatial information of wildfire boundaries to understand which herds have experienced the most disturbance from wildfire.</p>
+<p><strong>Step 1:</strong> Load the wild fires polygon shapefile from <strong>Lab 2</strong> (H_FIRE_PLY) and plot it on top of the caribou herds.</p>
+<p><img src="images/03/03-fires.png" width="80%" /></p>
+<p><strong>Step 2:</strong> We will use the <strong>Intersection</strong> tool to extract the overlapping area between the caribou herd boundaries and wildfire extents. The resulting layer will have attributes from both input layers.</p>
+<p><img src="images/03/03-intersect.png" width="80%" />
+<a href="https://docs.qgis.org/3.34/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html" class="uri">https://docs.qgis.org/3.34/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html</a></p>
+<p>Search for the <strong>Intersection</strong> tool, Processing &gt; Processing Toolbox.</p>
+<ul>
+<li>Input Layer: Herds</li>
+<li>Overlay Layer: H_FIRE_PLY</li>
+<li>Leave defaults for all other options</li>
+<li>Hit Run. This operation may take several minutes.</li>
+</ul>
+<p><strong>You will encounter the following error message <code>Feature (16748) from “H_FIRE_PLY_polygon” has invalid geometry. Please fix the geometry</code>. To do this, navigate to the “Fix Geometries” tool in the Processing Toolbox and use the “H_FIRE_PLY” layer as the input.</strong></p>
+<p>Now try re-running the Intersection tool using the resulting “Fixed geometries” layer.</p>
+<p>At the end you should have a new layer called “Intersection”. Turn off all other layers and inspect the output and its attribute table. Each polygon represents the area within the the caribou herds that <strong>also</strong> experienced fire.</p>
+<p><strong>Notice that there are some attributes with duplicate names in both datasets (for example AREA_SQM and AREA_SQM2). The attributes from the caribou herds will be listed first and the attributes from the fire polygons will be listed second!</strong></p>
+<p><strong>Step 3:</strong> Next we will calculate the area in km2 of each of the intersected polygons. Open the attribute table of the <strong>Intersection layer</strong> we just created.</p>
+<p>Click the “Field Calculator” button (it looks like an abacus).</p>
+<p>We will use the $area command to calculate the area of each polygon - note that the default units are meters squared so we will divide by 1000000 to get km squared.</p>
+<ul>
+<li>Output field name: <code>intersect_area_km</code></li>
+<li>Output filed type: Decimal Number (real)</li>
+<li>Output field length: 10</li>
+<li>Precision: 3</li>
+<li>In the Expression panel type: <code>$area / 1000000</code></li>
+<li>Click OK.</li>
+</ul>
+<p><img src="images/03/03-field.png" width="80%" /></p>
+<p>Click the “Save edits” button on the Intersection attribute table to save the new field.</p>
+<p><img src="images/03/03-save.png" width="80%" /></p>
+<p><strong>Step 4:</strong> On the top ribbon click View &gt; Statistical Summary to open the Statistics panel. We can use this tool to calculate summary statistics including the sum, mean, max and range for the features in our dataset.</p>
+<p>Change the input layer to “Intersection” and the attribute to “intersect_area_km”. You should now see summary statistics of the “intersect_area_km” field for all polygons in the dataset.</p>
+<p><img src="images/03/03-stats.png" width="50%" /></p>
+<div id="q10-what-is-the-total-burned-area-within-caribou-herd-ranges-report-in-km-squared" class="section level4 unnumbered hasAnchor">
+<h4>Q10: What is the total burned area within caribou herd ranges (report in km squared)?<a href="overlay-analysis-caribou.html#q10-what-is-the-total-burned-area-within-caribou-herd-ranges-report-in-km-squared" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Step 5:</strong> At the bottom of the Statistics panel check the “Selected features only” box. Open the “Intersection” attribute table and use the “Select by Expression” tool from previous Task to select polygons in the “Northern” herd ECOTYPE. The summary statistics should automatically update for the selected polygons.</p>
+</div>
+<div id="q11-what-is-the-total-burned-area-in-the-northern-herd-ecotype" class="section level4 unnumbered hasAnchor">
+<h4>Q11: What is the total burned area in the Northern herd ecotype?<a href="overlay-analysis-caribou.html#q11-what-is-the-total-burned-area-in-the-northern-herd-ecotype" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Step 6:</strong> Use what you have learned about SQL statements and summary statistics to answer the following questions:</p>
+</div>
+<div id="q12-what-is-the-total-area-of-endangered-caribou-habitat-in-km-squared-total-habitat-not-burned-area" class="section level4 unnumbered hasAnchor">
+<h4>Q12: What is the total area of Endangered caribou habitat in km squared? (Total HABITAT not burned area!)<a href="overlay-analysis-caribou.html#q12-what-is-the-total-area-of-endangered-caribou-habitat-in-km-squared-total-habitat-not-burned-area" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q13-what-is-the-total-burned-area-of-endangered-caribou-habitat-in-km-squared" class="section level4 unnumbered hasAnchor">
+<h4>Q13: What is the total burned area of Endangered caribou habitat in km squared?<a href="overlay-analysis-caribou.html#q13-what-is-the-total-burned-area-of-endangered-caribou-habitat-in-km-squared" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="q14-what-proportion-of-endangered-caribou-habitat-was-burned-answer-to-3-decimal-places." class="section level4 unnumbered hasAnchor">
+<h4>Q14: What <strong>proportion</strong> of Endangered caribou habitat was burned? Answer to 3 decimal places.<a href="overlay-analysis-caribou.html#q14-what-proportion-of-endangered-caribou-habitat-was-burned-answer-to-3-decimal-places." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="geodatabase-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="global-navigation-statellite-systems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ubc-geomatics-community-of-practice/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/edit/main/03-overlay-analysis-caribou.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/ubc-geomatics-community-of-practice/NRES241-Introduction-to-Geomatics-for-Natural-Resource-Management/blob/main/03-overlay-analysis-caribou.Rmd",
+    "text": null
+  },
+  "download": ["ubc-nres-241-introduction-to-geomatics-for-natural-resource-management.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

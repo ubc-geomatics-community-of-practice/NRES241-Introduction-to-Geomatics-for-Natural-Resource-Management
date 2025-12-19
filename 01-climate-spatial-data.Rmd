@@ -1,8 +1,8 @@
 ```{r echo=FALSE}
 yml_content <- yaml::read_yaml("chapterauthors.yml")
-author <- yml_content[["climatena"]][["author"]]
+author <- yml_content[["climate-spatial-data"]][["author"]]
 ```
-# Introduction to spatial data and map projections {#ClimateNA}
+# Introduction to spatial data and map projections {#climate-spatial-data}
 
 Written by
 ```{r results='asis', echo=FALSE}
@@ -19,7 +19,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 ### Learning Objectives {.unnumbered}
 
--   Understand differences between raster and vector datatypes
+-   Understand differences between raster and vector data types
 -   Visualize different map projections in ArcGIS Pro 
 -   Display spatial data in ArcGIS Pro using appropriate projections and symbology 
 
@@ -45,7 +45,7 @@ Over the past century, greenhouse gas emissions have driven rapid climatic chang
 
 **Step 1:** Go to Climate NA webmap using the following link: ClimateNA_Map (https://climatena.ca/mapVersion)
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-climNAmap.jpg')
 ```
 
@@ -61,7 +61,7 @@ The Quick Tutorial button will give more explanation for other features of the w
 
 ##### Q2. Zoom in to the UBC Vancouver campus, what is the MAT and MAP at this location for the normal period 1961_1990? (You do not need to click on the exact same point shown below, but make sure to click somewhere on campus). {.unnumbered}
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-UBC.jpg')
 ```
 
@@ -71,7 +71,7 @@ knitr::include_graphics('images/01/01-UBC.jpg')
 
 Zoom in to the following area showing greater Vancouver and the Coast Mountains.
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-lowermainland.jpg')
 ```
 
@@ -91,37 +91,37 @@ When you are done, hit the **Save** button to download the csv file to your Down
 
 **Step 1:** Open ArcGISPro. Click on the Map button, then name your new project and save it as Lab 1 on your computer. The default filepath might look something like this: `C:\Users\YourUsername\Documents\ArcGIS\Projects\Lab1.` 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-arcpro.jpg')
 ```
 
 To get started, click the **Insert** button on the top ribbon, then the **New Map** button. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-arcmappanes.jpg')
 ```
 
 **Step 2:** To import ClimateData.csv to ArcGIS Pro open File Explorer and navigate to the Downloads folder. Click and drag ClimateData.csv to the Contents pane. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-catalogpane.jpg')
 ```
 
 **Step 3:** Next, we will add data to the map using the lat/long coordinates from the csv. Right click on **ClimateData.csv** in the Contents pane then select **Display XY Data** from the dropdown menu. Ensure that the **X Field** shows the column corresponding to longitude (long) and the **Y Field** shows the column corresponding to latitude (lat). Leave the output feature class coordinate system as the default. Click OK.
 
-``` {r, echo=FALSE, fig.align = 'center'}
-knitr::include_graphics('images/01/01-displayXY.jpg')
+``` {r, echo=FALSE, fig.align = 'center', out.width="50%"}
+knitr::include_graphics('images/01/01-DisplayXY.jpg')
 ```
 
 **Step 4:** Your point features should now be displayed in the Map pane. Right click on the **ClimateData_XYTableToPoint** layer and select Attribute Table. This is where you can view the climate data associated with each point. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-attributetable.jpg')
 ```
 
 Right click on the **ClimateData_XYTableToPoint** layer in the Contents pane and select **Properties** from the dropdown menu. Navigate to **Source** and examine the **Spatial Reference** information by opening the menu. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="75%"}
 knitr::include_graphics('images/01/01-spatialref.jpg')
 ```
 
@@ -135,7 +135,7 @@ knitr::include_graphics('images/01/01-symbology.jpg')
 
 We can also vary the color of each point by different variables in the Attribute Table. Right click on **ClimateData_XYTableToPoint** layer and select **Symbology**. Under Primary symbology, use the dropdown menu to change the symbology type to **Graduated Colors**.  
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-plotpoints.jpg')
 ```
 
@@ -153,11 +153,11 @@ Go to the General tab and change the chart title and X and Y axis labels to some
 
 **Create charts of change in MAT and change in MAP by elevation. Include the images in your final deliverables. **
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-MATgraph.jpg')
 ```
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="75%"}
 knitr::include_graphics('images/01/01-savegraph.jpg')
 ```
 
@@ -169,7 +169,7 @@ knitr::include_graphics('images/01/01-savegraph.jpg')
 
 To visualize how different map projections alter shape, area and distance of spatial data drag and drop the **ellipses.shp** shapefile to the Map. Note that the default projection in ArcMap is the pseudo-Plate-Caree projection. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-ellipses.jpg')
 ```
 
@@ -202,7 +202,7 @@ Download the following layers:
 
 ##### Q7. From the IPCC Sixth Assessment Report what does the SSP2-4.5 scenario represent? Answer in 2-3 sentences. {.unnumbered}  
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="75%"}
 knitr::include_graphics('images/01/01-climNAraster.jpg')
 ```
 
@@ -212,7 +212,7 @@ Change the coordinate system of the map to **NAD 1983 Statistics Canada Lambert*
 
 Right click on the **mat_1961_1990** layer in the Contents pane > Symbology. Change the color scheme to better see the range of values. 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="50%"}
 knitr::include_graphics('images/01/01-rastersymbol.jpg')
 ```
 
@@ -220,7 +220,7 @@ knitr::include_graphics('images/01/01-rastersymbol.jpg')
 
 Under the Math tab click on the **Minus** tool. This tool subtracts cell values between two rasters and outputs a new raster whose values are the difference between the two inputs. In the Raster field input the **mat_ssp245_2071_2100** layer. In the Raster2 field input the **mat_1961_1990** layer. This will subtract the historical MAT values from the projected MAT values. Click **Create new layer.**
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="50%"}
 knitr::include_graphics('images/01/01-rastercalc.jpg')
 ```
 
@@ -252,7 +252,7 @@ In the example below I have chosen Victoria, BC where the projected change in MA
 
 **For your chosen place, record the Lat/Long and the change in MAT and MAP. Include this in the following discussion question.** 
 
-``` {r, echo=FALSE, fig.align = 'center'}
+``` {r, echo=FALSE, fig.align = 'center', out.width="100%"}
 knitr::include_graphics('images/01/01-victoria.jpg')
 ```
 
